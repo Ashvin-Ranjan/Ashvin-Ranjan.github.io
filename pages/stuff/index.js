@@ -1,7 +1,7 @@
 // React
 import React from "react";
 
-import VerticalText from "../components/VerticalText";
+import VerticalText from "../../components/VerticalText";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -49,28 +49,28 @@ const Stuff = () => {
               <Button
                 className={classes.button}
                 style={{ alignSelf: "center" }}
-                href="#/stuff/rune"
+                href="/stuff/rune"
               >
                 Rune Text Generator
               </Button>
               <Button
                 className={classes.button}
                 style={{ alignSelf: "center" }}
-                href="#/stuff/cyrillic"
+                href="/stuff/cyrillic"
               >
                 Cyrllic Text Generator
               </Button>
               <Button
                 className={classes.button}
                 style={{ alignSelf: "center" }}
-                href="#/stuff/similar"
+                href="/stuff/similar"
               >
                 Similar Text Generator
               </Button>
               <Button
                 className={classes.button}
                 style={{ alignSelf: "center" }}
-                href="#/stuff/comment_sorter"
+                href="/stuff/comment_sorter"
               >
                 Comment Sorter
               </Button>
@@ -78,7 +78,7 @@ const Stuff = () => {
             <Button
               className={classes.button}
               style={{ alignSelf: "center" }}
-              href="#/"
+              href="/"
             >
               Back
             </Button>

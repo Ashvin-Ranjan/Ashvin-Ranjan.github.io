@@ -6,9 +6,9 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 
-// Similar translate table
-import similar from "../data/similar.json";
-import TranslatedText from "../components/TranslatedText";
+// Rune translate table
+import rune from "../../data/rune.json";
+import TranslatedText from "../../components/TranslatedText";
 
 const useStyles = makeStyles((theme) => ({
   ...theme.spreadIt,
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SimilarTextGenerator = () => {
+const RuneTextGenerator = () => {
   const classes = useStyles();
   const [text, setText] = useState("");
 
@@ -40,7 +40,7 @@ const SimilarTextGenerator = () => {
   return (
     <div className="App">
       <header className="App-header-align-top">
-        <div className={classes.title}>Similar Text Generator</div>
+        <div className={classes.title}>Rune Text Generator</div>
         <div className={classes.side}>
           <div className={classes.column} style={{ marginTop: "15%" }}>
             <TextField
@@ -58,18 +58,13 @@ const SimilarTextGenerator = () => {
             />
           </div>
           <div className={classes.column}>
-            <TranslatedText
-              translate={similar}
-              text={text}
-              allowLowercase
-              highlightUntranslated
-            />
+            <TranslatedText translate={rune} text={text} />
           </div>
           <div className={classes.column} style={{ marginTop: "15%" }}>
             <Button
               className={classes.button}
               style={{ alignSelf: "center" }}
-              href="#/stuff"
+              href="/stuff"
             >
               Back
             </Button>
@@ -80,4 +75,4 @@ const SimilarTextGenerator = () => {
   );
 };
 
-export default SimilarTextGenerator;
+export default RuneTextGenerator;

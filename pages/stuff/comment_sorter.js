@@ -118,7 +118,7 @@ const CommentSorter = () => {
             <Button
               className={classes.button}
               style={{ alignSelf: "center" }}
-              href="#/stuff"
+              href="/stuff"
             >
               Back
             </Button>

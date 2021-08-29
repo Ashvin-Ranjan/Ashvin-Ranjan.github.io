@@ -7,8 +7,8 @@ import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 
 // Cyrillic translate table
-import cyrillic from "../data/cyrillic.json";
-import TranslatedText from "../components/TranslatedText";
+import cyrillic from "../../data/cyrillic.json";
+import TranslatedText from "../../components/TranslatedText";
 
 const useStyles = makeStyles((theme) => ({
   ...theme.spreadIt,
@@ -64,7 +64,7 @@ const CyrillicTextGenerator = () => {
             <Button
               className={classes.button}
               style={{ alignSelf: "center" }}
-              href="#/stuff"
+              href="/stuff"
             >
               Back
             </Button>
