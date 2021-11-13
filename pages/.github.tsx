@@ -19,13 +19,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Internals() {
+
+    //const pages = 
+
     const classes = useStyles();
     return (
         <div className="App">
             <header className="App-header">
                 <div className={classes.side}>
                     <div className={classes.paddingHorizontal}>
-                        <VerticalText text="アッシュ・ドット・ビンの内部詳細"/>
+                        <VerticalText text="Github Feed"/>
                     </div>
                     <div className={classes.column}>
                         <div className={classes.paddingBottom}>hello</div>

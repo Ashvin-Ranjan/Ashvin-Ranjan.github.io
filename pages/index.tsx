@@ -1,5 +1,6 @@
 import {ReactNode} from 'react';
 import Link from 'next/link';
+import Fade from 'react-reveal/Fade';
 
 // MUI
 import Typography from "@material-ui/core/Typography";
@@ -25,15 +26,17 @@ const useStyles = makeStyles((theme) => ({
 export default function Home() {
     const classes = useStyles();
 
-    function TypographyLink(props: {href: string, children: ReactNode}) {
+    function TypographyLink(props: {href: string, children: ReactNode, fade?: number}) {
         return (
-            <Typography className={classes.letters}>
-                <Link href={props.href}>
-                    <a className={classes.link}>
-                        {props.children}
-                    </a>
-                </Link>
-            </Typography>
+            <Fade>
+                <Typography className={classes.letters}>
+                    <Link href={props.href}>
+                        <a className={classes.link}>
+                            {props.children}
+                        </a>
+                    </Link>
+                </Typography>
+            </Fade>
         )
     }
 
