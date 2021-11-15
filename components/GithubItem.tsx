@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
     height: "auto",
     textDecoration: "none",
+    minHeight: "15vh",
   },
   content: {
     padding: "2.5%",
@@ -41,32 +42,32 @@ export default function GithubItem({ repo }: { repo: Repo }) {
   const classes = useStyles();
   return (
     <Card className={classes.card}>
-      <div className={classes.content}>
-        <CardActionArea>
-          <a
-            href={repo.html_url}
-            style={{ textDecoration: "none", color: "white" }}
-          >
+      <CardActionArea style={{ height: "100%" }}>
+        <a
+          href={repo.html_url}
+          style={{ textDecoration: "none", color: "white" }}
+        >
+          <div className={classes.content}>
             <Typography variant="h5" component="div">
               {repo.name}
             </Typography>
-          </a>
-        </CardActionArea>
-        <div className={classes.description}>
-          <Typography sx={{ fontSize: 14 }}>
-            {repo.description ?? ""}
-          </Typography>
-        </div>
-        <Typography sx={{ fontSize: 14 }}>
-          Language: {repo.language ?? "none"}
-        </Typography>
-        <div className={classes.stars}>
-          <StarIcon />
-          <Typography sx={{ fontSize: 14 }} style={{ paddingLeft: "1%" }}>
-            {repo.stargazers_count}
-          </Typography>
-        </div>
-      </div>
+            <div className={classes.description}>
+              <Typography sx={{ fontSize: 14 }}>
+                {repo.description ?? ""}
+              </Typography>
+            </div>
+            <Typography sx={{ fontSize: 14 }}>
+              Language: {repo.language ?? "none"}
+            </Typography>
+            <div className={classes.stars}>
+              <StarIcon />
+              <Typography sx={{ fontSize: 14 }} style={{ paddingLeft: "1%" }}>
+                {repo.stargazers_count}
+              </Typography>
+            </div>
+          </div>
+        </a>
+      </CardActionArea>
     </Card>
   );
 }

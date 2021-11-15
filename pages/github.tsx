@@ -2,6 +2,7 @@ import VerticalText from "../components/VerticalText";
 import GithubItem, { Repo } from "../components/GithubItem";
 import { makeStyles } from "@material-ui/core/styles";
 import { useState } from "react";
+import { Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   side: {
@@ -24,10 +25,13 @@ const useStyles = makeStyles((theme) => ({
 export default function Internals() {
   let [items, setItems] = useState<Repo[]>([]);
 
-  fetch("https://api.github.com/users/Ashvin-Ranjan/repos").then((v) =>
-    v.json().then((i) => {
-      setItems(i);
-    })
+  let values: Repo[] = [];
+
+  fetch("https://api.github.com/users/Ashvin-Ranjan/repos?sort=updated").then(
+    (v) =>
+      v.json().then((i) => {
+        setItems(i);
+      })
   );
 
   const classes = useStyles();
@@ -37,8 +41,11 @@ export default function Internals() {
         <div className={classes.side}>
           <div className={classes.paddingHorizontal}>
             <h1>
-              <VerticalText text="Github Feed" />
+              <VerticalText text=".github" />
             </h1>
+            <Button href="/" style={{ color: "white", fontSize: 30 }}>
+              ≪
+            </Button>
           </div>
           <div className={classes.column}>
             {items.map((v) => (

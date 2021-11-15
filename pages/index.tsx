@@ -78,7 +78,7 @@ export default function Home() {
             <TypographyLink href="/help" style={styles[3]}>
               h
             </TypographyLink>
-            <TypographyLink href="/.github" style={styles[4]}>
+            <TypographyLink href="/github" style={styles[4]}>
               .
             </TypographyLink>
             <TypographyLink href="/videos" style={styles[5]}>
