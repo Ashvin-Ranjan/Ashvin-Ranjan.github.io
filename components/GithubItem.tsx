@@ -52,16 +52,16 @@ export default function GithubItem({ repo }: { repo: Repo }) {
               {repo.name}
             </Typography>
             <div className={classes.description}>
-              <Typography sx={{ fontSize: 14 }}>
+              <Typography style={{ fontSize: 14 }}>
                 {repo.description ?? ""}
               </Typography>
             </div>
-            <Typography sx={{ fontSize: 14 }}>
+            <Typography style={{ fontSize: 14 }}>
               Language: {repo.language ?? "none"}
             </Typography>
             <div className={classes.stars}>
               <StarIcon />
-              <Typography sx={{ fontSize: 14 }} style={{ paddingLeft: "1%" }}>
+              <Typography style={{ fontSize: 14, paddingLeft: "1%" }}>
                 {repo.stargazers_count}
               </Typography>
             </div>
