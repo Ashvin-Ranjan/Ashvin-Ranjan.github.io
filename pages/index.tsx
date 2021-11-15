@@ -61,8 +61,6 @@ export default function Home() {
     });
   }
 
-  console.log(styles);
-
   return (
     <div className="App">
       <header className="App-header">
