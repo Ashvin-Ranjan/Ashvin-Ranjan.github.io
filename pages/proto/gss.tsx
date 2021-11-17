@@ -137,11 +137,10 @@ export default function GunnStudentSimulator() {
         {((data as any)[scene] ?? data.error).options.map((v: Option) => (
           <>
             {'\u00a0'}
-            <a
-              href="#"
+            <span
               className={classes.option}
               onClick={generateSelect(v)}
-              style={{ color: 'pink' }}
+              style={{ color: 'pink', cursor: 'pointer' }}
               onMouseEnter={() => {
                 setGradeEffect(v.grade_effect ?? 0);
                 setStressEffect(v.stress_effect ?? 0);
@@ -156,7 +155,7 @@ export default function GunnStudentSimulator() {
               {'['}
               <u>{v.text}</u>
               {']'}
-            </a>
+            </span>
           </>
         ))}
       </header>
