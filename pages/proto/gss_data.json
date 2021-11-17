@@ -138,7 +138,7 @@
     },
     "start_assembly.comment": "Tutorial Assembly to introduce the topics",
     "start_assembly0": {
-        "text": "Don Austin Gathers all students in the Spangenburg Theatre:\n\"Welcome to the illustrious Henry M. Gunn High School\"",
+        "text": "Don Austin Gathers all students in the Spangenb*rg Theatre: (Name censored for political reasons)\n\"Welcome to the illustrious Henry M. Gunn High School\"",
         "options": [
             {
                 "text": "Continue",
@@ -152,7 +152,7 @@
         ]
     },
     "start_assembly1": {
-        "text": "Don Austin Gathers all students in the Spangenburg Theatre:\n\"Welcome to the illustrious Henry M. Gunn High School\"\n\"Here will you need to keep your grades up\"",
+        "text": "Don Austin Gathers all students in the Spangenb*rg Theatre: (Name censored for political reasons)\n\"Welcome to the illustrious Henry M. Gunn High School\"\n\"Here will you need to keep your grades up\"",
         "options": [
             {
                 "text": "Continue",
@@ -166,7 +166,7 @@
         ]
     },
     "start_assembly2": {
-        "text": "Don Austin Gathers all students in the Spangenburg Theatre:\n\"Welcome to the illustrious Henry M. Gunn High School\"\n\"Here will you need to keep your grades up\"\n\"Manage your social relationships\"",
+        "text": "Don Austin Gathers all students in the Spangenb*rg Theatre: (Name censored for political reasons)\n\"Welcome to the illustrious Henry M. Gunn High School\"\n\"Here will you need to keep your grades up\"\n\"Manage your social relationships\"",
         "options": [
             {
                 "text": "Continue",
@@ -180,7 +180,7 @@
         ]
     },
     "start_assembly3": {
-        "text": "Don Austin Gathers all students in the Spangenburg Theatre:\n\"Welcome to the illustrious Henry M. Gunn High School\"\n\"Here will you need to keep your grades up\"\n\"Manage your social relationships\"\n\"Try to keep your stress low\"",
+        "text": "Don Austin Gathers all students in the Spangenb*rg Theatre: (Name censored for political reasons)\n\"Welcome to the illustrious Henry M. Gunn High School\"\n\"Here will you need to keep your grades up\"\n\"Manage your social relationships\"\n\"Try to keep your stress low\"",
         "options": [
             {
                 "text": "Continue",
@@ -194,7 +194,7 @@
         ]
     },
     "start_assembly4": {
-        "text": "Don Austin Gathers all students in the Spangenburg Theatre:\n\"Welcome to the illustrious Henry M. Gunn High School\"\n\"Here will you need to keep your grades up\"\n\"Manage your social relationships\"\n\"Try to keep your stress low\"\n\"And keep good relations with your teachers\"",
+        "text": "Don Austin Gathers all students in the Spangenb*rg Theatre: (Name censored for political reasons)\n\"Welcome to the illustrious Henry M. Gunn High School\"\n\"Here will you need to keep your grades up\"\n\"Manage your social relationships\"\n\"Try to keep your stress low\"\n\"And keep good relations with your teachers\"",
         "options": [
             {
                 "text": "Continue",
@@ -204,7 +204,7 @@
         ]
     },
     "start_assembly5": {
-        "text": "Don Austin Gathers all students in the Spangenburg Theatre:\n\"Welcome to the illustrious Henry M. Gunn High School\"\n\"Here will you need to keep your grades up\"\n\"Manage your social relationships\"\n\"Try to keep your stress low\"\n\"And keep good relations with your teachers\"\n\"These things will slowly fall out of order\"",
+        "text": "Don Austin Gathers all students in the Spangenb*rg Theatre: (Name censored for political reasons)\n\"Welcome to the illustrious Henry M. Gunn High School\"\n\"Here will you need to keep your grades up\"\n\"Manage your social relationships\"\n\"Try to keep your stress low\"\n\"And keep good relations with your teachers\"\n\"These things will slowly fall out of order\"",
         "options": [
             {
                 "text": "Continue",
@@ -213,7 +213,7 @@
         ]
     },
     "start_assembly_end": {
-        "text": "Don Austin Gathers all students in the Spangenburg Theatre:\n\"Welcome to the illustrious Henry M. Gunn High School\"\n\"Here will you need to keep your grades up\"\n\"Manage your social relationships\"\n\"Try to keep your stress low\"\n\"And keep good relations with your teachers\"\n\"These things will slowly fall out of order\"\n\"Have a good day and don't forget to attend RESPOELESLEF.\"\n[The Assembly comes to a close]",
+        "text": "Don Austin Gathers all students in the Spangenb*rg Theatre: (Name censored for political reasons)\n\"Welcome to the illustrious Henry M. Gunn High School\"\n\"Here will you need to keep your grades up\"\n\"Manage your social relationships\"\n\"Try to keep your stress low\"\n\"And keep good relations with your teachers\"\n\"These things will slowly fall out of order\"\n\"Have a good day and don't forget to attend RESPOELESLEF.\"\n[The Assembly comes to a close]",
         "options": [
             {
                 "text": "Continue",
@@ -302,7 +302,7 @@
         ]
     },
     "per1": {
-        "text": "The teacher continues to drone on and on",
+        "text": "[Per 1]:\nThe teacher continues to drone on and on",
         "options": [
             {
                 "text": "Check your phone",
