@@ -113,7 +113,7 @@
     ]
   },
   "reputationgm_final": {
-    "text": "You are expelled after being sent to the offic 24 times in a row.",
+    "text": "You are expelled after being sent to the office 24 times in a row.",
     "options": [
       {
         "text": "Retry",
@@ -217,73 +217,101 @@
     "options": [
       {
         "text": "Continue",
-        "go": "morning"
+        "go": "morning_day1"
       }
     ]
   },
-  "morning.comment": "Morning stuff",
-  "morning": {
+  "morning_day1.comment": "Morning stuff for day 1",
+  "morning_day1": {
     "text": "Your alarm goes off, it's 6:30 AM.",
     "options": [
       {
         "text": "Wake up",
-        "go": "bike",
+        "go": "bike_day1",
         "grade_effect": 10,
         "stress_effect": 5,
         "reputation_effect": 0
       },
       {
         "text": "Sleep",
-        "go": "bike",
+        "go": "bike_day1",
         "grade_effect": -10,
         "stress_effect": -10
       }
     ]
   },
-  "bike": {
+  "bike_day1": {
     "text": "What route should you take going to school?",
     "options": [
       {
         "text": "Meet with friends",
-        "go": "school",
+        "go": "school_day1",
         "grade_effect": -5,
         "stress_effect": -5,
         "popularity_effect": 10
       },
       {
         "text": "Go Alone",
-        "go": "school",
+        "go": "school_day1",
         "grade_effect": 5,
-        "popularity_effect": -10
+        "popularity_effect": -10,
+        "random": [
+          {
+            "go": "school_early_day1",
+            "chance": 0.75,
+            "grade_effect": 5,
+            "popularity_effect": -10
+          }
+        ]
+      }
+    ]
+  },
+  "school_early_day1": {
+    "text": "You arrive really early to school",
+    "options": [
+      {
+        "text": "Play games",
+        "go": "school_day1",
+        "grade_effect": -5,
+        "stress_effect": -10,
+        "popularity_effect": 0
+      },
+      {
+        "text": "Study",
+        "go": "school_day1",
+        "grade_effect": 5,
+        "stress_effect": 5,
+        "popularity_effect": 0
       }
     ]
   },
   "school.comment": "Start of school + periods",
-  "school": {
+  "school_day1": {
     "text": "There is some extra time before school starts",
     "options": [
       {
         "text": "Hang out with friends",
-        "go": "announcements",
+        "go": "announcements_day1",
         "grade_effect": -5,
         "stress_effect": 10,
         "popularity_effect": 10
       },
       {
         "text": "Study",
-        "go": "announcements",
+        "go": "announcements_day1",
         "grade_effect": 5,
         "stress_effect": -5,
         "popularity_effect": -10
       }
     ]
   },
-  "announcements": {
+  "announcements.comment": "Announcements to help the player do what they need to do",
+  "announcements_day1": {
     "text": "There are some announcements",
     "options": [
       {
         "text": "Listen",
-        "go": "announcement_message"
+        "go": "announcement_message_day1"
       },
       {
         "text": "Ignore",
@@ -292,7 +320,7 @@
       }
     ]
   },
-  "announcement_message": {
+  "announcement_message_day1": {
     "text": "\"Hello Gunn Students! Today we will be annoucing new changes to the school schedule, to reduce stress we have decided to make RESPOELESLEF mandatory on the weekends\"\n\"Also make sure that you go to RESPOELESLEF not RESLESESELEF, if you do not you will be marked absent\"\n\nHere is a helpful tip, when you hover over a choice you are able to see the effects it will have, ( ) is a default or no effect (-) is an effect <= 5. and (=) is an effect that is greater than 5.",
     "options": [
       {
@@ -339,7 +367,17 @@
         "grade_effect": -10,
         "stress_effect": 10,
         "popularity_effect": -10,
-        "reputation_effect": -10
+        "reputation_effect": -10,
+        "random": [
+          {
+            "go": "appeal_check_per1_pass",
+            "chance": 0.25,
+            "grade_effect": 10,
+            "stress_effect": 10,
+            "popularity_effect": 10,
+            "reputation_effect": 10
+          }
+        ]
       }
     ]
   },
@@ -356,6 +394,7 @@
       }
     ]
   },
+  "appeal_check_per1.comment": "There is a chance that the effect of appealing is minimized",
   "appeal_check_per1": {
     "text": "The teacher sighs and calls on someone else, some kids at the back snicker at you.",
     "options": [
@@ -365,6 +404,16 @@
       }
     ]
   },
+  "appeal_check_per1_pass": {
+    "text": "The teacher sighs and calls on someone else, turns out they don't know either and they end up reteaching it.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "end_per1"
+      }
+    ]
+  },
+  "answer_question_per1.comment": "The good student route for per1",
   "answer_question_per1": {
     "text": "The teacher calls on you and you get the answer correct, but it turns out your friend needed help.",
     "options": [

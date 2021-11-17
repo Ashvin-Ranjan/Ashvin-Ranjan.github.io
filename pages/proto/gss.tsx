@@ -30,6 +30,24 @@ const useStyles = makeStyles((theme) => ({
 const clamp = (num: number, min: number, max: number) =>
   Math.min(Math.max(num, min), max);
 
+interface OptionEffect {
+  go: string;
+  grade_effect?: number;
+  popularity_effect?: number;
+  stress_effect?: number;
+  reputation_effect?: number;
+  can_game_over?: boolean;
+}
+
+interface OptionRandom {
+  go: string;
+  grade_effect?: number;
+  popularity_effect?: number;
+  stress_effect?: number;
+  reputation_effect?: number;
+  can_game_over?: boolean;
+  chance: number;
+}
 interface Option {
   text: string;
   go: string;
@@ -38,6 +56,7 @@ interface Option {
   stress_effect?: number;
   reputation_effect?: number;
   can_game_over?: boolean;
+  random?: OptionRandom[];
 }
 
 export default function GunnStudentSimulator() {
@@ -71,30 +90,49 @@ export default function GunnStudentSimulator() {
   const generateSelect = (v: Option) => {
     return () => {
       setShowIndicator(false);
-      if (v.go === 'title') {
+
+      let out: OptionEffect = v;
+
+      if (v.random) {
+        let rand = Math.random();
+        console.log(rand);
+        for (let ev of v.random) {
+          rand -= ev.chance;
+          console.log(rand);
+          if (rand <= 0) {
+            out = ev;
+          }
+        }
+      }
+
+      if (out.go === 'title') {
         setGrade(0);
         setPopularity(0);
         setStress(0);
         setReputation(0);
       } else {
-        setGrade(clamp(grade + (v.grade_effect ?? -2), 0, 100));
-        setPopularity(clamp(popularity + (v.popularity_effect ?? -2), 0, 100));
-        setStress(clamp(stress + (v.stress_effect ?? 2), 0, 100));
-        setReputation(clamp(reputation + (v.reputation_effect ?? -2), 0, 100));
+        setGrade(clamp(grade + (out.grade_effect ?? -2), 0, 100));
+        setPopularity(
+          clamp(popularity + (out.popularity_effect ?? -2), 0, 100)
+        );
+        setStress(clamp(stress + (out.stress_effect ?? 2), 0, 100));
+        setReputation(
+          clamp(reputation + (out.reputation_effect ?? -2), 0, 100)
+        );
       }
-      if (v.can_game_over === false) {
-        setScene(v.go);
+      if (out.can_game_over === false) {
+        setScene(out.go);
       } else {
-        if (grade + (v.grade_effect ?? -2) <= 0) {
+        if (grade + (out.grade_effect ?? -2) <= 0) {
           setScene('gradegm');
-        } else if (popularity + (v.popularity_effect ?? -2) <= 0) {
+        } else if (popularity + (out.popularity_effect ?? -2) <= 0) {
           setScene('popularitygm');
-        } else if (stress + (v.stress_effect ?? 2) >= 100) {
+        } else if (stress + (out.stress_effect ?? 2) >= 100) {
           setScene('stressgm');
-        } else if (reputation + (v.reputation_effect ?? -2) <= 0) {
+        } else if (reputation + (out.reputation_effect ?? -2) <= 0) {
           setScene('reputationgm');
         } else {
-          setScene(v.go);
+          setScene(out.go);
         }
       }
     };
@@ -139,7 +177,7 @@ export default function GunnStudentSimulator() {
     <div className={classes.app}>
       <header className={classes.appHeader}>
         <span style={{ color: 'cyan' }}>Grade</span>: {grade} {gradeIndicator} |{' '}
-        <span style={{ color: 'blue' }}>Popularity</span>: {popularity}{' '}
+        <span style={{ color: 'yellow' }}>Popularity</span>: {popularity}{' '}
         {popularityIndicator} | <span style={{ color: 'green' }}>Stress</span>:{' '}
         {stress} {stressIndicator} |{' '}
         <span style={{ color: 'red' }}>Reputation</span>: {reputation}{' '}
