@@ -107,7 +107,13 @@ export default function GunnStudentSimulator() {
   );
   let popularityIndicator = (
     <span style={{ opacity: showIndicator ? 100 : 0 }}>
-      ({popularityEffect === 0 ? ' ' : Math.abs(popularityEffect) <= 5 ? '-' : '='})
+      (
+      {popularityEffect === 0
+        ? ' '
+        : Math.abs(popularityEffect) <= 5
+        ? '-'
+        : '='}
+      )
     </span>
   );
   let stressIndicator = (
@@ -117,7 +123,13 @@ export default function GunnStudentSimulator() {
   );
   let reputationIndicator = (
     <span style={{ opacity: showIndicator ? 100 : 0 }}>
-      ({reputationEffect === 0 ? ' ' : Math.abs(reputationEffect) <= 5 ? '-' : '='})
+      (
+      {reputationEffect === 0
+        ? ' '
+        : Math.abs(reputationEffect) <= 5
+        ? '-'
+        : '='}
+      )
     </span>
   );
 

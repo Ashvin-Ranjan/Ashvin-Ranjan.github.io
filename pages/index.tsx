@@ -1,32 +1,32 @@
-import { ReactNode } from "react";
-import Link from "next/link";
+import { ReactNode } from 'react';
+import Link from 'next/link';
 
 // MUI
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    display: "flex",
-    alignContent: "center",
-    justifyContent: "center",
-    flexDirection: "row",
+    display: 'flex',
+    alignContent: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
   },
   letters: {
-    marginRight: "5%",
-    fontSize: "400%",
+    marginRight: '5%',
+    fontSize: '400%',
   },
   title: {
-    display: "flex",
-    alignContent: "center",
-    justifyContent: "center",
-    flexDirection: "row",
-    fontSize: "200%",
-    marginBottom: "5%",
+    display: 'flex',
+    alignContent: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    fontSize: '200%',
+    marginBottom: '5%',
   },
   link: {
-    textDecoration: "none",
-    color: "white",
+    textDecoration: 'none',
+    color: 'white',
   },
 }));
 
@@ -62,32 +62,32 @@ export default function Home() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className='App'>
+      <header className='App-header'>
         <div>
           <div className={classes.title} style={styles[0]}>
             Choose one
           </div>
           <div className={classes.container}>
-            <TypographyLink href="/about" style={styles[1]}>
+            <TypographyLink href='/about' style={styles[1]}>
               A
             </TypographyLink>
-            <TypographyLink href="/stuff" style={styles[2]}>
+            <TypographyLink href='/stuff' style={styles[2]}>
               s
             </TypographyLink>
-            <TypographyLink href="/help" style={styles[3]}>
+            <TypographyLink href='/help' style={styles[3]}>
               h
             </TypographyLink>
-            <TypographyLink href="/github" style={styles[4]}>
+            <TypographyLink href='/github' style={styles[4]}>
               .
             </TypographyLink>
-            <TypographyLink href="/videos" style={styles[5]}>
+            <TypographyLink href='/videos' style={styles[5]}>
               v
             </TypographyLink>
-            <TypographyLink href="/internals" style={styles[6]}>
+            <TypographyLink href='/internals' style={styles[6]}>
               i
             </TypographyLink>
-            <TypographyLink href="/N" style={styles[7]}>
+            <TypographyLink href='/N' style={styles[7]}>
               n
             </TypographyLink>
           </div>
