@@ -132,9 +132,9 @@ export default function GunnStudentSimulator() {
         {stress} {stressIndicator} |{' '}
         <span style={{ color: 'red' }}>Reputation</span>: {reputation}{' '}
         {reputationIndicator} <br />
-        {reactifyText((data[scene] ?? data.error).text)}
+        {reactifyText(((data as any)[scene] ?? data.error).text)}
         <br />
-        {(data[scene] ?? data.error).options.map((v: Option) => (
+        {((data as any)[scene] ?? data.error).options.map((v: Option) => (
           <>
             {'\u00a0'}
             <a
