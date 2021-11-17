@@ -293,7 +293,7 @@
     ]
   },
   "announcement_message": {
-    "text": "\"Hello Gunn Students! Today we will be annoucing new changes to the school schedule, to reduce stress we have decided to make RESPOELESLEF mandatory on the weekends\"\n\"Also make sure that you go to RESPOELESLEF not RESLESESELEF, if you do not you will be marked absent\"",
+    "text": "\"Hello Gunn Students! Today we will be annoucing new changes to the school schedule, to reduce stress we have decided to make RESPOELESLEF mandatory on the weekends\"\n\"Also make sure that you go to RESPOELESLEF not RESLESESELEF, if you do not you will be marked absent\"\n\nHere is a helpful tip, when you hover over a choice you are able to see the effects it will have, ( ) is a default or no effect (-) is an effect <= 5. and (=) is an effect that is greater than 5.",
     "options": [
       {
         "text": "Continue",
