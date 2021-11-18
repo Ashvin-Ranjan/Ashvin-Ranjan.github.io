@@ -111,25 +111,25 @@ export default function GunnStudentSimulator() {
         setStress(0);
         setReputation(0);
       } else {
-        setGrade(clamp(grade + (out.grade_effect ?? -2), 0, 100));
+        setGrade(clamp(grade + (out.grade_effect ?? -3), 0, 100));
         setPopularity(
-          clamp(popularity + (out.popularity_effect ?? -2), 0, 100)
+          clamp(popularity + (out.popularity_effect ?? -3), 0, 100)
         );
-        setStress(clamp(stress + (out.stress_effect ?? 2), 0, 100));
+        setStress(clamp(stress + (out.stress_effect ?? 3), 0, 100));
         setReputation(
-          clamp(reputation + (out.reputation_effect ?? -2), 0, 100)
+          clamp(reputation + (out.reputation_effect ?? -3), 0, 100)
         );
       }
       if (out.can_game_over === false) {
         setScene(out.go);
       } else {
-        if (grade + (out.grade_effect ?? -2) <= 0) {
+        if (grade + (out.grade_effect ?? -3) <= 0) {
           setScene('gradegm');
-        } else if (popularity + (out.popularity_effect ?? -2) <= 0) {
+        } else if (popularity + (out.popularity_effect ?? -3) <= 0) {
           setScene('popularitygm');
-        } else if (stress + (out.stress_effect ?? 2) >= 100) {
+        } else if (stress + (out.stress_effect ?? 3) >= 100) {
           setScene('stressgm');
-        } else if (reputation + (out.reputation_effect ?? -2) <= 0) {
+        } else if (reputation + (out.reputation_effect ?? -3) <= 0) {
           setScene('reputationgm');
         } else {
           setScene(out.go);

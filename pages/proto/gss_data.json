@@ -434,8 +434,6 @@
       {
         "text": "Leave",
         "go": "halls_meet",
-        "grade_effect": 0,
-        "stress_effect": 0,
         "popularity_effect": 5,
         "reputation_effect": 0
       },
@@ -715,6 +713,7 @@
       }
     ]
   },
+  "per2.comment": "Period 2 stuff",
   "per2": {
     "text": "[Period 2]\nThe teacher gives you free work time.",
     "options": [
@@ -734,10 +733,10 @@
         "random": [
           {
             "go": "per2_work_reprimand",
-            "chance": 0.25,
-            "stress_effect": 10,
+            "chance": 0.75,
+            "stress_effect": 20,
             "grade_effect": -15,
-            "reputation_effect": -5
+            "reputation_effect": -10
           }
         ]
       }
@@ -810,7 +809,209 @@
     "options": [
       {
         "text": "Continue",
-        "go": "prime"
+        "go": "assembly"
+      }
+    ]
+  },
+  "assembly.comment": "Assembly topics",
+  "assembly": {
+    "text": "██████████ and ██████ wave to the audience\n\nThey start talking and you start zoning out, but you manage to catch some details",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "assembly_topic0",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "random": [
+          {
+            "go": "assembly_topic1",
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "grade_effect": 0,
+            "reputation_effect": 0,
+            "chance": 0.2
+          },
+          {
+            "go": "assembly_topic2",
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "grade_effect": 0,
+            "reputation_effect": 0,
+            "chance": 0.2
+          },
+          {
+            "go": "assembly_topic3",
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "grade_effect": 0,
+            "reputation_effect": 0,
+            "chance": 0.2
+          },
+          {
+            "go": "assembly_topic4",
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "grade_effect": 0,
+            "reputation_effect": 0,
+            "chance": 0.2
+          }
+        ]
+      }
+    ]
+  },
+  "assembly_topic0": {
+    "text": "██████████: \"Due to some recent... incidents, all climbing on the Spangenb*rg Theatre will not be tolerated.\"\n\n██████: \"Yes, and if you do so then security find you.\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "assembly_end",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "assembly_topic1": {
+    "text": "██████████: \"Remember: cheating will NOT be tolerated.\"\n\n██████: \"Yes, all of our security will be in the classrooms making sure you don't cheat during the SAT.\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "assembly_end",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "assembly_topic2": {
+    "text": "██████████: \"Make sure to go to RESPOELESLEF on the weekends!\"\n\n██████: \"Make sure you don't acciedentially go to RESLESESELEF.\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "assembly_end",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "assembly_topic3": {
+    "text": "██████████: \"If you run into Don Austin in the halls make sure you are respectful.\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "assembly_end",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "assembly_topic4": {
+    "text": "██████: \"There is nothing at the top of the Spangenb*rg theatre.\"\n         \"There is nothing at the top of the Spangenb*rg theatre.\"\n         \"There is nothing at the top of the Spangenb*rg theatre.\"\n         \"There is nothing at the top of the Spangenb*rg theatre.\"\n         \"There is nothing at the top of the Spangenb*rg theatre.\"\n         \"There is nothing at the top of the Spangenb*rg theatre.\"\n         \"There is nothing at the top of the Spangenb*rg theatre.\"\n         \"There is nothing at the top of the Spangenb*rg theatre.\"\n         \"There is nothing at the top of the Spangenb*rg theatre.\"\n         \"There is nothing at the top of the Spangenb*rg theatre.\"\n         \"There is nothing at the top of the Spangenb*rg theatre.\"\n         \"There is nothing at the top of the Spangenb*rg theatre.\"\n         \"There is nothing at the top of the Spangenb*rg theatre.\"\n         \"There is nothing at the top of the Spangenb*rg theatre.\"\n         \"There is nothing at the top of the Spangenb*rg theatre.\"\n         \"There is nothing at the top of the Spangenb*rg theatre.\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "assembly_end",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "assembly_end": {
+    "text": "██████████: \"Don't forget, starting tomorrow there is a 5% chance that an SAT will happen starting tomorrow\"\n\nThe assembly comes to a close",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "lunch0",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "lunch.comment": "3 lunch actions to help the player",
+  "lunch0": {
+    "text": "It is now lunchtime.",
+    "options": [
+      {
+        "text": "Eat",
+        "go": "lunch1",
+        "stress_effect": -10
+      },
+      {
+        "text": "Study",
+        "go": "lunch1",
+        "grade_effect": 10
+      },
+      {
+        "text": "Talk with Friends",
+        "go": "lunch1",
+        "popularity_effect": 10
+      },
+      {
+        "text": "Help Teachers",
+        "go": "lunch1",
+        "reputation_effect": 10
+      }
+    ]
+  },
+  "lunch1": {
+    "text": "It is now lunchtime.",
+    "options": [
+      {
+        "text": "Eat",
+        "go": "lunch2",
+        "stress_effect": -10
+      },
+      {
+        "text": "Study",
+        "go": "lunch2",
+        "grade_effect": 10
+      },
+      {
+        "text": "Talk with Friends",
+        "go": "lunch2",
+        "popularity_effect": 10
+      },
+      {
+        "text": "Help Teachers",
+        "go": "lunch2",
+        "reputation_effect": 10
+      }
+    ]
+  },
+  "lunch2": {
+    "text": "It is now lunchtime.",
+    "options": [
+      {
+        "text": "Eat",
+        "go": "per3",
+        "stress_effect": -10
+      },
+      {
+        "text": "Study",
+        "go": "per3",
+        "grade_effect": 10
+      },
+      {
+        "text": "Talk with Friends",
+        "go": "per3",
+        "popularity_effect": 10
+      },
+      {
+        "text": "Help Teachers",
+        "go": "per3",
+        "reputation_effect": 10
       }
     ]
   }
