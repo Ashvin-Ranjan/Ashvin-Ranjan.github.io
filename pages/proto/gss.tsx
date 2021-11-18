@@ -98,9 +98,9 @@ export default function GunnStudentSimulator() {
         console.log(rand);
         for (let ev of v.random) {
           rand -= ev.chance;
-          console.log(rand);
           if (rand <= 0) {
             out = ev;
+            break;
           }
         }
       }

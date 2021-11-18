@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import Link from 'next/link';
 
 // MUI
 import Typography from '@material-ui/core/Typography';

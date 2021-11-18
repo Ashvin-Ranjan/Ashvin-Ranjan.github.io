@@ -433,7 +433,7 @@
     "options": [
       {
         "text": "Leave",
-        "go": "per2",
+        "go": "halls_meet",
         "grade_effect": 0,
         "stress_effect": 0,
         "popularity_effect": 5,
@@ -459,6 +459,259 @@
         "stress_effect": 0,
         "popularity_effect": 0,
         "reputation_effect": 0
+      }
+    ]
+  },
+  "halls.comment": "Hall events",
+  "halls_meet": {
+    "text": "You meet your friends in the halls.",
+    "options": [
+      {
+        "text": "Join in on the conversation",
+        "go": "per2",
+        "grade_effect": -5,
+        "stress_effect": -5,
+        "popularity_effect": 10,
+        "reputation_effect": 0,
+        "random": [
+          {
+            "go": "halls_don_austin",
+            "grade_effect": -5,
+            "stress_effect": 10,
+            "popularity_effect": 10,
+            "reputation_effect": 0,
+            "chance": 0.1
+          },
+          {
+            "go": "halls_locker",
+            "grade_effect": -5,
+            "stress_effect": -5,
+            "popularity_effect": 10,
+            "reputation_effect": 0,
+            "chance": 0.4
+          }
+        ]
+      },
+      {
+        "text": "Go to your next class",
+        "go": "per2",
+        "grade_effect": 5,
+        "stress_effect": 5,
+        "popularity_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "halls_don_austin": {
+    "text": "You bump into Don Austin in the halls\n\"I hope you were not saying anything bad about RESPOELESLEF\".",
+    "options": [
+      {
+        "text": "We were",
+        "go": "halls_don_austingm",
+        "grade_effect": -100,
+        "stress_effect": -100,
+        "popularity_effect": -100,
+        "reputation_effect": -100,
+        "can_game_over": false
+      },
+      {
+        "text": "We were not",
+        "go": "halls_don_austin_no",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "halls_don_austingm": {
+    "text": "\"Intresting...\".",
+    "options": [
+      {
+        "text": "what...",
+        "go": "halls_don_austingm_final",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "halls_don_austingm_final": {
+    "text": "Don Austin himself changes your entire schedule to only RESPOELESLEF.",
+    "options": [
+      {
+        "text": "Retry",
+        "go": "title",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "halls_don_austin_no": {
+    "text": "\"Intresting...\".",
+    "options": [
+      {
+        "text": "what...",
+        "go": "per2",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "halls_locker": {
+    "text": "Your friend asks if you can get something from his locker for him\n\nHe says the code is 36, 14, 23",
+    "options": [
+      {
+        "text": "Accept",
+        "go": "locker1",
+        "grade_effect": -5,
+        "stress_effect": 0,
+        "popularity_effect": 10,
+        "reputation_effect": 0
+      },
+      {
+        "text": "Decline",
+        "go": "per2",
+        "grade_effect": 5,
+        "stress_effect": 0,
+        "popularity_effect": -10,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "locker.comment": "Locker thing",
+  "locker1": {
+    "text": "You are at the locker, input the first number.",
+    "options": [
+      {
+        "text": "34",
+        "go": "locker2_fail"
+      },
+      {
+        "text": "35",
+        "go": "locker2_fail"
+      },
+      {
+        "text": "36",
+        "go": "locker2"
+      }
+    ]
+  },
+  "locker2": {
+    "text": "You are at the locker, input the second number.",
+    "options": [
+      {
+        "text": "14",
+        "go": "locker3"
+      },
+      {
+        "text": "15",
+        "go": "locker3_fail"
+      },
+      {
+        "text": "16",
+        "go": "locker3_fail"
+      }
+    ]
+  },
+  "locker3": {
+    "text": "You are at the locker, input the third number.",
+    "options": [
+      {
+        "text": "22",
+        "go": "locker_input_fail"
+      },
+      {
+        "text": "23",
+        "go": "locker_input_pass"
+      },
+      {
+        "text": "24",
+        "go": "locker_input_fail"
+      }
+    ]
+  },
+  "locker_fail.comment": "If they fail then these occur",
+  "locker2_fail": {
+    "text": "You are at the locker, input the second number.",
+    "options": [
+      {
+        "text": "14",
+        "go": "locker3_fail"
+      },
+      {
+        "text": "15",
+        "go": "locker3_fail"
+      },
+      {
+        "text": "16",
+        "go": "locker3_fail"
+      }
+    ]
+  },
+  "locker3_fail": {
+    "text": "You are at the locker, input the third number.",
+    "options": [
+      {
+        "text": "22",
+        "go": "locker_input_fail"
+      },
+      {
+        "text": "23",
+        "go": "locker_input_fail"
+      },
+      {
+        "text": "24",
+        "go": "locker_input_fail"
+      }
+    ]
+  },
+  "locker_input.comment": "Locker input results",
+  "locker_input_pass": {
+    "text": "The lock clicks and opens.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per2",
+        "popularity": 15,
+        "stress": -15,
+        "grade": 15,
+        "reputation": 15
+      }
+    ]
+  },
+  "locker_input_fail": {
+    "text": "The lock does not open.",
+    "options": [
+      {
+        "text": "Retry",
+        "go": "locker1"
+      },
+      {
+        "text": "Give up",
+        "go": "locker_input_give_up",
+        "popularity": -10,
+        "stress": 10
+      }
+    ]
+  },
+  "locker_input_give_up": {
+    "text": "Turns out your friend really needed that.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per2",
+        "popularity": 0,
+        "stress": 0,
+        "grade": 0,
+        "reputation": 0
       }
     ]
   }
