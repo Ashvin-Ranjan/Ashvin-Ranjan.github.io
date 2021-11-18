@@ -10,6 +10,30 @@
         "stress_effect": 0,
         "reputation_effect": 0,
         "can_game_over": false
+      },
+      {
+        "text": "EXPLANATION",
+        "go": "explanation",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "explanation.comment": "For those who did not attend Gunn High School",
+  "explanation": {
+    "text": "Explanation [For those who did not attend Gunn High School]:\n\nGunn High School: The school the creator went to before\nDon Austin: The Superintendent of the district\nRESPOELESLEF: A reference to SELF, the most useful class... Totally.\n\nBased off of the original Gunn Student Simulator by Sean Yen.",
+    "options": [
+      {
+        "text": "Back",
+        "go": "title",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
       }
     ]
   },
