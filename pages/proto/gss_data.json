@@ -680,10 +680,10 @@
       {
         "text": "Continue",
         "go": "per2",
-        "popularity": 15,
-        "stress": -15,
-        "grade": 15,
-        "reputation": 15
+        "popularity_effect": 15,
+        "stress_effect": -15,
+        "grade_effect": 15,
+        "reputation_effect": 15
       }
     ]
   },
@@ -697,8 +697,8 @@
       {
         "text": "Give up",
         "go": "locker_input_give_up",
-        "popularity": -10,
-        "stress": 10
+        "popularity_effect": -10,
+        "stress_effect": 10
       }
     ]
   },
@@ -708,10 +708,109 @@
       {
         "text": "Continue",
         "go": "per2",
-        "popularity": 0,
-        "stress": 0,
-        "grade": 0,
-        "reputation": 0
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per2": {
+    "text": "[Period 2]\nThe teacher gives you free work time.",
+    "options": [
+      {
+        "text": "Work on work for this class",
+        "go": "per2_work_normal",
+        "stress_effect": 5,
+        "grade_effect": 10,
+        "reputation_effect": 5
+      },
+      {
+        "text": "Work on things needed",
+        "go": "per2_work_normal",
+        "stress_effect": -10,
+        "grade_effect": 15,
+        "reputation_effect": 5,
+        "random": [
+          {
+            "go": "per2_work_reprimand",
+            "chance": 0.25,
+            "stress_effect": 10,
+            "grade_effect": -15,
+            "reputation_effect": -5
+          }
+        ]
+      }
+    ]
+  },
+  "per2_work_normal": {
+    "text": "You're in the middle of your work when your phone buzzes.",
+    "options": [
+      {
+        "text": "Ignore",
+        "go": "per2_work_ignore",
+        "stress_effect": 5,
+        "grade_effect": 5,
+        "popularity_effect": -5
+      },
+      {
+        "text": "Check",
+        "go": "per2_work_check_friend",
+        "grade_effect": 5,
+        "popularity_effect": 10,
+        "reputation_effect": -5,
+        "random": [
+          {
+            "go": "per2_work_check_spam",
+            "chance": 0.5,
+            "grade_effect": -10
+          }
+        ]
+      }
+    ]
+  },
+  "per2_work_reprimand": {
+    "text": "The teacher repimands you for doing work that is not relevant to the class",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per2_work_normal"
+      }
+    ]
+  },
+  "per2_work_ignore": {
+    "text": "You resist the urge to check your phone",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per2_work_end"
+      }
+    ]
+  },
+  "per2_work_check_friend": {
+    "text": "Turns out your friend had some important tips for you, the teacher is not amused however.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per2_work_end"
+      }
+    ]
+  },
+  "per2_work_check_spam": {
+    "text": "Turns out it was only spam, and when you go back to your work you realize you lost your train of thought.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per2_work_end"
+      }
+    ]
+  },
+  "per2_work_end": {
+    "text": "Work time comes to a close",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "prime"
       }
     ]
   }
