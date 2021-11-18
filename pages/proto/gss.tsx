@@ -6,7 +6,6 @@ const useStyles = makeStyles((theme) => ({
   appHeader: {
     backgroundColor: 'black',
     height: '100%',
-    overflow: 'hidden',
     fontSize: 'calc(10px + 1vmin)',
     color: 'white',
     fontFamily: 'IBM Plex Mono',
@@ -17,9 +16,8 @@ const useStyles = makeStyles((theme) => ({
   },
   app: {
     width: '100%',
-    height: '100vh',
+    minHeight: '100vh',
     backgroundColor: 'black',
-    overflow: 'hidden',
   },
   option: {
     textDecoration: 'none',
