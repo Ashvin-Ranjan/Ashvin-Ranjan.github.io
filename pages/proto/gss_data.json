@@ -330,7 +330,7 @@
     ]
   },
   "per1": {
-    "text": "[Per 1]:\nThe teacher continues to drone on and on",
+    "text": "[Period 1]:\nThe teacher continues to drone on and on",
     "options": [
       {
         "text": "Check your phone",
@@ -1012,6 +1012,127 @@
         "text": "Help Teachers",
         "go": "per3",
         "reputation_effect": 10
+      }
+    ]
+  },
+  "per3.comment": "Period 3 Stuff",
+  "per3": {
+    "text": "[Period 3]\nThe teacher stumbles into the room\n\"Sorry guys I am just really tired today\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per3_begin",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      },
+      {
+        "text": "Say the line",
+        "go": "per3_line",
+        "popularity_effect": 100,
+        "stress_effect": -100,
+        "grade_effect": 100,
+        "reputation_effect": -75,
+        "can_game_over": false
+      }
+    ]
+  },
+  "per3_line": {
+    "text": "\"Hi just really tired today\"\n\"I am [Name redacted for security reasons]\"\n\nWhat a legend",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per3_begin",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per3_begin": {
+    "text": "\"I don't mind if you do whatever, just try to keep it quiet\"",
+    "options": [
+      {
+        "text": "Study alone",
+        "go": "per3_study_alone",
+        "popularity_effect": -5,
+        "grade_effect": 5,
+        "reputation_effect": 5
+      },
+      {
+        "text": "Meet friends",
+        "go": "per3_friend_meet",
+        "popularity_effect": 5,
+        "reputation_effect": 5,
+        "random": [
+          {
+            "go": "per3_friend_loud",
+            "popularity_effect": 10,
+            "reputation_effect": -10,
+            "chance": 0.15
+          },
+          {
+            "go": "per3_friend_study",
+            "popularity_effect": 10,
+            "grade_effect": 10,
+            "reputation_effect": 5,
+            "chance": 0.4
+          }
+        ]
+      }
+    ]
+  },
+  "per3_study_alone": {
+    "text": "You study alone and the period passes by quickly",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per3_end",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per3_friend_meet": {
+    "text": "You meet with your friends and keep quiet, but you were not that productive",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per3_end",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per3_friend_loud": {
+    "text": "You talk with your friends a bit too loudly and end up angering the teacher, right before you were sent back to your seat your friend says\n\n\"If we could somehow sneak out during the tests there would be no one on campus to stop us doing what we want.\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per3_end",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per3_friend_study": {
+    "text": "You study with your friends and have a good time, the period passes by quickly",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per3_end",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
       }
     ]
   }
