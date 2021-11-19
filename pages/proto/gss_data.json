@@ -760,7 +760,8 @@
             "chance": 0.75,
             "stress_effect": 20,
             "grade_effect": -15,
-            "reputation_effect": -10
+            "reputation_effect": -10,
+            "can_game_over": false
           }
         ]
       }
@@ -1182,7 +1183,7 @@
   },
   "halls2.comment": "Halls event set number 2",
   "halls2_meet": {
-    "text": "You try to catch up with your friends but lose track of them.",
+    "text": "You try to catch up with your friends but lose track of them when class ends.",
     "options": [
       {
         "text": "Wander",

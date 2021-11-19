@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { useState } from 'react';
+import { createRef, useEffect, useState, RefObject } from 'react';
 import data from './gss_data.json';
 
 const useStyles = makeStyles((theme) => ({
@@ -21,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
   },
   option: {
     textDecoration: 'none',
-    color: 'white',
+    color: 'pink',
+    cursor: 'pointer',
   },
   healthHeader: {
     display: 'flex',
@@ -83,6 +84,39 @@ export default function GunnStudentSimulator() {
   let [playerTurn, setPlayerTurn] = useState(true);
   let [attackMod, setAttackMod] = useState(0);
   let [defenseMod, setDefenseMod] = useState(0);
+  let [fightEnd, setFightEnd] = useState(false);
+
+  // Attack bar thing
+  const attackBar: RefObject<HTMLSpanElement> = createRef();
+  const attackBarElement = (
+    <span ref={attackBar}>
+      ===================
+      <br />
+      # | #<br />
+      ===================
+    </span>
+  );
+  let attackBarCharge = 0;
+
+  useEffect(() => {
+    let update = setInterval(() => {
+      if (attackBar.current && !playerTurn) {
+        attackBar.current.innerHTML = `
+        ${'\u00a0'.repeat(9)}v<br />
+        ===================<br />
+        #${'\u00a0'.repeat(attackBarCharge)}|${'\u00a0'.repeat(
+          16 - attackBarCharge
+        )}#<br />
+        ===================<br />
+        ${'\u00a0'.repeat(9)}^
+        `;
+        attackBarCharge = (attackBarCharge + 1) % 17;
+      }
+    }, 30);
+    return () => {
+      clearInterval(update);
+    };
+  }, [playerTurn, attackBarCharge]);
 
   const classes = useStyles();
 
@@ -202,7 +236,6 @@ export default function GunnStudentSimulator() {
               <span
                 className={classes.option}
                 onClick={generateSelect(v)}
-                style={{ color: 'pink', cursor: 'pointer' }}
                 onMouseEnter={() => {
                   setGradeEffect(v.grade_effect ?? 0);
                   setStressEffect(v.stress_effect ?? 0);
@@ -220,6 +253,46 @@ export default function GunnStudentSimulator() {
               </span>
             </>
           ))}
+        </header>
+      </div>
+    );
+  } else if (fightEnd) {
+    return (
+      <div className={classes.app}>
+        <header className={classes.appHeader}>
+          <div className={classes.healthHeader}>
+            <span>
+              You:{' '}
+              <span style={{ color: 'green' }}>
+                {playerHealth}/{maxPlayerHealth}
+              </span>
+            </span>
+            <span>
+              Enemy:{' '}
+              <span style={{ color: 'red' }}>
+                {enemyHealth}/{maxEnemyHealth}
+              </span>
+            </span>
+          </div>{' '}
+          <br />
+          {combatText.map((v) => (
+            <>
+              {v}
+              <br />
+            </>
+          ))}
+          <br />
+          {'\u00a0'}
+          <span
+            className={classes.option}
+            onClick={() => {
+              setInFight(false);
+            }}
+          >
+            {'['}
+            <u>Continue</u>
+            {']'}
+          </span>
         </header>
       </div>
     );
@@ -264,7 +337,6 @@ export default function GunnStudentSimulator() {
                   );
                   setPlayerTurn(false);
                 }}
-                style={{ color: 'pink', cursor: 'pointer' }}
               >
                 {'['}
                 <u>Heal</u>
@@ -276,15 +348,23 @@ export default function GunnStudentSimulator() {
                 onClick={() => {
                   let attack = Math.floor(Math.random() * 4 + 1) + attackMod;
                   setEnemyHealth(
-                    clamp(enemyHealth - attack, 0, maxPlayerHealth)
+                    clamp(enemyHealth - attack, 0, maxEnemyHealth)
                   );
                   setCombatText(
                     combatText.concat(`You attack for ${attack} health`)
                   );
                   setAttackMod(0);
+                  if (clamp(enemyHealth - attack, 0, maxPlayerHealth) == 0) {
+                    setCombatText(
+                      combatText.concat([
+                        `You attack for ${attack} health`,
+                        `You win!`,
+                      ])
+                    );
+                    setFightEnd(true);
+                  }
                   setPlayerTurn(false);
                 }}
-                style={{ color: 'pink', cursor: 'pointer' }}
               >
                 {'['}
                 <u>Attack</u>
@@ -298,7 +378,6 @@ export default function GunnStudentSimulator() {
                   setCombatText(combatText.concat(`You pumped yourself up`));
                   setPlayerTurn(false);
                 }}
-                style={{ color: 'pink', cursor: 'pointer' }}
               >
                 {'['}
                 <u>Brood</u>
@@ -312,7 +391,6 @@ export default function GunnStudentSimulator() {
                   setCombatText(combatText.concat(`You braced yourself`));
                   setPlayerTurn(false);
                 }}
-                style={{ color: 'pink', cursor: 'pointer' }}
               >
                 {'['}
                 <u>Defend</u>
@@ -321,9 +399,41 @@ export default function GunnStudentSimulator() {
             </>
           ) : (
             <>
-            ======================================================<br/>
-            #     |     #<br/>
-            ======================================================
+              {attackBarElement}
+              <br />
+              {'\u00a0'}
+              <span
+                className={classes.option}
+                onClick={() => {
+                  let damage = clamp(
+                    Math.floor(Math.abs(9 - attackBarCharge) / 2) - defenseMod,
+                    0,
+                    maxPlayerHealth
+                  );
+                  setPlayerHealth(
+                    clamp(playerHealth - damage, 0, maxPlayerHealth)
+                  );
+                  setCombatText(
+                    combatText.concat(
+                      `The enemy attacked you for ${damage} health`
+                    )
+                  );
+                  if (clamp(playerHealth - damage, 0, maxPlayerHealth) == 0) {
+                    setCombatText(
+                      combatText.concat([
+                        `The enemy attacked you for ${damage} health`,
+                        `You lose!`,
+                      ])
+                    );
+                    setFightEnd(true);
+                  }
+                  setPlayerTurn(true);
+                }}
+              >
+                {'['}
+                <u>Block</u>
+                {']'}
+              </span>
             </>
           )}
         </header>
