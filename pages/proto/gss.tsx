@@ -23,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
     color: 'white',
   },
+  healthHeader: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
 }));
 
 const clamp = (num: number, min: number, max: number) =>
@@ -69,11 +73,22 @@ export default function GunnStudentSimulator() {
   let [reputationEffect, setReputationEffect] = useState(0);
   let [showIndicator, setShowIndicator] = useState(false);
 
+  // Combat stuff
+  let [inFight, setInFight] = useState(false);
+  let [maxPlayerHealth, setMaxPlayerHealth] = useState(20);
+  let [playerHealth, setPlayerHealth] = useState(maxPlayerHealth);
+  let [maxEnemyHealth, setMaxEnemyHealth] = useState(10);
+  let [enemyHealth, setEnemyHealth] = useState(10);
+  let [combatText, setCombatText] = useState(['Combat begins!']);
+  let [playerTurn, setPlayerTurn] = useState(true);
+  let [attackMod, setAttackMod] = useState(0);
+  let [defenseMod, setDefenseMod] = useState(0);
+
   const classes = useStyles();
 
   const reactifyText = (text: string) => {
     return text
-      .replace(/ /g, '\u00a0')
+      .replace(/  /g, '\u00a0\u00a0')
       .split('\n')
       .map((value, index) => {
         return (
@@ -169,44 +184,150 @@ export default function GunnStudentSimulator() {
     </span>
   );
 
-  let opacityInterval = null;
-
-  return (
-    <div className={classes.app}>
-      <header className={classes.appHeader}>
-        <span style={{ color: 'cyan' }}>Grade</span>: {grade} {gradeIndicator} |{' '}
-        <span style={{ color: 'yellow' }}>Popularity</span>: {popularity}{' '}
-        {popularityIndicator} | <span style={{ color: 'green' }}>Stress</span>:{' '}
-        {stress} {stressIndicator} |{' '}
-        <span style={{ color: 'red' }}>Reputation</span>: {reputation}{' '}
-        {reputationIndicator} <br />
-        {reactifyText(((data as any)[scene] ?? data.error).text)}
-        <br />
-        {((data as any)[scene] ?? data.error).options.map((v: Option) => (
-          <>
-            {'\u00a0'}
-            <span
-              className={classes.option}
-              onClick={generateSelect(v)}
-              style={{ color: 'pink', cursor: 'pointer' }}
-              onMouseEnter={() => {
-                setGradeEffect(v.grade_effect ?? 0);
-                setStressEffect(v.stress_effect ?? 0);
-                setPopularityEffect(v.popularity_effect ?? 0);
-                setReputationEffect(v.reputation_effect ?? 0);
-                setShowIndicator(true);
-              }}
-              onMouseLeave={() => {
-                setShowIndicator(false);
-              }}
-            >
-              {'['}
-              <u>{v.text}</u>
-              {']'}
+  if (!inFight) {
+    return (
+      <div className={classes.app}>
+        <header className={classes.appHeader}>
+          <span style={{ color: 'cyan' }}>Grade</span>: {grade} {gradeIndicator}{' '}
+          | <span style={{ color: 'yellow' }}>Popularity</span>: {popularity}{' '}
+          {popularityIndicator} | <span style={{ color: 'green' }}>Stress</span>
+          : {stress} {stressIndicator} |{' '}
+          <span style={{ color: 'red' }}>Reputation</span>: {reputation}{' '}
+          {reputationIndicator} <br />
+          {reactifyText(((data as any)[scene] ?? data.error).text)}
+          <br />
+          {((data as any)[scene] ?? data.error).options.map((v: Option) => (
+            <>
+              {'\u00a0'}
+              <span
+                className={classes.option}
+                onClick={generateSelect(v)}
+                style={{ color: 'pink', cursor: 'pointer' }}
+                onMouseEnter={() => {
+                  setGradeEffect(v.grade_effect ?? 0);
+                  setStressEffect(v.stress_effect ?? 0);
+                  setPopularityEffect(v.popularity_effect ?? 0);
+                  setReputationEffect(v.reputation_effect ?? 0);
+                  setShowIndicator(true);
+                }}
+                onMouseLeave={() => {
+                  setShowIndicator(false);
+                }}
+              >
+                {'['}
+                <u>{v.text}</u>
+                {']'}
+              </span>
+            </>
+          ))}
+        </header>
+      </div>
+    );
+  } else {
+    return (
+      <div className={classes.app}>
+        <header className={classes.appHeader}>
+          <div className={classes.healthHeader}>
+            <span>
+              You:{' '}
+              <span style={{ color: 'green' }}>
+                {playerHealth}/{maxPlayerHealth}
+              </span>
             </span>
-          </>
-        ))}
-      </header>
-    </div>
-  );
+            <span>
+              Enemy:{' '}
+              <span style={{ color: 'red' }}>
+                {enemyHealth}/{maxEnemyHealth}
+              </span>
+            </span>
+          </div>{' '}
+          <br />
+          {combatText.map((v) => (
+            <>
+              {v}
+              <br />
+            </>
+          ))}
+          <br />
+          {playerTurn ? (
+            <>
+              {'\u00a0'}
+              <span
+                className={classes.option}
+                onClick={() => {
+                  let heal = Math.floor(Math.random() * 4 + 1);
+                  setPlayerHealth(
+                    clamp(playerHealth + heal, 0, maxPlayerHealth)
+                  );
+                  setCombatText(
+                    combatText.concat(`You heal for ${heal} health`)
+                  );
+                  setPlayerTurn(false);
+                }}
+                style={{ color: 'pink', cursor: 'pointer' }}
+              >
+                {'['}
+                <u>Heal</u>
+                {']'}
+              </span>
+              {'\u00a0'}
+              <span
+                className={classes.option}
+                onClick={() => {
+                  let attack = Math.floor(Math.random() * 4 + 1) + attackMod;
+                  setEnemyHealth(
+                    clamp(enemyHealth - attack, 0, maxPlayerHealth)
+                  );
+                  setCombatText(
+                    combatText.concat(`You attack for ${attack} health`)
+                  );
+                  setAttackMod(0);
+                  setPlayerTurn(false);
+                }}
+                style={{ color: 'pink', cursor: 'pointer' }}
+              >
+                {'['}
+                <u>Attack</u>
+                {']'}
+              </span>
+              {'\u00a0'}
+              <span
+                className={classes.option}
+                onClick={() => {
+                  setAttackMod(attackMod + 1);
+                  setCombatText(combatText.concat(`You pumped yourself up`));
+                  setPlayerTurn(false);
+                }}
+                style={{ color: 'pink', cursor: 'pointer' }}
+              >
+                {'['}
+                <u>Brood</u>
+                {']'}
+              </span>
+              {'\u00a0'}
+              <span
+                className={classes.option}
+                onClick={() => {
+                  setDefenseMod(Math.floor(Math.random() * 3 + 1));
+                  setCombatText(combatText.concat(`You braced yourself`));
+                  setPlayerTurn(false);
+                }}
+                style={{ color: 'pink', cursor: 'pointer' }}
+              >
+                {'['}
+                <u>Defend</u>
+                {']'}
+              </span>
+            </>
+          ) : (
+            <>
+            ======================================================<br/>
+            #     |     #<br/>
+            ======================================================
+            </>
+          )}
+        </header>
+      </div>
+    );
+  }
 }
