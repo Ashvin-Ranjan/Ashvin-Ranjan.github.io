@@ -392,7 +392,6 @@ export default function GunnStudentSimulator() {
                   setCombatText(
                     combatText.concat(`You attack for ${attack} health`)
                   );
-                  setAttackMod(0);
                   if (clamp(enemyHealth - attack, 0, maxPlayerHealth) == 0) {
                     setCombatText(
                       combatText.concat([
@@ -413,7 +412,7 @@ export default function GunnStudentSimulator() {
               <span
                 className={classes.option}
                 onClick={() => {
-                  setAttackMod(Math.floor(Math.random() * 2 + 2));
+                  setAttackMod(attackMod + 1);
                   setCombatText(combatText.concat(`You pumped yourself up`));
                   setPlayerTurn(false);
                 }}
@@ -426,7 +425,7 @@ export default function GunnStudentSimulator() {
               <span
                 className={classes.option}
                 onClick={() => {
-                  setDefenseMod(Math.floor(Math.random() * 3 + 1));
+                  setDefenseMod(defenseMod + 1);
                   setCombatText(combatText.concat(`You braced yourself`));
                   setPlayerTurn(false);
                 }}
@@ -445,9 +444,11 @@ export default function GunnStudentSimulator() {
                 className={classes.option}
                 onClick={() => {
                   let damage = clamp(
-                    (Math.floor(Math.abs(9 - attackBarCharge) / 2) -
-                      defenseMod) *
-                      ((data as any)[scene].enemy_damage_mul ?? 1),
+                    Math.floor(
+                      Math.abs(9 - attackBarCharge) -
+                        defenseMod *
+                          ((data as any)[scene].enemy_damage_mul ?? 1)
+                    ),
                     0,
                     maxPlayerHealth
                   );
@@ -459,7 +460,6 @@ export default function GunnStudentSimulator() {
                       `The enemy attacked you for ${damage} health`
                     )
                   );
-                  setDefenseMod(0);
                   if (clamp(playerHealth - damage, 0, maxPlayerHealth) == 0) {
                     setCombatText(
                       combatText.concat([

@@ -1110,6 +1110,7 @@
         "text": "Meet friends",
         "go": "per3_friend_meet",
         "popularity_effect": 5,
+        "stress_effect": -5,
         "reputation_effect": 5,
         "random": [
           {
@@ -1327,7 +1328,7 @@
     ]
   },
   "boxing_help": {
-    "text": "In fights you will be given options on what to do, every time you do something the enemy will attack, when the bar lines up in the middle, click block to block the damage. The closer you are to the center, the less damage you take.",
+    "text": "In fights you will be given options on what to do, every time you do something the enemy will attack, when the bar lines up in the middle, click block to block the damage. The closer you are to the center, the less damage you take.\n\nBrooding will increase your attack damage by one and defending will decrease the damage you take by 1",
     "options": [
       {
         "text": "Continue",
@@ -1345,7 +1346,7 @@
       "win": "boxing_end_win",
       "lose": "boxing_end_lose",
       "enemy_health": 35,
-      "enemy_damage_mul": 1
+      "enemy_damage_mul": 1.5
     }
   },
   "boxing_end_win": {
