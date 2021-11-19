@@ -1311,5 +1311,67 @@
         "reputation_effect": 0
       }
     ]
+  },
+  "per4.comment": "Period 4 fight stuff",
+  "per4": {
+    "text": "[Period 4]:\n\"Today we will be boxing, get into pairs\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "boxing_help",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "boxing_help": {
+    "text": "In fights you will be given options on what to do, every time you do something the enemy will attack, when the bar lines up in the middle, click block to block the damage. The closer you are to the center, the less damage you take.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "boxing",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "boxing": {
+    "text": "The teacher starts the match",
+    "fight": {
+      "win": "boxing_end_win",
+      "lose": "boxing_end_lose",
+      "enemy_health": 35,
+      "enemy_damage_mul": 1
+    }
+  },
+  "boxing_end_win": {
+    "text": "The Teacher finished the matches and you are declared the winner of yours.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per5",
+        "popularity_effect": 10,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 10
+      }
+    ]
+  },
+  "boxing_end_lose": {
+    "text": "The Teacher finished the matches and you are declared the loser of yours.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per5",
+        "popularity_effect": -10,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
   }
 }

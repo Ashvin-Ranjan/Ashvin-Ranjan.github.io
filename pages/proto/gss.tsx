@@ -62,6 +62,13 @@ interface Option {
   random?: OptionRandom[];
 }
 
+interface Fight {
+  win: string;
+  lose: string;
+  enemy_health: number;
+  enemy_damage_mul: number;
+}
+
 export default function GunnStudentSimulator() {
   let [scene, setScene] = useState('title');
   let [grade, setGrade] = useState(0);
@@ -134,6 +141,8 @@ export default function GunnStudentSimulator() {
       });
   };
 
+  console.log(scene);
+
   const generateSelect = (v: Option) => {
     return () => {
       setShowIndicator(false);
@@ -142,7 +151,6 @@ export default function GunnStudentSimulator() {
 
       if (v.random) {
         let rand = Math.random();
-        console.log(rand);
         for (let ev of v.random) {
           rand -= ev.chance;
           if (rand <= 0) {
@@ -168,6 +176,18 @@ export default function GunnStudentSimulator() {
         );
       }
       if (out.can_game_over === false) {
+        let maybeFight: Fight = ((data as any)[out.go] ?? data.error).fight;
+        if (maybeFight) {
+          setInFight(true);
+          setPlayerHealth(maxPlayerHealth);
+          setMaxEnemyHealth(maybeFight.enemy_health);
+          setEnemyHealth(maybeFight.enemy_health);
+          setCombatText([]);
+          setPlayerTurn(true);
+          setAttackMod(0);
+          setDefenseMod(0);
+          setFightEnd(false);
+        }
         setScene(out.go);
       } else {
         if (grade + (out.grade_effect ?? -3) <= 0) {
@@ -179,6 +199,18 @@ export default function GunnStudentSimulator() {
         } else if (reputation + (out.reputation_effect ?? -3) <= 0) {
           setScene('reputationgm');
         } else {
+          let maybeFight: Fight = ((data as any)[out.go] ?? data.error).fight;
+          if (maybeFight) {
+            setInFight(true);
+            setPlayerHealth(maxPlayerHealth);
+            setMaxEnemyHealth(maybeFight.enemy_health);
+            setEnemyHealth(maybeFight.enemy_health);
+            setCombatText([]);
+            setPlayerTurn(true);
+            setAttackMod(0);
+            setDefenseMod(0);
+            setFightEnd(false);
+          }
           setScene(out.go);
         }
       }
@@ -287,6 +319,11 @@ export default function GunnStudentSimulator() {
             className={classes.option}
             onClick={() => {
               setInFight(false);
+              if (playerHealth === 0) {
+                setScene((data as any)[scene].fight.lose);
+              } else {
+                setScene((data as any)[scene].fight.win);
+              }
             }}
           >
             {'['}
@@ -314,6 +351,8 @@ export default function GunnStudentSimulator() {
               </span>
             </span>
           </div>{' '}
+          <br />
+          {reactifyText(((data as any)[scene] ?? data.error).text)}
           <br />
           {combatText.map((v) => (
             <>
@@ -374,7 +413,7 @@ export default function GunnStudentSimulator() {
               <span
                 className={classes.option}
                 onClick={() => {
-                  setAttackMod(attackMod + 1);
+                  setAttackMod(Math.floor(Math.random() * 2 + 2));
                   setCombatText(combatText.concat(`You pumped yourself up`));
                   setPlayerTurn(false);
                 }}
@@ -406,7 +445,9 @@ export default function GunnStudentSimulator() {
                 className={classes.option}
                 onClick={() => {
                   let damage = clamp(
-                    Math.floor(Math.abs(9 - attackBarCharge) / 2) - defenseMod,
+                    (Math.floor(Math.abs(9 - attackBarCharge) / 2) -
+                      defenseMod) *
+                      ((data as any)[scene].enemy_damage_mul ?? 1),
                     0,
                     maxPlayerHealth
                   );
@@ -418,6 +459,7 @@ export default function GunnStudentSimulator() {
                       `The enemy attacked you for ${damage} health`
                     )
                   );
+                  setDefenseMod(0);
                   if (clamp(playerHealth - damage, 0, maxPlayerHealth) == 0) {
                     setCombatText(
                       combatText.concat([
