@@ -5,8 +5,7 @@ type TranslatedTextProps = {
 }
 export default function TranslatedText(props: TranslatedTextProps) {
     const {translate, text, className, allowLowercase, highlightUntranslated} = props;
-
-    console.log();
+    
     return (
         <span className={className}>
             {(allowLowercase ? text : text.toUpperCase()).split("").map((v) => {

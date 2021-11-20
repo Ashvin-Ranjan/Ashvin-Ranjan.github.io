@@ -141,8 +141,6 @@ export default function GunnStudentSimulator() {
       });
   };
 
-  console.log(scene);
-
   const generateSelect = (v: Option) => {
     return () => {
       setShowIndicator(false);
