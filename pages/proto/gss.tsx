@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { createRef, useEffect, useState, RefObject } from 'react';
 import data from './gss_data.json';
+import Head from 'next/head';
 
 const useStyles = makeStyles((theme) => ({
   appHeader: {
@@ -251,6 +252,18 @@ export default function GunnStudentSimulator() {
   if (!inFight) {
     return (
       <div className={classes.app}>
+        <Head>
+          <title>Gunn Student Simulator 2 | ash.vin</title>
+          <meta
+            name="description"
+            content="A totally original idea of a text-based game to totally accuratly portray life as a Gunn School student, totally not based on something by Sean Yen."
+          />
+          <meta
+            name="keywords"
+            content="Gunn Student Simulator 2, Gunn Student Simulator, Gunn, Student Simulator, Gunn High School"
+          />
+          <meta name="author" content="Ashvin Ranjan" />
+        </Head>
         <header className={classes.appHeader}>
           <span style={{ color: 'cyan' }}>Grade</span>: {grade} {gradeIndicator}{' '}
           | <span style={{ color: 'yellow' }}>Popularity</span>: {popularity}{' '}

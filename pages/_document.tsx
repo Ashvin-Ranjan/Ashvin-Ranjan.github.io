@@ -41,7 +41,7 @@ class MyDocument extends Document {
           <meta name='description' content='ash.vin is a website' />
           <link rel='apple-touch-icon' href='/logo192.png' />
           <link rel='manifest' href='/manifest.json' />
-          <title>Ash.vin</title>
+          <title>ash.vin</title>
         </Head>
         <body>
           <Main />
