@@ -972,7 +972,7 @@
     ]
   },
   "assembly_end": {
-    "text": "██████████: \"Don't forget, starting tomorrow there is a 5% chance that an SAT will happen starting tomorrow\"\n\nThe assembly comes to a close",
+    "text": "██████████: \"Don't forget, the SAT will be in two days!\"\n\nThe assembly comes to a close",
     "options": [
       {
         "text": "Continue",
@@ -1369,6 +1369,209 @@
         "text": "Continue",
         "go": "per5",
         "popularity_effect": -10,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per5": {
+    "text": "You arrive at class and the teacher is not there",
+    "options": [
+      {
+        "text": "Study",
+        "go": "per5_late0",
+        "grade_effect": 5
+      },
+      {
+        "text": "Talk with friends",
+        "go": "per5_late0",
+        "popularity_effect": 5
+      },
+      {
+        "text": "Leave",
+        "go": "per5_leave",
+        "reputation_effect": -15
+      }
+    ]
+  },
+  "per5_late0": {
+    "text": "5 minutes pass",
+    "options": [
+      {
+        "text": "Study",
+        "go": "per5_late1",
+        "grade_effect": 5
+      },
+      {
+        "text": "Talk with friends",
+        "go": "per5_late0",
+        "popularity_effect": 5
+      },
+      {
+        "text": "Leave",
+        "go": "per5_leave",
+        "reputation_effect": -15
+      }
+    ]
+  },
+  "per5_late1": {
+    "text": "10 minutes pass",
+    "options": [
+      {
+        "text": "Study",
+        "go": "per5_late2",
+        "grade_effect": 5
+      },
+      {
+        "text": "Talk with friends",
+        "go": "per5_late2",
+        "popularity_effect": 5
+      },
+      {
+        "text": "Leave",
+        "go": "per5_leave",
+        "reputation_effect": -15
+      }
+    ]
+  },
+  "per5_late2": {
+    "text": "15 minutes pass",
+    "options": [
+      {
+        "text": "Study",
+        "go": "per5_end",
+        "grade_effect": 10
+      },
+      {
+        "text": "Talk with friends",
+        "go": "per5_end",
+        "popularity_effect": 10
+      },
+      {
+        "text": "Leave",
+        "go": "per5_leave",
+        "reputation_effect": -15
+      }
+    ]
+  },
+  "per5_end": {
+    "text": "The classe ends",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per6",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per5_leave.comment": "Leave cycle, same as after school but go to per6 after",
+  "per5_leave": {
+    "text": "Where do you want to go?",
+    "options": [
+      {
+        "text": "Spangenb*rg Theatre",
+        "go": "per5_leave_theatre"
+      },
+      {
+        "text": "The Library",
+        "go": "per5_leave_library",
+        "grade_effect": 20
+      },
+      {
+        "text": "The Garden",
+        "go": "per5_leave_caterpillars"
+      }
+    ]
+  },
+  "per5_leave_library": {
+    "text": "You go to the library and study, nothing eventful happens",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per6",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per5_leave_caterpillars": {
+    "text": "Catterpillars drop down!",
+    "fight": {
+      "win": "per5_leave_caterpillars_win",
+      "lose": "per5_leave_caterpillars_lose",
+      "enemy_health": 20,
+      "enemy_damage_mul": 5
+    }
+  },
+  "per5_leave_caterpillars_win": {
+    "text": "You go to the garden, it is very calming",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per6",
+        "popularity_effect": 0,
+        "stress_effect": -40,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per5_leave_caterpillars_lose": {
+    "text": "You run away to your next period",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per6"
+      }
+    ]
+  },
+  "per5_leave_theatre": {
+    "text": "You arrive at the Spangenb*rg Theatre",
+    "options": [
+      {
+        "text": "Go inside",
+        "go": "per5_leave_theatre_inside",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": -10
+      },
+      {
+        "text": "Climb up",
+        "go": "per5_leave_theatre_climb",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per5_leave_theatre_inside": {
+    "text": "As you go inside you find a old peice of paper, the text is faded but you are able to read some text\n\n\"In the event of a student coming on stage they are allowed to challange the superintendent to a fight, to account for this all superintendents must have rigourous physical training to make sure all students are put in their place\"",
+    "options": [
+      {
+        "text": "Leave",
+        "go": "per6",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per5_leave_theatre_climb": {
+    "text": "As you try to climb up security finds you and gets you down, you are escorted to your next class",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per6",
+        "popularity_effect": 0,
         "stress_effect": 0,
         "grade_effect": 0,
         "reputation_effect": 0
