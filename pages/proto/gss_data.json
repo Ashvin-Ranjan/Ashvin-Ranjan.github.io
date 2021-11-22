@@ -1350,7 +1350,7 @@
     }
   },
   "boxing_end_win": {
-    "text": "The Teacher finished the matches and you are declared the winner of yours.",
+    "text": "The teacher finishes the matches and you are declared the winner of yours.",
     "options": [
       {
         "text": "Continue",
@@ -1363,7 +1363,7 @@
     ]
   },
   "boxing_end_lose": {
-    "text": "The Teacher finished the matches and you are declared the loser of yours.",
+    "text": "The teacher finishes the matches and you are declared the loser of yours.",
     "options": [
       {
         "text": "Continue",
@@ -1571,6 +1571,400 @@
       {
         "text": "Continue",
         "go": "per6",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per6": {
+    "text": "[Period 6]:\n\n\"Today we will be taking an anonymous¹ survey, this is not optional but your results will not¹ be shared with the district\"",
+    "options": [
+      {
+        "text": "Take the survey",
+        "go": "per6_survey_start",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      },
+      {
+        "text": "Take the survey",
+        "go": "per6_survey_start",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      },
+      {
+        "text": "Take the survey",
+        "go": "per6_survey_start",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per6_survey.comment": "Survey questions",
+  "per6_survey_start": {
+    "text": "Today you will be taking an anonymous¹ survey\n\nSponsered by RESPOELESLEF",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per6_survey0",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per6_survey0": {
+    "text": "Do you drink alcohol?",
+    "options": [
+      {
+        "text": "I drink alcohol every day, it is my life and my soul",
+        "go": "per6_survey1",
+        "popularity_effect": 15,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": -15,
+        "can_game_over": false
+      },
+      {
+        "text": "I drink alcohol 3 times a week",
+        "go": "per6_survey1",
+        "popularity_effect": 5,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": -5,
+        "can_game_over": false
+      },
+      {
+        "text": "I have never drank alcohol in my entire life, I hate the idea of even having a little sip of wine",
+        "go": "per6_survey1",
+        "popularity_effect": -15,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 15,
+        "can_game_over": false
+      }
+    ]
+  },
+  "per6_survey1": {
+    "text": "Do you smoke weed?",
+    "options": [
+      {
+        "text": "I am smoking weed right now.",
+        "go": "per6_survey2",
+        "popularity_effect": 15,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": -15,
+        "can_game_over": false
+      },
+      {
+        "text": "I smoke weed in between classes",
+        "go": "per6_survey2",
+        "popularity_effect": 5,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": -5,
+        "can_game_over": false
+      },
+      {
+        "text": "What is weed?",
+        "go": "per6_survey2",
+        "popularity_effect": -15,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 15,
+        "can_game_over": false
+      }
+    ]
+  },
+  "per6_survey2": {
+    "text": "On a scale of 1 to 10 how stressful is school?",
+    "options": [
+      {
+        "text": "11",
+        "go": "per6_survey3",
+        "popularity_effect": 0,
+        "stress_effect": -15,
+        "grade_effect": -10,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "5.67",
+        "go": "per6_survey3",
+        "popularity_effect": 0,
+        "stress_effect": -5,
+        "grade_effect": 5,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "0",
+        "go": "per6_survey3",
+        "popularity_effect": 0,
+        "stress_effect": 10,
+        "grade_effect": 15,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "per6_survey3": {
+    "text": "How do you feel about your school's mental health program?",
+    "options": [
+      {
+        "text": "Good",
+        "go": "per6_survey4",
+        "popularity_effect": -5,
+        "stress_effect": 5,
+        "grade_effect": -5,
+        "reputation_effect": 5,
+        "can_game_over": false
+      },
+      {
+        "text": "Great",
+        "go": "per6_survey4",
+        "popularity_effect": -10,
+        "stress_effect": 10,
+        "grade_effect": -10,
+        "reputation_effect": 10,
+        "can_game_over": false
+      },
+      {
+        "text": "Perfect",
+        "go": "per6_survey4",
+        "popularity_effect": -15,
+        "stress_effect": 15,
+        "grade_effect": -15,
+        "reputation_effect": 15,
+        "can_game_over": false
+      }
+    ]
+  },
+  "per6_survey4": {
+    "text": "How many times have you stayed up past midnight to do homework?",
+    "options": [
+      {
+        "text": "46",
+        "go": "per6_survey5",
+        "popularity_effect": 0,
+        "stress_effect": -15,
+        "grade_effect": -10,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "11",
+        "go": "per6_survey5",
+        "popularity_effect": 0,
+        "stress_effect": -5,
+        "grade_effect": 5,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "-1",
+        "go": "per6_survey5",
+        "popularity_effect": 0,
+        "stress_effect": 10,
+        "grade_effect": 15,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "per6_survey5": {
+    "text": "How much do you like Don Austin?",
+    "options": [
+      {
+        "text": "He is amazingly perfect",
+        "go": "per6_survey6",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "per6_survey6": {
+    "text": "How many times have commited crimes in the last 354.432 days?",
+    "options": [
+      {
+        "text": "46",
+        "go": "per6_survey7",
+        "popularity_effect": 15,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": -15,
+        "can_game_over": false
+      },
+      {
+        "text": "11",
+        "go": "per6_survey7",
+        "popularity_effect": 5,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": -5,
+        "can_game_over": false
+      },
+      {
+        "text": "-1",
+        "go": "per6_survey7",
+        "popularity_effect": -10,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 10,
+        "can_game_over": false
+      }
+    ]
+  },
+  "per6_survey7": {
+    "text": "How many friends you have?",
+    "options": [
+      {
+        "text": "0",
+        "go": "per6_survey8",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "-1",
+        "go": "per6_survey8",
+        "popularity_effect": -5,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "-2",
+        "go": "per6_survey8",
+        "popularity_effect": -10,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "per6_survey8": {
+    "text": "Do you like this survey?",
+    "options": [
+      {
+        "text": "It's good",
+        "go": "per6_survey9",
+        "popularity_effect": -5,
+        "stress_effect": 5,
+        "grade_effect": -5,
+        "reputation_effect": 5,
+        "can_game_over": false
+      },
+      {
+        "text": "It's great",
+        "go": "per6_survey9",
+        "popularity_effect": -10,
+        "stress_effect": 10,
+        "grade_effect": -10,
+        "reputation_effect": 10,
+        "can_game_over": false
+      },
+      {
+        "text": "It's perfect",
+        "go": "per6_survey9",
+        "popularity_effect": -15,
+        "stress_effect": 15,
+        "grade_effect": -15,
+        "reputation_effect": 15,
+        "can_game_over": false
+      }
+    ]
+  },
+  "per6_survey9": {
+    "text": "Have you been honest on this survey?",
+    "options": [
+      {
+        "text": "Yes",
+        "go": "per6_survey_tos",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "No",
+        "go": "per6_survey_tos",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "Maybe",
+        "go": "per6_survey_tos",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "per6_survey_tos": {
+    "text": "Do you agree to the Terms of Service and the Privacy Policy?",
+    "options": [
+      {
+        "text": "Yes",
+        "go": "per6_survey_finish",
+        "popularity_effect": 5,
+        "stress_effect": 5,
+        "grade_effect": -5,
+        "reputation_effect": 5
+      },
+      {
+        "text": "Read them",
+        "go": "per6_survey_tos_read",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "per6_survey_tos_read": {
+    "text": "You try to click on the link to read them, but it appears it is just underlined text.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per6_survey_tos",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "per6_survey_finish": {
+    "text": "After you submit the survey you see a little text at the bottom:\n\"¹: If you agreed to the TOS and PP then we will share these with your school district with your name attached\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per7",
         "popularity_effect": 0,
         "stress_effect": 0,
         "grade_effect": 0,

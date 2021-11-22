@@ -29,6 +29,11 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  optionWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
 }));
 
 const clamp = (num: number, min: number, max: number) =>
@@ -263,6 +268,7 @@ export default function GunnStudentSimulator() {
             content="Gunn Student Simulator 2, Gunn Student Simulator, Gunn, Student Simulator, Gunn High School"
           />
           <meta name="author" content="Ashvin Ranjan" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <header className={classes.appHeader}>
           <span style={{ color: 'cyan' }}>Grade</span>: {grade} {gradeIndicator}{' '}
@@ -273,29 +279,31 @@ export default function GunnStudentSimulator() {
           {reputationIndicator} <br />
           {reactifyText(((data as any)[scene] ?? data.error).text)}
           <br />
-          {((data as any)[scene] ?? data.error).options.map((v: Option) => (
-            <>
-              {'\u00a0'}
-              <span
-                className={classes.option}
-                onClick={generateSelect(v)}
-                onMouseEnter={() => {
-                  setGradeEffect(v.grade_effect ?? 0);
-                  setStressEffect(v.stress_effect ?? 0);
-                  setPopularityEffect(v.popularity_effect ?? 0);
-                  setReputationEffect(v.reputation_effect ?? 0);
-                  setShowIndicator(true);
-                }}
-                onMouseLeave={() => {
-                  setShowIndicator(false);
-                }}
-              >
-                {'['}
-                <u>{v.text}</u>
-                {']'}
-              </span>
-            </>
-          ))}
+          <div className={classes.optionWrapper}>
+            {((data as any)[scene] ?? data.error).options.map((v: Option) => (
+              <>
+                {'\u00a0'}
+                <div
+                  className={classes.option}
+                  onClick={generateSelect(v)}
+                  onMouseEnter={() => {
+                    setGradeEffect(v.grade_effect ?? 0);
+                    setStressEffect(v.stress_effect ?? 0);
+                    setPopularityEffect(v.popularity_effect ?? 0);
+                    setReputationEffect(v.reputation_effect ?? 0);
+                    setShowIndicator(true);
+                  }}
+                  onMouseLeave={() => {
+                    setShowIndicator(false);
+                  }}
+                >
+                  {'['}
+                  <u>{v.text}</u>
+                  {']'}
+                </div>
+              </>
+            ))}
+          </div>
         </header>
       </div>
     );
