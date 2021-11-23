@@ -1929,10 +1929,10 @@
       {
         "text": "Yes",
         "go": "per6_survey_finish",
-        "popularity_effect": 5,
-        "stress_effect": 5,
-        "grade_effect": -5,
-        "reputation_effect": 5
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
       },
       {
         "text": "Read them",

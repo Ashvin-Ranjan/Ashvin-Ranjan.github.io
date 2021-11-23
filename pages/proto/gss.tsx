@@ -86,6 +86,7 @@ export default function GunnStudentSimulator() {
   let [stressEffect, setStressEffect] = useState(0);
   let [reputationEffect, setReputationEffect] = useState(0);
   let [showIndicator, setShowIndicator] = useState(false);
+  let baseChange = 3;
 
   // Combat stuff
   let [inFight, setInFight] = useState(false);
@@ -147,6 +148,18 @@ export default function GunnStudentSimulator() {
       });
   };
 
+  const resetFight = (fight: Fight) => {
+    setInFight(true);
+    setPlayerHealth(maxPlayerHealth);
+    setMaxEnemyHealth(fight.enemy_health);
+    setEnemyHealth(fight.enemy_health);
+    setCombatText([]);
+    setPlayerTurn(true);
+    setAttackMod(0);
+    setDefenseMod(0);
+    setFightEnd(false);
+  };
+
   const generateSelect = (v: Option) => {
     return () => {
       setShowIndicator(false);
@@ -164,56 +177,53 @@ export default function GunnStudentSimulator() {
         }
       }
 
+      let gradeMove = clamp(grade + (out.grade_effect ?? -baseChange), 0, 100);
+      let popularityMove = clamp(
+        popularity + (out.popularity_effect ?? -baseChange),
+        0,
+        100
+      );
+      let stressMove = clamp(
+        stress + (out.stress_effect ?? baseChange),
+        0,
+        100
+      );
+      let reputationMove = clamp(
+        reputation + (out.reputation_effect ?? -baseChange),
+        0,
+        100
+      );
+
       if (out.go === 'title') {
         setGrade(0);
         setPopularity(0);
         setStress(0);
         setReputation(0);
       } else {
-        setGrade(clamp(grade + (out.grade_effect ?? -3), 0, 100));
-        setPopularity(
-          clamp(popularity + (out.popularity_effect ?? -3), 0, 100)
-        );
-        setStress(clamp(stress + (out.stress_effect ?? 3), 0, 100));
-        setReputation(
-          clamp(reputation + (out.reputation_effect ?? -3), 0, 100)
-        );
+        setGrade(gradeMove);
+        setPopularity(popularityMove);
+        setStress(stressMove);
+        setReputation(reputationMove);
       }
       if (out.can_game_over === false) {
         let maybeFight: Fight = ((data as any)[out.go] ?? data.error).fight;
         if (maybeFight) {
-          setInFight(true);
-          setPlayerHealth(maxPlayerHealth);
-          setMaxEnemyHealth(maybeFight.enemy_health);
-          setEnemyHealth(maybeFight.enemy_health);
-          setCombatText([]);
-          setPlayerTurn(true);
-          setAttackMod(0);
-          setDefenseMod(0);
-          setFightEnd(false);
+          resetFight(maybeFight);
         }
         setScene(out.go);
       } else {
-        if (grade + (out.grade_effect ?? -3) <= 0) {
+        if (gradeMove <= 0) {
           setScene('gradegm');
-        } else if (popularity + (out.popularity_effect ?? -3) <= 0) {
+        } else if (popularityMove <= 0) {
           setScene('popularitygm');
-        } else if (stress + (out.stress_effect ?? 3) >= 100) {
+        } else if (stressMove >= 100) {
           setScene('stressgm');
-        } else if (reputation + (out.reputation_effect ?? -3) <= 0) {
+        } else if (reputationMove <= 0) {
           setScene('reputationgm');
         } else {
           let maybeFight: Fight = ((data as any)[out.go] ?? data.error).fight;
           if (maybeFight) {
-            setInFight(true);
-            setPlayerHealth(maxPlayerHealth);
-            setMaxEnemyHealth(maybeFight.enemy_health);
-            setEnemyHealth(maybeFight.enemy_health);
-            setCombatText([]);
-            setPlayerTurn(true);
-            setAttackMod(0);
-            setDefenseMod(0);
-            setFightEnd(false);
+            resetFight(maybeFight);
           }
           setScene(out.go);
         }
@@ -260,15 +270,15 @@ export default function GunnStudentSimulator() {
         <Head>
           <title>Gunn Student Simulator 2 | ash.vin</title>
           <meta
-            name="description"
-            content="A totally original idea of a text-based game to totally accuratly portray life as a Gunn School student, totally not based on something by Sean Yen."
+            name='description'
+            content='A totally original idea of a text-based game to totally accuratly portray life as a Gunn School student, totally not based on something by Sean Yen.'
           />
           <meta
-            name="keywords"
-            content="Gunn Student Simulator 2, Gunn Student Simulator, Gunn, Student Simulator, Gunn High School"
+            name='keywords'
+            content='Gunn Student Simulator 2, Gunn Student Simulator, Gunn, Student Simulator, Gunn High School'
           />
-          <meta name="author" content="Ashvin Ranjan" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name='author' content='Ashvin Ranjan' />
+          <meta name='viewport' content='width=device-width, initial-scale=1' />
         </Head>
         <header className={classes.appHeader}>
           <span style={{ color: 'cyan' }}>Grade</span>: {grade} {gradeIndicator}{' '}
