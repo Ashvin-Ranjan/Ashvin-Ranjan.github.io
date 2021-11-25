@@ -1456,7 +1456,7 @@
     ]
   },
   "per5_end": {
-    "text": "The classe ends",
+    "text": "The class ends",
     "options": [
       {
         "text": "Continue",
@@ -1579,7 +1579,7 @@
     ]
   },
   "per6": {
-    "text": "[Period 6]:\n\n\"Today we will be taking an anonymous¹ survey, this is not optional but your results will not¹ be shared with the district\"",
+    "text": "[Period 6]:\n\"Today we will be taking an anonymous¹ survey, this is not optional but your results will not¹ be shared with the district\"",
     "options": [
       {
         "text": "Take the survey",
@@ -1932,7 +1932,8 @@
         "popularity_effect": 0,
         "stress_effect": 0,
         "grade_effect": 0,
-        "reputation_effect": 0
+        "reputation_effect": 0,
+        "can_game_over": false
       },
       {
         "text": "Read them",
@@ -1965,6 +1966,95 @@
       {
         "text": "Continue",
         "go": "per7",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per7": {
+    "text": "[Period 7]\nYou are in the class when all of a sudden the fire alarm goes off",
+    "options": [
+      {
+        "text": "Leave school",
+        "go": "afterschool_day1",
+        "popularity_effect": 15,
+        "reputation_effect": -15
+      },
+      {
+        "text": "Assemble outside",
+        "go": "per7_fire0",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per7_fire0": {
+    "text": "You assemble outside and wait",
+    "options": [
+      {
+        "text": "Wait",
+        "go": "per7_back0",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      },
+      {
+        "text": "Check your phone",
+        "go": "per7_back0",
+        "popularity_effect": 5,
+        "reputation_effect": -5
+      }
+    ]
+  },
+  "per7_back0": {
+    "text": "You go back when all of a sudden the alarm goes off again",
+    "options": [
+      {
+        "text": "Leave school",
+        "go": "afterschool_day1",
+        "popularity_effect": 15,
+        "reputation_effect": -15
+      },
+      {
+        "text": "Assemble outside",
+        "go": "per7_fire1",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per7_fire1": {
+    "text": "You assemble outside and wait",
+    "options": [
+      {
+        "text": "Wait",
+        "go": "per7_back1",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      },
+      {
+        "text": "Check your phone",
+        "go": "per7_back1",
+        "popularity_effect": 5,
+        "reputation_effect": -5
+      }
+    ]
+  },
+  "per7_back1": {
+    "text": "By the time you get back to class the school is over",
+    "options": [
+      {
+        "text": "Leave school",
+        "go": "afterschool_day1",
         "popularity_effect": 0,
         "stress_effect": 0,
         "grade_effect": 0,
