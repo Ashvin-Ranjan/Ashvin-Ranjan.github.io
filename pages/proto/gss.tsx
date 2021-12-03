@@ -45,6 +45,8 @@ interface OptionEffect {
   popularity_effect?: number;
   stress_effect?: number;
   reputation_effect?: number;
+  attack_effect?: number;
+  defense_effect?: number;
   can_game_over?: boolean;
 }
 
@@ -199,8 +201,8 @@ export default function GunnStudentSimulator() {
         0,
         100
       );
-      let attackMove = permanentAttackMod + (out.attack_effect ?? 0)
-      let defenseMove = permanentDefenseMod + (out.defense_effect ?? 0)
+      let attackMove = permanentAttackMod + (out.attack_effect ?? 0);
+      let defenseMove = permanentDefenseMod + (out.defense_effect ?? 0);
 
       if (out.go === 'title') {
         setGrade(0);
@@ -424,7 +426,9 @@ export default function GunnStudentSimulator() {
               <span
                 className={classes.option}
                 onClick={() => {
-                  let attack = Math.floor(Math.random() * 4 + 1) + (attackMod + permanentAttackMod);
+                  let attack =
+                    Math.floor(Math.random() * 4 + 1) +
+                    (attackMod + permanentAttackMod);
                   setEnemyHealth(
                     clamp(enemyHealth - attack, 0, maxEnemyHealth)
                   );
