@@ -54,6 +54,8 @@ interface OptionRandom {
   popularity_effect?: number;
   stress_effect?: number;
   reputation_effect?: number;
+  attack_effect?: number;
+  defense_effect?: number;
   can_game_over?: boolean;
   chance: number;
 }
@@ -64,6 +66,8 @@ interface Option {
   popularity_effect?: number;
   stress_effect?: number;
   reputation_effect?: number;
+  attack_effect?: number;
+  defense_effect?: number;
   can_game_over?: boolean;
   random?: OptionRandom[];
 }
@@ -99,6 +103,8 @@ export default function GunnStudentSimulator() {
   let [attackMod, setAttackMod] = useState(0);
   let [defenseMod, setDefenseMod] = useState(0);
   let [fightEnd, setFightEnd] = useState(false);
+  let [permanentAttackMod, setPermanentAttackMod] = useState(0);
+  let [permanentDefenseMod, setPermanentDefenseMod] = useState(0);
 
   // Attack bar thing
   const attackBar: RefObject<HTMLSpanElement> = createRef();
@@ -193,12 +199,16 @@ export default function GunnStudentSimulator() {
         0,
         100
       );
+      let attackMove = permanentAttackMod + (out.attack_effect ?? 0)
+      let defenseMove = permanentDefenseMod + (out.defense_effect ?? 0)
 
       if (out.go === 'title') {
         setGrade(0);
         setPopularity(0);
         setStress(0);
         setReputation(0);
+        setPermanentAttackMod(0);
+        setPermanentDefenseMod(0);
       } else {
         setGrade(gradeMove);
         setPopularity(popularityMove);
@@ -414,7 +424,7 @@ export default function GunnStudentSimulator() {
               <span
                 className={classes.option}
                 onClick={() => {
-                  let attack = Math.floor(Math.random() * 4 + 1) + attackMod;
+                  let attack = Math.floor(Math.random() * 4 + 1) + (attackMod + permanentAttackMod);
                   setEnemyHealth(
                     clamp(enemyHealth - attack, 0, maxEnemyHealth)
                   );
@@ -475,7 +485,7 @@ export default function GunnStudentSimulator() {
                   let damage = clamp(
                     Math.floor(
                       Math.abs(9 - attackBarCharge) -
-                        defenseMod *
+                        (defenseMod + permanentDefenseMod) *
                           ((data as any)[scene].enemy_damage_mul ?? 1)
                     ),
                     0,

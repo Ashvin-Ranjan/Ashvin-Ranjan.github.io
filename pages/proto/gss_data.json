@@ -2061,5 +2061,486 @@
         "reputation_effect": 0
       }
     ]
+  },
+  "afterschool_day1.comment": "Afterschool events for day 1",
+  "afterschool_day1": {
+    "text": "[Afterschool]: 5pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day1_1",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day1_1",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Meet Friends",
+        "go": "afterschool_day1_2",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      }
+    ]
+  },
+  "afterschool_day1_1": {
+    "text": "[Afterschool]: 6pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day1_2",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day1_2",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Meet Friends",
+        "go": "afterschool_day1_3",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      }
+    ]
+  },
+  "afterschool_day1_2": {
+    "text": "[Afterschool]: 7pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day1_3",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day1_3",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Meet Friends",
+        "go": "afterschool_day1_4",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      }
+    ]
+  },
+  "afterschool_day1_3": {
+    "text": "[Afterschool]: 8pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day1_4",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day1_4",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Meet Friends",
+        "go": "afterschool_day1_5",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      }
+    ]
+  },
+  "afterschool_day1_4": {
+    "text": "[Afterschool]: 9pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day1_5",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day1_5",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Meet Friends",
+        "go": "afterschool_day1_6",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      }
+    ]
+  },
+  "afterschool_day1_5": {
+    "text": "[Afterschool]: 10pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day1_6",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day1_6",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Meet Friends",
+        "go": "afterschool_day1_7",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      },
+      {
+        "text": "Go to the store",
+        "go": "store_day1",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "afterschool_day1_6": {
+    "text": "[Afterschool]: 11pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day1_7",
+        "reputation_effect": 0,
+        "grade_effect": 5,
+        "popularity_effect": 0
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day1_7",
+        "reputation_effect": 0,
+        "stress_effect": -5,
+        "popularity_effect": 0
+      }
+    ]
+  },
+  "afterschool_day1_7": {
+    "text": "[Afterschool]: 12pm",
+    "options": [
+      {
+        "text": "Sleep",
+        "go": "chapter_1_end",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "store_day1.comment": "Store stuff for day 1",
+  "store_day1": {
+    "text": "You wander around and find yourself at a store",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day1_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "store_day1_options": {
+    "text": "\"I don't recommend overpaying...\"",
+    "options": [
+      {
+        "text": "Sharp stick +1 attack (Cost: 20 Reputation)",
+        "go": "store_day1_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": -20,
+        "can_game_over": false,
+        "attack_effect": 1
+      },
+      {
+        "text": "Knife +5 attack (Cost: 60 Reputation)",
+        "go": "store_day1_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": -60,
+        "can_game_over": false,
+        "attack_effect": 5
+      },
+      {
+        "text": "Padding +1 Defense (Cost: 20 Grade)",
+        "go": "store_day1_options",
+        "grade_effect": -20,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false,
+        "defense_effect": 1
+      },
+      {
+        "text": "Talk",
+        "go": "store_day1_talk0",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false,
+        "random": [
+          {
+            "go": "store_day1_talk1",
+            "grade_effect": 0,
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "reputation_effect": 0,
+            "can_game_over": false,
+            "chance": 0.1
+          },
+          {
+            "go": "store_day1_talk2",
+            "grade_effect": 0,
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "reputation_effect": 0,
+            "can_game_over": false,
+            "chance": 0.1
+          },
+          {
+            "go": "store_day1_talk3",
+            "grade_effect": 0,
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "reputation_effect": 0,
+            "can_game_over": false,
+            "chance": 0.1
+          },
+          {
+            "go": "store_day1_talk4",
+            "grade_effect": 0,
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "reputation_effect": 0,
+            "can_game_over": false,
+            "chance": 0.1
+          },
+          {
+            "go": "store_day1_talk5",
+            "grade_effect": 0,
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "reputation_effect": 0,
+            "can_game_over": false,
+            "chance": 0.1
+          },
+          {
+            "go": "store_day1_talk6",
+            "grade_effect": 0,
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "reputation_effect": 0,
+            "can_game_over": false,
+            "chance": 0.1
+          },
+          {
+            "go": "store_day1_talk7",
+            "grade_effect": 0,
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "reputation_effect": 0,
+            "can_game_over": false,
+            "chance": 0.1
+          },
+          {
+            "go": "store_day1_talk8",
+            "grade_effect": 0,
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "reputation_effect": 0,
+            "can_game_over": false,
+            "chance": 0.1
+          },
+          {
+            "go": "store_day1_talk9",
+            "grade_effect": 0,
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "reputation_effect": 0,
+            "can_game_over": false,
+            "chance": 0.1
+          }
+        ]
+      },
+      {
+        "text": "Leave",
+        "go": "afterschool_day1_6",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "store_day1_talk0": {
+    "text": "\"My name... well don't you know that already, you found this after all\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day1_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "store_day1_talk1": {
+    "text": "\"Spangenb*rg... Ah, its cencored because of me... I'm... Bad at spelling to say the least\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day1_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "store_day1_talk2": {
+    "text": "\"What do I do? Well I sit here at the skyline and watch everything unfold from afar\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day1_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "store_day1_talk3": {
+    "text": "\"Don Austin... I recommend buying up if you want to fight him\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day1_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "store_day1_talk4": {
+    "text": "\"Sheep... Pool...\"\n\"Huh? I must have zoned out\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day1_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "store_day1_talk5": {
+    "text": "\"I wonder how hard the SAT will be, I wouldn't know\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day1_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "store_day1_talk6": {
+    "text": "\"Have you heard about the 14th letter of the alphabet?\"",
+    "options": [
+      {
+        "text": "coNtinue",
+        "go": "store_day1_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "store_day1_talk7": {
+    "text": "\"That knife isn't actually an original design, I'm just really good at stealing other people's ideas\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day1_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "store_day1_talk8": {
+    "text": "\"Watch out for year 666... Oh wait thats a different game\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day1_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "store_day1_talk9": {
+    "text": "\"I'll get it done eventually... No I was not talking to you\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day1_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "chapter_1_end": {
+    "text": "[End of Chapter 1]",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "title",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
   }
 }
