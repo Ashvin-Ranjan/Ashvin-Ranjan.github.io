@@ -8,6 +8,8 @@ import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 
+import Head from "next/head";
+
 
 const useStyles = makeStyles((theme) => ({
     ...theme.spreadIt,
@@ -74,6 +76,15 @@ export default function BecauseBreadStarredMessageGeneator() {
 
     return (
         <div className="App">
+            <Head>
+                <title>Because Bread Starred Message Generator</title>
+                <meta
+                    name='description'
+                    content='what have i done?'
+                />
+                <meta name='author' content='Ashvin Ranjan' />
+                <meta name='viewport' content='width=device-width, initial-scale=1' />
+            </Head>
             <header className="App-header-align-top">
                 <div className={classes.title}>Because Bread Starred Message Generator</div>
                 The higher the context the more coherent the messages, but if it is too high it just starts to copy them
@@ -101,7 +112,7 @@ export default function BecauseBreadStarredMessageGeneator() {
                             style={{alignSelf: "center"}}
                             onClick={generateMessage}
                         >
-                            Geneate Message
+                            Generate Message
                         </Button>
                     <div className={classes.column}>
                         {text}

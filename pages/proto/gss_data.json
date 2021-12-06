@@ -2542,5 +2542,140 @@
         "reputation_effect": 0
       }
     ]
+  },
+  "day2_dream": {
+    "text": "`______________\n< *)^&(*&()^$# >\n`--------------\n        \\   ^__^\n         \\  (oo)\\_______\n            (__)\\       )\\/\\\n                ||----w |\n                ||     ||",
+    "options": [
+      {
+        "text": "What?",
+        "go": "day2_dream_explain",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "day2_dream_explain": {
+    "text": "You feel as though that dream has some meaning...",
+    "options": [
+      {
+        "text": "...",
+        "go": "morning_day2",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "morning_day2.comment": "Morning stuff for day 2",
+  "morning_day2": {
+    "text": "Your alarm goes off, it's 6:45 AM.",
+    "options": [
+      {
+        "text": "Wake up",
+        "go": "bike_day2",
+        "grade_effect": 10,
+        "stress_effect": 5,
+        "reputation_effect": 0
+      },
+      {
+        "text": "Sleep",
+        "go": "bike_day2",
+        "grade_effect": -10,
+        "stress_effect": -10
+      }
+    ]
+  },
+  "bike_day2": {
+    "text": "What route should you take going to school?",
+    "options": [
+      {
+        "text": "Meet with friends",
+        "go": "school_day2",
+        "grade_effect": -5,
+        "stress_effect": -5,
+        "popularity_effect": 10
+      },
+      {
+        "text": "Go Alone",
+        "go": "school_day2",
+        "grade_effect": 5,
+        "popularity_effect": -10,
+        "random": [
+          {
+            "go": "school_early_day2",
+            "chance": 0.75,
+            "grade_effect": 5,
+            "popularity_effect": -10
+          }
+        ]
+      }
+    ]
+  },
+  "school_early_day2": {
+    "text": "You arrive really early to school",
+    "options": [
+      {
+        "text": "Play games",
+        "go": "school_day2",
+        "grade_effect": -5,
+        "stress_effect": -10,
+        "popularity_effect": 0
+      },
+      {
+        "text": "Study",
+        "go": "school_day2",
+        "grade_effect": 5,
+        "stress_effect": 5,
+        "popularity_effect": 0
+      }
+    ]
+  },
+  "school_day2": {
+    "text": "There is some extra time before school starts",
+    "options": [
+      {
+        "text": "Hang out with friends",
+        "go": "announcements_day2",
+        "grade_effect": -5,
+        "stress_effect": 10,
+        "popularity_effect": 10
+      },
+      {
+        "text": "Study",
+        "go": "announcements_day2",
+        "grade_effect": 5,
+        "stress_effect": -5,
+        "popularity_effect": -10
+      }
+    ]
+  },
+  "announcements_day2": {
+    "text": "There are some announcements",
+    "options": [
+      {
+        "text": "Listen",
+        "go": "announcement_message_day2"
+      },
+      {
+        "text": "Ignore",
+        "go": "per1_day2",
+        "grade_effect": 5
+      }
+    ]
+  },
+  "announcement_message_day2": {
+    "text": "\"Hello Gunn Students! Please take note of the people working on the water mains today and try to avoid them.\"\n\"We have noticed that some students have been heading to peculiar shops to pick up weapons and padding, this is why we have asked them to change their hours to 2PM to 3PM.\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per1_day2"
+      }
+    ]
+  },
+  "per1_day2": {
+    "text": "[Period 1]:\n"
   }
 }
