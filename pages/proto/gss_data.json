@@ -424,7 +424,11 @@
     "options": [
       {
         "text": "Continue",
-        "go": "end_per1"
+        "go": "end_per1",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 0,
+        "reputation_effect": 0
       }
     ]
   },
@@ -433,7 +437,11 @@
     "options": [
       {
         "text": "Continue",
-        "go": "end_per1"
+        "go": "end_per1",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 0,
+        "reputation_effect": 0
       }
     ]
   },
@@ -2676,6 +2684,252 @@
     ]
   },
   "per1_day2": {
-    "text": "[Period 1]:\n"
+    "text": "[Period 1]:\nYou feel your eyes start to close",
+    "options": [
+      {
+        "text": "Stay awake",
+        "go": "per1_day2_awake",
+        "grade_effect": 10,
+        "stress_effect": 10
+      },
+      {
+        "text": "Go to sleep",
+        "go": "per1_day2_sleep",
+        "grade_effect": -10,
+        "stress_effect": -10
+      }
+    ]
+  },
+  "per1_day2_awake": {
+    "text": "You force yourself to stay awake, and answer the question that you were asked",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per1_day2_end",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per1_day2_sleep": {
+    "text": "You go to sleep, and are quickly woken up by the teacher asking you a question",
+    "options": [
+      {
+        "text": "Guess",
+        "go": "per1_day2_guess_fail",
+        "grade_effect": -10,
+        "reputation_effect": -10,
+        "random": [
+          {
+            "go": "per1_day2_guess_pass",
+            "grade_effect": 10,
+            "reputation_effect": 10,
+            "chance": 0.1
+          }
+        ]
+      },
+      {
+        "text": "Appeal for help",
+        "go": "per1_day2_appeal",
+        "grade_effect": 10,
+        "stress_effect": 10,
+        "popularity_effect": 10,
+        "reputation_effect": 10
+      }
+    ]
+  },
+  "per1_day2_guess_fail": {
+    "text": "You randomly guess and get it wrong, however, no one else knew what it was either",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per1_day2_end",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per1_day2_guess_pass": {
+    "text": "You randomly guess and somehow get it right.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per1_day2_end",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per1_day2_appeal": {
+    "text": "The teacher sighs and calls on someone else, turns out no one else knew either.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per1_day2_end",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per1_day2_end": {
+    "text": "The bell rings and the class is dismissed",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "day2_halls",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "day2_halls": {
+    "text": "You pass by a strange circle of people",
+    "options": [
+      {
+        "text": "Go on your way",
+        "go": "per2_day2",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 0,
+        "reputation_effect": 0
+      },
+      {
+        "text": "Check it out",
+        "go": "day2_hall_check",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "day2_hall_check" : {
+    "text": "Turns out that they are fighting, just when you are about to leave, someone pushed you in",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "day2_hall_fight",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "day2_hall_fight": {
+    "text": "You are pushed into a fight",
+    "fight": {
+      "win": "day2_hall_fight_win",
+      "lose": "day2_hall_fight_lose",
+      "enemy_health": 35,
+      "enemy_damage_mul": 2.5
+    }
+  },
+  "day2_hall_fight_win": {
+    "text": "You win the fight!",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per2_day2",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 10,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "day2_hall_fight_lose": {
+    "text": "You lose the fight!",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per2_day2",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": -10,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per2_day2": {
+    "text": "[Period 2]\nThe workers seem to be working above you.\nYou feel a drip of water on your head",
+    "options": [
+      {
+        "text": "Let the teacher know",
+        "go": "per2_day2_check_drip",
+        "stress_effect": -5,
+        "reputation_effect": -5
+      },
+      {
+        "text": "Deal with it",
+        "go": "per2_day2_flow",
+        "stress_effect": 5
+      }
+    ]
+  },
+  "per2_day2_flow": {
+    "text": "That drip starts to turn into a steady stream",
+    "options": [
+      {
+        "text": "Let the teacher know",
+        "go": "per2_day2_check_flow",
+        "stress_effect": -10,
+        "reputation_effect": 10
+      },
+      {
+        "text": "Deal with it",
+        "go": "per2_day2_burst",
+        "stress_effect": 10
+      }
+    ]
+  },
+  "per2_day2_burst": {
+    "text": "The ceiling caves in and you are drenched in water\n\nThe teacher sends you to the office and school is called off for the day",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "afterschool_day2",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per2_day2_check_drip": {
+    "text": "\"Oh they must have spilled some water up there it will be fine\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "per2_day2_flow",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "per2_day2_check_flow": {
+    "text": "The teacher finally notices and moves you away, just as you are moved the ceiling caves in and water is dumped where you just were, school is then called off for the day.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "afterschool_day2",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
   }
 }
