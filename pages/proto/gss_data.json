@@ -2241,7 +2241,20 @@
     "options": [
       {
         "text": "Sleep",
-        "go": "chapter_1_end",
+        "go": "day1_sleep",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "day1_sleep": {
+    "text": "You go to sleep and have a strange dream",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "day2_dream",
         "grade_effect": 0,
         "popularity_effect": 0,
         "stress_effect": 0,
@@ -2287,9 +2300,9 @@
         "attack_effect": 5
       },
       {
-        "text": "Padding +1 Defense (Cost: 20 Grade)",
+        "text": "Padding +1 Defense (Cost: 50 Grade)",
         "go": "store_day1_options",
-        "grade_effect": -20,
+        "grade_effect": -50,
         "popularity_effect": 0,
         "stress_effect": 0,
         "reputation_effect": 0,
@@ -2928,6 +2941,382 @@
         "grade_effect": 0,
         "stress_effect": 0,
         "popularity_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "afterschool_day2": {
+    "text": "[Afterschool]\nYour friends drag you along to do something.",
+    "options": [
+      {
+        "text": "Ask what they are doing",
+        "go": "afterschool_day2_friends_ask",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "afterschool_day2_friends_ask": {
+    "text": "They shrug, turns out even they don't know",
+    "options": [
+      {
+        "text": "Leave",
+        "go": "afterschool_day2_friends_leave",
+        "grade_effect": 15,
+        "stress_effect": -15,
+        "popularity_effect": -10
+      },
+      {
+        "text": "Study",
+        "go": "afterschool_day2_friends_study",
+        "grade_effect": 10,
+        "popularity_effect": 10
+      },
+      {
+        "text": "Play Games",
+        "go": "afterschool_day2_friends_play_games",
+        "stress_effect": -10,
+        "popularity_effect": 10
+      }
+    ]
+  },
+  "afterschool_day2_friends_leave": {
+    "text": "Your friends protest but relent once they realize they don't have any ideas on what to do",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "afterschool_day2_0",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "afterschool_day2_friends_study": {
+    "text": "You go to the library and study with your friends",
+    "options": [
+      {
+        "text": "Go home",
+        "go": "afterschool_day2_0",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "afterschool_day2_friends_play_games": {
+    "text": "You go to the library and play games... until your times runs out.",
+    "options": [
+      {
+        "text": "Go home",
+        "go": "afterschool_day2_0",
+        "grade_effect": 0,
+        "stress_effect": 0,
+        "popularity_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "afterschool_day2_0.comment": "Time events for day2, starts at 12",
+  "afterschool_day2_0": {
+    "text": "[Afterschool]: 12pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day2_1",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day2_1",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Talk with Friends",
+        "go": "afterschool_day2_2",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      }
+    ]
+  },
+  "afterschool_day2_1": {
+    "text": "[Afterschool]: 1pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day2_2",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day2_2",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Talk with Friends",
+        "go": "afterschool_day2_3",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      }
+    ]
+  },
+  "afterschool_day2_2": {
+    "text": "[Afterschool]: 2pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day2_3",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day2_3",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Talk with Friends",
+        "go": "afterschool_day2_4",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      },
+      {
+        "text": "Go to the store",
+        "go": "store_day2",
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "afterschool_day2_3": {
+    "text": "[Afterschool]: 3pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day2_4",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day2_4",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Talk with Friends",
+        "go": "afterschool_day2_5",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      }
+    ]
+  },
+  "afterschool_day2_4": {
+    "text": "[Afterschool]: 4pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day2_5",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day2_5",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Talk with Friends",
+        "go": "afterschool_day2_6",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      }
+    ]
+  },
+  "afterschool_day2_5": {
+    "text": "[Afterschool]: 5pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day2_6",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day2_6",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Talk with Friends",
+        "go": "afterschool_day2_7",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      }
+    ]
+  },
+  "afterschool_day2_6": {
+    "text": "[Afterschool]: 6pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day2_7",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day2_7",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Talk with Friends",
+        "go": "afterschool_day2_8",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      }
+    ]
+  },
+  "afterschool_day2_7": {
+    "text": "[Afterschool]: 7pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day2_8",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day2_8",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      }
+    ]
+  },
+  "afterschool_day2_8": {
+    "text": "[Afterschool]: 8pm, you start to feel tired from the days events",
+    "options": [
+      {
+        "text": "Push yourself",
+        "go": "afterschool_day2_9",
+        "reputation_effect": 0,
+        "grade_effect": 10,
+        "stress_effect": 10
+      },
+      {
+        "text": "Sleep",
+        "go": "chapter_2_end",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "afterschool_day2_9": {
+    "text": "[Afterschool]: 9pm",
+    "options": [
+      {
+        "text": "Sleep",
+        "go": "chapter_2_end",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "store_day2": {
+    "text": "You find yourself at a store, seems like it is closed",
+    "options": [
+      {
+        "text": "Try the door",
+        "go": "store_day2_enter",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      },
+      {
+        "text": "Go home",
+        "go": "afterschool_day2_3",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "store_day2_enter": {
+    "text": "You find a plank on the counter with a note",
+    "options": [
+      {
+        "text": "Read the note",
+        "go": "store_day2_note",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      },
+      {
+        "text": "Take the plank",
+        "go": "store_day2_take",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "defense_effect": 1
+      }
+    ]
+  },
+  "store_day2_note": {
+    "text": "Hello,\nI hope this finds you well. This should give you some extra defense. I have been asked by the school to close for the day, I will have a secret open hour at 1AM however",
+    "options": [
+      {
+        "text": "Take the plank",
+        "go": "store_day2_take",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "defense_effect": 1
+      }
+    ]
+  },
+  "store_day2_take": {
+    "text": "You take the plank and leave",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "afterschool_day2_3",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "chapter_2_end": {
+    "text": "[End of Chapter 2]",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "title",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
         "reputation_effect": 0
       }
     ]
