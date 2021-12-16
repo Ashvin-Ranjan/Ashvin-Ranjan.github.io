@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 // MUI
 import Typography from '@material-ui/core/Typography';
@@ -31,6 +31,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Home() {
   const classes = useStyles();
+  const [fadeIn, setFadeIn] = useState(true);
+
+  useEffect(() => {
+    if ((localStorage.getItem('fade') ?? '1') === '1') {
+      localStorage.setItem('fade', '0');
+    } else {
+      setFadeIn(false);
+    }
+  });
 
   function TypographyLink(props: {
     href: string;
@@ -53,11 +62,13 @@ export default function Home() {
     },
   ];
 
-  for (let i = 0; i < 7; i++) {
-    styles.push({
-      opacity: 0,
-      animation: `fade 500ms linear ${2000 + i * 500}ms forwards`,
-    });
+  if (fadeIn) {
+    for (let i = 0; i < 7; i++) {
+      styles.push({
+        opacity: 0,
+        animation: `fade 500ms linear ${2000 + i * 500}ms forwards`,
+      });
+    }
   }
 
   return (
