@@ -1354,7 +1354,7 @@
       "win": "boxing_end_win",
       "lose": "boxing_end_lose",
       "enemy_health": 35,
-      "enemy_damage_mul": 1.5
+      "enemy_damage_mul": 0.5
     }
   },
   "boxing_end_win": {
@@ -2826,7 +2826,7 @@
       }
     ]
   },
-  "day2_hall_check" : {
+  "day2_hall_check": {
     "text": "Turns out that they are fighting, just when you are about to leave, someone pushed you in",
     "options": [
       {
@@ -2845,7 +2845,7 @@
       "win": "day2_hall_fight_win",
       "lose": "day2_hall_fight_lose",
       "enemy_health": 35,
-      "enemy_damage_mul": 2.5
+      "enemy_damage_mul": 1
     }
   },
   "day2_hall_fight_win": {
@@ -3282,7 +3282,7 @@
     ]
   },
   "store_day2_note": {
-    "text": "Hello,\nI hope this finds you well. This should give you some extra defense. I have been asked by the school to close for the day, I will have a secret open hour at 1AM however",
+    "text": "Hello,\nI hope this finds you well. This should give you some extra defense. I have been asked by the school to close for the day, I will open tomorrow however",
     "options": [
       {
         "text": "Take the plank",
@@ -3320,5 +3320,1314 @@
         "reputation_effect": 0
       }
     ]
-  }
+  },
+  "day3_dream": {
+    "text": "\n   _______________\n  <><<<><>><>>>><>>\n   ---------------\n      ,ww v\nwWWWWWWW_)\n`WWWWWW'\n II  II",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "day3_dream_explain",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "day3_dream_explain": {
+    "text": "You wake up in a cold sweat",
+    "options": [
+      {
+        "text": "Check your phone",
+        "go": "day3_dream_phone",
+        "grade_effect": 10,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      },
+      {
+        "text": "Go back to sleep",
+        "go": "morning_day3",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": -10,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "day3_dream_phone": {
+    "text": "You check your phone and realize that the SAT is today.",
+    "options": [
+      {
+        "text": "Go to sleep",
+        "go": "morning_day3",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 10,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "morning_day3.comment": "Morning stuff for day 2",
+  "morning_day3": {
+    "text": "Your alarm goes off, it's 6:45 AM.",
+    "options": [
+      {
+        "text": "Wake up",
+        "go": "bike_day3",
+        "grade_effect": 10,
+        "stress_effect": 5,
+        "reputation_effect": 0
+      },
+      {
+        "text": "Sleep",
+        "go": "bike_day3",
+        "grade_effect": -10,
+        "stress_effect": -10
+      }
+    ]
+  },
+  "bike_day3": {
+    "text": "What route should you take going to school?",
+    "options": [
+      {
+        "text": "Meet with friends",
+        "go": "school_day3",
+        "grade_effect": -5,
+        "stress_effect": -5,
+        "popularity_effect": 10
+      },
+      {
+        "text": "Go Alone",
+        "go": "school_day3",
+        "grade_effect": 5,
+        "popularity_effect": -10,
+        "random": [
+          {
+            "go": "school_early_day3",
+            "chance": 0.75,
+            "grade_effect": 5,
+            "popularity_effect": -10
+          }
+        ]
+      }
+    ]
+  },
+  "school_early_day3": {
+    "text": "You arrive really early to school",
+    "options": [
+      {
+        "text": "Play games",
+        "go": "school_day3",
+        "grade_effect": -5,
+        "stress_effect": -10,
+        "popularity_effect": 0
+      },
+      {
+        "text": "Study",
+        "go": "school_day3",
+        "grade_effect": 5,
+        "stress_effect": 5,
+        "popularity_effect": 0
+      }
+    ]
+  },
+  "school_day3": {
+    "text": "There is some extra time before school starts",
+    "options": [
+      {
+        "text": "Hang out with friends",
+        "go": "announcements_day3",
+        "grade_effect": -5,
+        "stress_effect": 10,
+        "popularity_effect": 10
+      },
+      {
+        "text": "Study",
+        "go": "announcements_day3",
+        "grade_effect": 5,
+        "stress_effect": -5,
+        "popularity_effect": -10
+      }
+    ]
+  },
+  "announcements_day3": {
+    "text": "There are some announcements",
+    "options": [
+      {
+        "text": "Listen",
+        "go": "announcement_message_day3"
+      },
+      {
+        "text": "Ignore",
+        "go": "announcement_ignore_day3"
+      }
+    ]
+  },
+  "announcement_message_day3": {
+    "text": "\"Hello Gunn Students! Please go to your assigned SAT room for testing. Have a good day!\"",
+    "options": [
+      {
+        "text": "Go to room",
+        "go": "sat_start"
+      },
+      {
+        "text": "Stay here",
+        "go": "outside_day3"
+      }
+    ]
+  },
+  "announcement_ignore_day3": {
+    "text": "You see lots of people going somewhere",
+    "options": [
+      {
+        "text": "Ask what is going on",
+        "go": "announcement_ignore_talk_day3"
+      },
+      {
+        "text": "Stay here",
+        "go": "outside_day3"
+      }
+    ]
+  },
+  "announcement_ignore_talk_day3": {
+    "text": "They tell you that the SAT is about to start",
+    "options": [
+      {
+        "text": "Go to room",
+        "go": "sat_start"
+      },
+      {
+        "text": "Stay here",
+        "go": "outside_day3"
+      }
+    ]
+  },
+  "outside_day3": {
+    "text": "It is dead quiet outside",
+    "options": [
+      {
+        "text": "Go to room",
+        "go": "sat_start",
+        "grade_effect": 10,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      },
+      {
+        "text": "Stay at school",
+        "go": "outside_school_day3",
+        "grade_effect": -10,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": -15
+      },
+      {
+        "text": "Go to the park",
+        "go": "outside_park_day3",
+        "grade_effect": -10,
+        "popularity_effect": 0,
+        "stress_effect": -10,
+        "reputation_effect": -10
+      }
+    ]
+  },
+  "outside_school_day3.comment": "Player stays at school",
+  "outside_school_day3": {
+    "text": "Where do you want to go",
+    "options": [
+      {
+        "text": "Spangenb*rg Theatre",
+        "go": "outisde_school_theatre_day3",
+        "random": [
+          {
+            "go": "outisde_school_found_day3",
+            "chance": 1
+          }
+        ]
+      },
+      {
+        "text": "Garden",
+        "go": "outisde_school_garden_day3",
+        "random": [
+          {
+            "go": "outisde_school_found_day3",
+            "chance": 0.1
+          }
+        ]
+      }
+    ]
+  },
+  "outisde_school_found_day3": {
+    "text": "A teacher finds you wandering around",
+    "options": [
+      {
+        "text": "Run away",
+        "go": "outisde_school_found_run_day3",
+        "reputation_effect": -10
+      },
+      {
+        "text": "Fight",
+        "go": "outisde_school_found_fight_day3",
+        "grade_effect": 0,
+        "popularity_effect": 30,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "outisde_school_found_run_day3": {
+    "text": "You run away but they see a glimpse of your face",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "outside_day3",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "outisde_school_found_fight_day3": {
+    "text": "You start a fight with the teacher",
+    "fight": {
+      "win": "outisde_school_found_fight_win_day3",
+      "lose": "outisde_school_found_fight_lose_day3",
+      "enemy_health": 60,
+      "enemy_damage_mul": 0.75
+    }
+  },
+  "outisde_school_found_fight_win_day3": {
+    "text": "You knock out the teacher and run away quickly",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "outside_school_day3",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 20
+      }
+    ]
+  },
+  "outisde_school_found_fight_lose_day3": {
+    "text": "You get knocked out by the teacher",
+    "options": [
+      {
+        "text": "what...",
+        "go": "fightgm",
+        "grade_effect": -100,
+        "popularity_effect": 100,
+        "stress_effect": 100,
+        "reputation_effect": -100,
+        "can_game_over": false
+      }
+    ]
+  },
+  "fightgm": {
+    "text": "You have been expelled",
+    "options": [
+      {
+        "text": "Retry",
+        "go": "title",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "outisde_school_garden_day3": {
+    "text": "Catterpillars drop down!",
+    "fight": {
+      "win": "outisde_school_garden_visit_day3",
+      "lose": "outisde_school_garden_lose_day3",
+      "enemy_health": 30,
+      "enemy_damage_mul": 3
+    }
+  },
+  "outisde_school_garden_lose_day3": {
+    "text": "You run away to the garden",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "outisde_school_garden_visit_day3",
+        "popularity_effect": 0,
+        "stress_effect": 10,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "outisde_school_garden_visit_day3": {
+    "text": "You go to the garden and find a bag of chips, you feel like you have more endurace after eating them",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "outside_school_storetime_day3",
+        "popularity_effect": 0,
+        "stress_effect": -5,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "health_effect": 10
+      }
+    ]
+  },
+  "outisde_school_theatre_day3.comment": "this should probably be done last",
+  "outisde_school_theatre_day3": {},
+  "outside_park_day3.comment": "Side quest where the player beats up a squirrel",
+  "outside_park_day3": {
+    "text": "You are walking in the park when all of a sudden a squirrel steals your phone!",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "park_quest_start_day3",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 10,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "park_quest_start_day3": {
+    "text": "`#######     ##     ##    #########    #########    #########\n##     ##    ##     ##    ##           ##              ###\n##     ##    ##     ##    ######       #########       ###\n##     ##    ##     ##    ##                  ##       ###\n`########     ########    #########    #########       ###\n        ###\n\n                   Find and destroy the squirrel",
+    "options": [
+      {
+        "text": "Wait what...",
+        "go": "park_quest_fight_day3",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "park_quest_fight_day3": {
+    "text": "Objective: Find and destroy the squirrel [ ]\n\nYou encounter the squirrel!",
+    "fight": {
+      "win": "park_quest_end_day3",
+      "lose": "park_quest_search_day3",
+      "enemy_health": 50,
+      "enemy_damage_mul": 3,
+      "evasion": 0.9
+    }
+  },
+  "sat_start.comment": "The whole SAT \"test\"",
+  "sat_start": {
+    "text": "As you sit down the proctor begins reading:\n\"The FitnessGram Pacer test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter Pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal *boop*. A single lap should be completed each time you hear this sound *ding*. Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start.\"",
+    "options": [
+      {
+        "text": "Start",
+        "go": "sat_question1",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 10,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "sat_question1": {
+    "text": "Question 1: Who is Joe",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "Joe Stalin",
+        "go": "sat_question2",
+        "grade_effect": 5,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Joe Mama",
+        "go": "sat_question2",
+        "grade_effect": -2,
+        "popularity_effect": 5,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Idk, who is Joe?",
+        "go": "sat_question2",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": -5,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Mr. Stalin",
+        "go": "sat_question2",
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "grade_effect": -2,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question2": {
+    "text": "Question 2: Which studio made the hit game Among Us?",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "Innersloth",
+        "go": "sat_question3",
+        "grade_effect": 5,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "AMOGUS!!!1!1!!1! SUSUUSUSUSUYY",
+        "go": "sat_question3",
+        "grade_effect": -2,
+        "popularity_effect": 5,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Why should I care?",
+        "go": "sat_question3",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": -5,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Among us is dead",
+        "go": "sat_question3",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question3": {
+    "text": "Question 3: What is baking soda's chemical formula?",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "NaCO3",
+        "go": "sat_question4",
+        "grade_effect": 5,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "imagine chemistry",
+        "go": "sat_question4",
+        "grade_effect": -2,
+        "popularity_effect": 5,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Barium Potassium Indium [G] Sulfur Oxygen [D] [A]",
+        "go": "sat_question4",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": -5,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Sodium Bicarbonate",
+        "go": "sat_question4",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question4": {
+    "text": "Question 4: What is the airspeed velocity of an unladen sparrow?",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "11 m/s",
+        "go": "sat_question5",
+        "grade_effect": 5,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Sparrow, is that like the pokemon?",
+        "go": "sat_question5",
+        "grade_effect": -2,
+        "popularity_effect": 5,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Wait isn't this test about math and stuff?",
+        "go": "sat_question5",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": -5,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Depends on the sparrow",
+        "go": "sat_question5",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question5": {
+    "text": "Question 5: Who asked?",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "The test",
+        "go": "sat_question6",
+        "grade_effect": 5,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Nobody",
+        "go": "sat_question6",
+        "grade_effect": -2,
+        "popularity_effect": 5,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "You",
+        "go": "sat_question6",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": -5,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Me",
+        "go": "sat_question6",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question6": {
+    "text": "Question 6: What was Minecraft written in?",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "C++",
+        "go": "sat_question6_end",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "Java",
+        "go": "sat_question6_end",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question6_end": {
+    "text": "You feel as though this question will cause a useless arguement somehow.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "sat_question7",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question7": {
+    "text": "Question 7: h .",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "Skill issued",
+        "go": "sat_question8",
+        "grade_effect": 5,
+        "popularity_effect": 5,
+        "stress_effect": -5,
+        "reputation_effect": 5,
+        "can_game_over": false
+      },
+      {
+        "text": "Stupid",
+        "go": "sat_question8",
+        "grade_effect": 5,
+        "popularity_effect": 5,
+        "stress_effect": -5,
+        "reputation_effect": 5,
+        "can_game_over": false
+      },
+      {
+        "text": "warping their right arrow key (this has no relation to any events that have occured)",
+        "go": "sat_question8",
+        "grade_effect": 5,
+        "popularity_effect": 5,
+        "stress_effect": -5,
+        "reputation_effect": 5,
+        "can_game_over": false
+      },
+      {
+        "text": "Me",
+        "go": "sat_question8",
+        "grade_effect": 5,
+        "popularity_effect": 5,
+        "stress_effect": -5,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question8": {
+    "text": "Question 8: If a chicken says \"all chickens are liars,\" is this chicken telling the truth?",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "No",
+        "go": "sat_question9",
+        "grade_effect": 5,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Yes",
+        "go": "sat_question9",
+        "grade_effect": -2,
+        "popularity_effect": 5,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Chickens can't talk",
+        "go": "sat_question9",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": -5,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "This is a paradox",
+        "go": "sat_question9",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question9": {
+    "text": "Question 9: What is the name of the country located at 25° 6' N and 121° 35' E?",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "Taiwan",
+        "go": "sat_question9_end",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "Chinese Taipei",
+        "go": "sat_question9_end",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "[REDACTED]",
+        "go": "sat_question9_end",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "There is nothing there",
+        "go": "sat_question9_end",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question9_end": {
+    "text": "For some reason, there is no row to bubble in the answer.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "sat_question10",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question10": {
+    "text": "Question 10: What is the 4th, 5th, and 6th derivatives of velocity?",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "Snap, Crackle, Pop",
+        "go": "sat_question11",
+        "grade_effect": 5,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "What is a velocity?",
+        "go": "sat_question11",
+        "grade_effect": -2,
+        "popularity_effect": 5,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Wait, there are more?",
+        "go": "sat_question11",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": -5,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "I would never infringe on the trademark of Rice Krispies™",
+        "go": "sat_question11",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question11": {
+    "text": "Question 11: What goes first when making cereal?",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "Table",
+        "go": "sat_question12",
+        "grade_effect": 5,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Cereal",
+        "go": "sat_question12",
+        "grade_effect": -2,
+        "popularity_effect": 5,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Bowl",
+        "go": "sat_question12",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": -5,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Milk",
+        "go": "sat_question12",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question12": {
+    "text": "Question 12: What does the @ operator do in python?",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "Matrix multiplication",
+        "go": "sat_question13",
+        "grade_effect": 5,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Since when could you program a snake?",
+        "go": "sat_question13",
+        "grade_effect": -2,
+        "popularity_effect": 5,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Ping people to review your spaghetti code",
+        "go": "sat_question12_review",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": -5,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "It adds a special attribute to a language element",
+        "go": "sat_question12_java",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question12_review": {
+    "text": "Please never go to https://www.github.com/Ashvin-Ranjan/Ashvin-Ranjan.github.io",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "sat_question13",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "No",
+        "go": "sat_question13",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false,
+        "redirect": "https://www.github.com/Ashvin-Ranjan/Ashvin-Ranjan.github.io"
+      }
+    ]
+  },
+  "sat_question12_java": {
+    "text": "Unfortunatly python is not in the curriculum for programming.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "sat_question13",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question13": {
+    "text": "Question 13: What does idk mean?",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "I don't know",
+        "go": "sat_question14",
+        "grade_effect": 5,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "idk man what about you",
+        "go": "sat_question14",
+        "grade_effect": -2,
+        "popularity_effect": 5,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "idk?",
+        "go": "sat_question14",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": -5,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Using contractions in professional and academic writing is bad form and we will grade you lower for using them in your essay.",
+        "go": "sat_question14",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question14": {
+    "text": "Question 14: Define child",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "Me",
+        "go": "sat_question15",
+        "grade_effect": 5,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "You",
+        "go": "sat_question15",
+        "grade_effect": -2,
+        "popularity_effect": 5,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "██████████",
+        "go": "sat_question15",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": -5,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "██████",
+        "go": "sat_question15",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question15": {
+    "text": "Question 15: What type of nuclear reaction do h-bombs utilize?",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "Fusion",
+        "go": "sat_question16",
+        "grade_effect": 5,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Death",
+        "go": "sat_question16",
+        "grade_effect": -2,
+        "popularity_effect": 5,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "is that the ancestor of the f-bomb?",
+        "go": "sat_question16",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": -5,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Illegal",
+        "go": "sat_question16",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question16": {
+    "text": "Question 16: Is the place referenced in Question 9 a country?",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "",
+        "go": "sat_question16_end",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question16_end": {
+    "text": "You feel as though that question was not supposed to make it onto the test.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "sat_question17",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question17": {
+    "text": "Question 17: What is the answer to life the universe and everything?",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "42",
+        "go": "sat_question18",
+        "grade_effect": 5,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "69",
+        "go": "sat_question18",
+        "grade_effect": -2,
+        "popularity_effect": 5,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "this is a bit too deep?",
+        "go": "sat_question18",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": -5,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Where are the commas in this question?",
+        "go": "sat_question18",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question18": {
+    "text": "Question 19: What is watermelon in french?",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "Pasteque",
+        "go": "sat_question19",
+        "grade_effect": 5,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Haha funni bagueette langugae!!1",
+        "go": "sat_question19",
+        "grade_effect": -2,
+        "popularity_effect": 5,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "when did i take french?",
+        "go": "sat_question19",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": -5,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "l'eau melon",
+        "go": "sat_question19",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question19": {
+    "text": "Question 19: What is 1,3,7-trimethylpurine-2,6-dione?",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "The active ingredient in coffee",
+        "go": "sat_question20",
+        "grade_effect": 5,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "what do the symbols mean?",
+        "go": "sat_question20",
+        "grade_effect": -2,
+        "popularity_effect": 5,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "organic chemistry aaaaa",
+        "go": "sat_question20",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": -5,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "C₈H₁₀N₄O₂",
+        "go": "sat_question20",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_question20": {
+    "text": "Question 20: O_er_t_o_",
+    "shuffle": true,
+    "options": [
+      {
+        "text": "Painless operation",
+        "go": "sat_end",
+        "grade_effect": 5,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "what???",
+        "go": "sat_end",
+        "grade_effect": -2,
+        "popularity_effect": 5,
+        "stress_effect": 2,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Oreo",
+        "go": "sat_end",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": -5,
+        "reputation_effect": -2,
+        "can_game_over": false
+      },
+      {
+        "text": "Oerto",
+        "go": "sat_end",
+        "grade_effect": -2,
+        "popularity_effect": -2,
+        "stress_effect": 2,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "sat_end": {
+    "text": "The time limit is now over, you and your paper in and...",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "sat_go_home",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "sat_go_home": {
+    "text": "Everything goes well! Everyone is dismissed and heads home.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "afterschool_day3",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "afterschool_day3.comment": "Afterschool day 3 stuff"
 }

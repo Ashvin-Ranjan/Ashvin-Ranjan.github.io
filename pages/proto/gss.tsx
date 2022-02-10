@@ -47,21 +47,15 @@ interface OptionEffect {
   reputation_effect?: number;
   attack_effect?: number;
   defense_effect?: number;
+  health_effect?: number;
   can_game_over?: boolean;
+  redirect?: string;
 }
 
-interface OptionRandom {
-  go: string;
-  grade_effect?: number;
-  popularity_effect?: number;
-  stress_effect?: number;
-  reputation_effect?: number;
-  attack_effect?: number;
-  defense_effect?: number;
-  can_game_over?: boolean;
+interface OptionRandom extends OptionEffect {
   chance: number;
 }
-interface Option {
+interface Option extends OptionEffect {
   text: string;
   go: string;
   grade_effect?: number;
@@ -79,6 +73,7 @@ interface Fight {
   lose: string;
   enemy_health: number;
   enemy_damage_mul: number;
+  evasion?: number;
 }
 
 export default function GunnStudentSimulator() {
@@ -120,6 +115,10 @@ export default function GunnStudentSimulator() {
   );
   let attackBarCharge = 0;
 
+  // Options and shuffling them;
+  let options = ((data as any)[scene] ?? data.error).options;
+  let [_, forceRefresh] = useState(true);
+
   useEffect(() => {
     let update = setInterval(() => {
       if (attackBar.current && !playerTurn) {
@@ -139,6 +138,18 @@ export default function GunnStudentSimulator() {
       clearInterval(update);
     };
   }, [playerTurn, attackBarCharge]);
+
+  useEffect(() => {
+    if (((data as any)[scene] ?? data.error).shuffle) {
+      for (let i = options.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        const temp = options[i];
+        options[i] = options[j];
+        options[j] = temp;
+      }
+      forceRefresh((v) => !v);
+    }
+  }, [scene, data]);
 
   const classes = useStyles();
 
@@ -201,8 +212,6 @@ export default function GunnStudentSimulator() {
         0,
         100
       );
-      let attackMove = permanentAttackMod + (out.attack_effect ?? 0);
-      let defenseMove = permanentDefenseMod + (out.defense_effect ?? 0);
 
       if (out.go === 'title') {
         setGrade(0);
@@ -211,11 +220,15 @@ export default function GunnStudentSimulator() {
         setReputation(0);
         setPermanentAttackMod(0);
         setPermanentDefenseMod(0);
+        setMaxPlayerHealth(20);
       } else {
         setGrade(gradeMove);
         setPopularity(popularityMove);
         setStress(stressMove);
         setReputation(reputationMove);
+        setPermanentAttackMod((val) => val + (out.attack_effect ?? 0));
+        setPermanentDefenseMod((val) => val + (out.defense_effect ?? 0));
+        setMaxPlayerHealth((val) => val + (out.health_effect ?? 0));
       }
       if (out.can_game_over === false) {
         let maybeFight: Fight = ((data as any)[out.go] ?? data.error).fight;
@@ -276,21 +289,228 @@ export default function GunnStudentSimulator() {
     </span>
   );
 
-  if (!inFight) {
+  if (inFight) {
+    if (fightEnd) {
+      return (
+        <div className={classes.app}>
+          <header className={classes.appHeader}>
+            <div className={classes.healthHeader}>
+              <span>
+                You:{' '}
+                <span style={{ color: 'green' }}>
+                  {playerHealth}/{maxPlayerHealth}
+                </span>
+              </span>
+              <span>
+                Enemy:{' '}
+                <span style={{ color: 'red' }}>
+                  {enemyHealth}/{maxEnemyHealth}
+                </span>
+              </span>
+            </div>{' '}
+            <br />
+            {combatText.map((v) => (
+              <>
+                {v}
+                <br />
+              </>
+            ))}
+            <br />
+            {'\u00a0'}
+            <span
+              className={classes.option}
+              onClick={() => {
+                setInFight(false);
+                if (playerHealth === 0) {
+                  setScene((data as any)[scene].fight.lose);
+                } else {
+                  setScene((data as any)[scene].fight.win);
+                }
+              }}
+            >
+              {'['}
+              <u>Continue</u>
+              {']'}
+            </span>
+          </header>
+        </div>
+      );
+    } else {
+      return (
+        <div className={classes.app}>
+          <header className={classes.appHeader}>
+            <div className={classes.healthHeader}>
+              <span>
+                You:{' '}
+                <span style={{ color: 'green' }}>
+                  {playerHealth}/{maxPlayerHealth}
+                </span>
+              </span>
+              <span>
+                Enemy:{' '}
+                <span style={{ color: 'red' }}>
+                  {enemyHealth}/{maxEnemyHealth}
+                </span>
+              </span>
+            </div>{' '}
+            <br />
+            {reactifyText(((data as any)[scene] ?? data.error).text)}
+            <br />
+            {combatText.map((v) => (
+              <>
+                {v}
+                <br />
+              </>
+            ))}
+            <br />
+            {playerTurn ? (
+              <>
+                {'\u00a0'}
+                <span
+                  className={classes.option}
+                  onClick={() => {
+                    let heal = Math.floor(Math.random() * 4 + 2);
+                    setPlayerHealth(
+                      clamp(playerHealth + heal, 0, maxPlayerHealth)
+                    );
+                    setCombatText(
+                      combatText.concat(`You heal for ${heal} health`)
+                    );
+                    setPlayerTurn(false);
+                  }}
+                >
+                  {'['}
+                  <u>Heal</u>
+                  {']'}
+                </span>
+                {'\u00a0'}
+                <span
+                  className={classes.option}
+                  onClick={() => {
+                    if (
+                      ((data as any)[scene].fight.evasion ?? 0) - Math.random() <
+                      0
+                    ) {
+                      let attack =
+                        Math.floor(Math.random() * 4 + 1) +
+                        (attackMod + permanentAttackMod);
+                      setEnemyHealth(
+                        clamp(enemyHealth - attack, 0, maxEnemyHealth)
+                      );
+                      setCombatText(
+                        combatText.concat(`You attack for ${attack} health`)
+                      );
+                      if (
+                        clamp(enemyHealth - attack, 0, maxPlayerHealth) == 0
+                      ) {
+                        setCombatText(
+                          combatText.concat([
+                            `You attack for ${attack} health`,
+                            `You win!`,
+                          ])
+                        );
+                        setFightEnd(true);
+                      }
+                    } else {
+                      setCombatText(combatText.concat(`The enemy evades!`));
+                    }
+                    setPlayerTurn(false);
+                  }}
+                >
+                  {'['}
+                  <u>Attack</u>
+                  {']'}
+                </span>
+                {'\u00a0'}
+                <span
+                  className={classes.option}
+                  onClick={() => {
+                    setAttackMod(attackMod + 1);
+                    setCombatText(combatText.concat(`You pumped yourself up`));
+                    setPlayerTurn(false);
+                  }}
+                >
+                  {'['}
+                  <u>Brood</u>
+                  {']'}
+                </span>
+                {'\u00a0'}
+                <span
+                  className={classes.option}
+                  onClick={() => {
+                    setDefenseMod(defenseMod + 1);
+                    setCombatText(combatText.concat(`You braced yourself`));
+                    setPlayerTurn(false);
+                  }}
+                >
+                  {'['}
+                  <u>Defend</u>
+                  {']'}
+                </span>
+              </>
+            ) : (
+              <>
+                {attackBarElement}
+                <br />
+                {'\u00a0'}
+                <span
+                  className={classes.option}
+                  onClick={() => {
+                    let damage = clamp(
+                      Math.floor(
+                        (Math.abs(9 - attackBarCharge) -
+                          (defenseMod + permanentDefenseMod)/2) *
+                            ((data as any)[scene].fight.enemy_damage_mul ?? 1)
+                      ),
+                      0,
+                      maxPlayerHealth
+                    );
+                    damage += (attackBarCharge == 9 ? 0 : 1)
+                    setPlayerHealth(
+                      clamp(playerHealth - damage, 0, maxPlayerHealth)
+                    );
+                    setCombatText(
+                      combatText.concat(
+                        `The enemy attacked you for ${damage} health`
+                      )
+                    );
+                    if (clamp(playerHealth - damage, 0, maxPlayerHealth) == 0) {
+                      setCombatText(
+                        combatText.concat([
+                          `The enemy attacked you for ${damage} health`,
+                          `You lose!`,
+                        ])
+                      );
+                      setFightEnd(true);
+                    }
+                    setPlayerTurn(true);
+                  }}
+                >
+                  {'['}
+                  <u>Block</u>
+                  {']'}
+                </span>
+              </>
+            )}
+          </header>
+        </div>
+      );
+    }
+  } else {
     return (
       <div className={classes.app}>
         <Head>
           <title>Gunn Student Simulator 2 | ash.vin</title>
           <meta
-            name='description'
-            content='A totally original idea of a text-based game to totally accuratly portray life as a Gunn School student, totally not based on something by Sean Yen.'
+            name="description"
+            content="A totally original idea of a text-based game to totally accuratly portray life as a Gunn School student, totally not based on something by Sean Yen."
           />
           <meta
-            name='keywords'
-            content='Gunn Student Simulator 2, Gunn Student Simulator, Gunn, Student Simulator, Gunn High School'
+            name="keywords"
+            content="Gunn Student Simulator 2, Gunn Student Simulator, Gunn, Student Simulator, Gunn High School"
           />
-          <meta name='author' content='Ashvin Ranjan' />
-          <meta name='viewport' content='width=device-width, initial-scale=1' />
+          <meta name="author" content="Ashvin Ranjan" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <header className={classes.appHeader}>
           <span style={{ color: 'cyan' }}>Grade</span>: {grade} {gradeIndicator}{' '}
@@ -302,7 +522,7 @@ export default function GunnStudentSimulator() {
           {reactifyText(((data as any)[scene] ?? data.error).text)}
           <br />
           <div className={classes.optionWrapper}>
-            {((data as any)[scene] ?? data.error).options.map((v: Option) => (
+            {(options ?? data.error.options).map((v: Option) => (
               <>
                 {'\u00a0'}
                 <div
@@ -319,208 +539,27 @@ export default function GunnStudentSimulator() {
                     setShowIndicator(false);
                   }}
                 >
-                  {'['}
-                  <u>{v.text}</u>
-                  {']'}
+                  {v.redirect ? (
+                    <a
+                      href={v.redirect}
+                      target="_blank"
+                      className={classes.option}
+                    >
+                      {'['}
+                      <u>{v.text}</u>
+                      {']'}
+                    </a>
+                  ) : (
+                    <>
+                      {'['}
+                      <u>{v.text}</u>
+                      {']'}
+                    </>
+                  )}
                 </div>
               </>
             ))}
           </div>
-        </header>
-      </div>
-    );
-  } else if (fightEnd) {
-    return (
-      <div className={classes.app}>
-        <header className={classes.appHeader}>
-          <div className={classes.healthHeader}>
-            <span>
-              You:{' '}
-              <span style={{ color: 'green' }}>
-                {playerHealth}/{maxPlayerHealth}
-              </span>
-            </span>
-            <span>
-              Enemy:{' '}
-              <span style={{ color: 'red' }}>
-                {enemyHealth}/{maxEnemyHealth}
-              </span>
-            </span>
-          </div>{' '}
-          <br />
-          {combatText.map((v) => (
-            <>
-              {v}
-              <br />
-            </>
-          ))}
-          <br />
-          {'\u00a0'}
-          <span
-            className={classes.option}
-            onClick={() => {
-              setInFight(false);
-              if (playerHealth === 0) {
-                setScene((data as any)[scene].fight.lose);
-              } else {
-                setScene((data as any)[scene].fight.win);
-              }
-            }}
-          >
-            {'['}
-            <u>Continue</u>
-            {']'}
-          </span>
-        </header>
-      </div>
-    );
-  } else {
-    return (
-      <div className={classes.app}>
-        <header className={classes.appHeader}>
-          <div className={classes.healthHeader}>
-            <span>
-              You:{' '}
-              <span style={{ color: 'green' }}>
-                {playerHealth}/{maxPlayerHealth}
-              </span>
-            </span>
-            <span>
-              Enemy:{' '}
-              <span style={{ color: 'red' }}>
-                {enemyHealth}/{maxEnemyHealth}
-              </span>
-            </span>
-          </div>{' '}
-          <br />
-          {reactifyText(((data as any)[scene] ?? data.error).text)}
-          <br />
-          {combatText.map((v) => (
-            <>
-              {v}
-              <br />
-            </>
-          ))}
-          <br />
-          {playerTurn ? (
-            <>
-              {'\u00a0'}
-              <span
-                className={classes.option}
-                onClick={() => {
-                  let heal = Math.floor(Math.random() * 4 + 1);
-                  setPlayerHealth(
-                    clamp(playerHealth + heal, 0, maxPlayerHealth)
-                  );
-                  setCombatText(
-                    combatText.concat(`You heal for ${heal} health`)
-                  );
-                  setPlayerTurn(false);
-                }}
-              >
-                {'['}
-                <u>Heal</u>
-                {']'}
-              </span>
-              {'\u00a0'}
-              <span
-                className={classes.option}
-                onClick={() => {
-                  let attack =
-                    Math.floor(Math.random() * 4 + 1) +
-                    (attackMod + permanentAttackMod);
-                  setEnemyHealth(
-                    clamp(enemyHealth - attack, 0, maxEnemyHealth)
-                  );
-                  setCombatText(
-                    combatText.concat(`You attack for ${attack} health`)
-                  );
-                  if (clamp(enemyHealth - attack, 0, maxPlayerHealth) == 0) {
-                    setCombatText(
-                      combatText.concat([
-                        `You attack for ${attack} health`,
-                        `You win!`,
-                      ])
-                    );
-                    setFightEnd(true);
-                  }
-                  setPlayerTurn(false);
-                }}
-              >
-                {'['}
-                <u>Attack</u>
-                {']'}
-              </span>
-              {'\u00a0'}
-              <span
-                className={classes.option}
-                onClick={() => {
-                  setAttackMod(attackMod + 1);
-                  setCombatText(combatText.concat(`You pumped yourself up`));
-                  setPlayerTurn(false);
-                }}
-              >
-                {'['}
-                <u>Brood</u>
-                {']'}
-              </span>
-              {'\u00a0'}
-              <span
-                className={classes.option}
-                onClick={() => {
-                  setDefenseMod(defenseMod + 1);
-                  setCombatText(combatText.concat(`You braced yourself`));
-                  setPlayerTurn(false);
-                }}
-              >
-                {'['}
-                <u>Defend</u>
-                {']'}
-              </span>
-            </>
-          ) : (
-            <>
-              {attackBarElement}
-              <br />
-              {'\u00a0'}
-              <span
-                className={classes.option}
-                onClick={() => {
-                  let damage = clamp(
-                    Math.floor(
-                      Math.abs(9 - attackBarCharge) -
-                        (defenseMod + permanentDefenseMod) *
-                          ((data as any)[scene].enemy_damage_mul ?? 1)
-                    ),
-                    0,
-                    maxPlayerHealth
-                  );
-                  setPlayerHealth(
-                    clamp(playerHealth - damage, 0, maxPlayerHealth)
-                  );
-                  setCombatText(
-                    combatText.concat(
-                      `The enemy attacked you for ${damage} health`
-                    )
-                  );
-                  if (clamp(playerHealth - damage, 0, maxPlayerHealth) == 0) {
-                    setCombatText(
-                      combatText.concat([
-                        `The enemy attacked you for ${damage} health`,
-                        `You lose!`,
-                      ])
-                    );
-                    setFightEnd(true);
-                  }
-                  setPlayerTurn(true);
-                }}
-              >
-                {'['}
-                <u>Block</u>
-                {']'}
-              </span>
-            </>
-          )}
         </header>
       </div>
     );
