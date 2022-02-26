@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { createRef, useEffect, useState, RefObject } from 'react';
-import data from './gss_data.json';
+import data from '../../data/gss_data.json';
 import Head from 'next/head';
 
 const useStyles = makeStyles((theme) => ({
