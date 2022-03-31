@@ -19,15 +19,6 @@
         "stress_effect": 0,
         "reputation_effect": 0,
         "can_game_over": false
-      },
-      {
-        "text": "DEV SKCJLEI:",
-        "go": "day3_dream",
-        "grade_effect": 50,
-        "popularity_effect": 50,
-        "stress_effect": 50,
-        "reputation_effect": 50,
-        "can_game_over": false
       }
     ]
   },
@@ -3226,7 +3217,7 @@
       },
       {
         "text": "Sleep",
-        "go": "chapter_2_end",
+        "go": "day3_dream",
         "grade_effect": 0,
         "popularity_effect": 0,
         "stress_effect": 0,
@@ -3239,7 +3230,7 @@
     "options": [
       {
         "text": "Sleep",
-        "go": "chapter_2_end",
+        "go": "day3_dream",
         "grade_effect": 0,
         "popularity_effect": 0,
         "stress_effect": 0,
@@ -3310,19 +3301,6 @@
       {
         "text": "Continue",
         "go": "afterschool_day2_3",
-        "grade_effect": 0,
-        "popularity_effect": 0,
-        "stress_effect": 0,
-        "reputation_effect": 0
-      }
-    ]
-  },
-  "chapter_2_end": {
-    "text": "[End of Chapter 2]",
-    "options": [
-      {
-        "text": "Continue",
-        "go": "title",
         "grade_effect": 0,
         "popularity_effect": 0,
         "stress_effect": 0,
@@ -3551,7 +3529,7 @@
         "random": [
           {
             "go": "outisde_school_found_day3",
-            "chance": 1
+            "chance": 0.2
           }
         ]
       },
@@ -3703,6 +3681,14 @@
         "stress_effect": 0,
         "grade_effect": 0,
         "reputation_effect": 0
+      },
+      {
+        "text": "Leave",
+        "go": "afterschool_day3",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
       }
     ]
   },
@@ -3720,15 +3706,294 @@
     ]
   },
   "outisde_school_theatre_climb_day3": {
-    "text": "As you try to climb up security finds you and gets you down, you are escorted to your next class",
+    "text": "As you try to climb up its deathly quiet, you get up halfway",
     "options": [
       {
         "text": "Continue",
-        "go": "per6",
+        "go": "outisde_school_theatre_climb_rest_day3",
         "popularity_effect": 0,
         "stress_effect": 0,
         "grade_effect": 0,
         "reputation_effect": 0
+      }
+    ]
+  },
+  "outisde_school_theatre_climb_rest_day3": {
+    "text": "When you take a break someone in a class notices you, they laugh. When a teacher comes over to the student",
+    "options": [
+      {
+        "text": "Get down and run",
+        "go": "outisde_school_theatre_climb_run_day3",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0
+      },
+      {
+        "text": "Finish the climb",
+        "go": "outisde_school_theatre_climb_finish_day3",
+        "popularity_effect": 10,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": -10,
+        "can_game_over": false
+      }
+    ]
+  },
+  "outisde_school_theatre_climb_run_day3": {
+    "text": "You get down and run away just quick enough so that the teacher does not see you.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "outisde_school_theatre_day3",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "outisde_school_theatre_climb_finish_day3.comment": "Where the player talks to me",
+  "outisde_school_theatre_climb_finish_day3": {
+    "text": "You reach the top... you [REDACTED], and see a person as well",
+    "options": [
+      {
+        "text": "Talk",
+        "go": "developer_convo_start",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "developer_convo_start": {
+    "text": "Hello there, you may have enjoyed the game so far but now... The real game is what's happening between you and me",
+    "options": [
+      {
+        "text": "Did you just Pathologic reference me?",
+        "go": "developer_convo_pathologic",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "developer_convo_pathologic": {
+    "text": "Ah, you got me. Unfortunately I have not given up my ways...",
+    "options": [
+      {
+        "text": "That was the only option though...",
+        "go": "developer_convo_option",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "Ok",
+        "go": "developer_convo_pass",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "developer_convo_option": {
+    "text": "Good callout, but the problem is that people are more likely to choose the more interesting option... so adding the other one is not useful",
+    "options": [
+      {
+        "text": "Ok",
+        "go": "developer_convo_time",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "developer_convo_pass": {
+    "text": "Interesting, it appears that you did not see what I had to say...",
+    "options": [
+      {
+        "text": "Ok",
+        "go": "developer_convo_time",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "Wait you won't let me go back",
+        "go": "developer_convo_structure",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "developer_convo_structure": {
+    "text": "Oh well, I could, but I am too lazy, guess its too bad",
+    "options": [
+      {
+        "text": "bruh",
+        "go": "developer_convo_time",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "developer_convo_time": {
+    "text": "Oh yeah, abrupt tranition, but I want to apologize for taking so long on this...",
+    "options": [
+      {
+        "text": "Why did you take so long?",
+        "go": "developer_convo_time_reason",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "What are you talking about?",
+        "go": "developer_convo_time_explain",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "developer_convo_time_reason": {
+    "text": "So sorry about it, I really just bit off more than I could chew. You were supposed to fight Sean Yen here but that was too much for me to do.",
+    "options": [
+      {
+        "text": "Ok...",
+        "go": "developer_convo_day_4",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "developer_convo_time_explain": {
+    "text": "Ah you probably did not follow this games troubled creation, well this day took way to long to make.",
+    "options": [
+      {
+        "text": "Ok...",
+        "go": "developer_convo_day_4",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "developer_convo_day_4": {
+    "text": "Anyways now that you know about that I'll let you know that day 4 should not take that long!",
+    "options": [
+      {
+        "text": "Yay",
+        "go": "developer_convo_stolen",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "developer_convo_stolen": {
+    "text": "Also Please note that I did steal this from Sean Yen, so please check out the original Gunn Student Simulator.",
+    "options": [
+      {
+        "text": "Yes",
+        "go": "developer_convo_stolen_yes",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false,
+        "redirect": "https://sheeptester.github.io/gunn-student-sim/"
+      },
+      {
+        "text": "No",
+        "go": "developer_convo_stolen_no",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "developer_convo_stolen_yes": {
+    "text": "Epic, again thanks so much to Sean Yen.",
+    "options": [
+      {
+        "text": "Yes",
+        "go": "developer_convo_end",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "developer_convo_stolen_no": {
+    "text": "Cringe.",
+    "options": [
+      {
+        "text": "Yes",
+        "go": "developer_convo_end",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "developer_convo_end": {
+    "text": "Ok, our conversation has come to a close, this will be the only thing that I change so please visit me again.",
+    "options": [
+      {
+        "text": "Go to afterschool",
+        "go": "afterschool_day3",
+        "popularity_effect": 40,
+        "stress_effect": -40,
+        "grade_effect": 40,
+        "reputation_effect": 40,
+        "can_game_over": false
+      },
+      {
+        "text": "Loop dialogue",
+        "go": "developer_convo_start",
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "grade_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
       }
     ]
   },
@@ -3762,12 +4027,194 @@
   "park_quest_fight_day3": {
     "text": "Objective: Find and destroy the squirrel [ ]\n\nYou encounter the squirrel!",
     "fight": {
-      "win": "park_quest_end_day3",
+      "win": "park_quest_close_day3",
       "lose": "park_quest_search_day3",
       "enemy_health": 50,
       "enemy_damage_mul": 3,
-      "evasion": 0.9
+      "evasion": 0.1
     }
+  },
+  "park_quest_search_day3": {
+    "text": "Objective: Find and destroy the squirrel [ ]\n\nThe squirrel seems to be mocking you",
+    "options": [
+      {
+        "text": "Enter negotiations with the squirrel",
+        "go": "park_quest_negotiate_day3",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "park_quest_negotiate_day3": {
+    "text": "Objective: Strike a deal with the squirrel [ ]\n\nYou enter negotiations...",
+    "options": [
+      {
+        "text": "Start!",
+        "go": "park_quest_negotiate_medium_day3",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "park_quest_negotiate_medium_day3": {
+    "text": "Objective: Strike a deal with the squirrel [ ]\n\nThe squirrel is demanding a price for your phone.",
+    "options": [
+      {
+        "text": "Close the deal",
+        "go": "park_quest_close_day3",
+        "grade_effect": -5,
+        "popularity_effect": -5,
+        "stress_effect": 5,
+        "reputation_effect": -5,
+        "can_game_over": false
+      },
+      {
+        "text": "Threaten",
+        "go": "park_quest_negotiate_very_bad_day3",
+        "grade_effect": 0,
+        "popularity_effect": 5,
+        "stress_effect": -5,
+        "reputation_effect": 5,
+        "can_game_over": false
+      },
+      {
+        "text": "Appease",
+        "go": "park_quest_negotiate_bad_day3",
+        "grade_effect": 5,
+        "popularity_effect": 0,
+        "stress_effect": 5,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "Appeal for help",
+        "go": "park_quest_negotiate_good_day3",
+        "grade_effect": 5,
+        "popularity_effect": 0,
+        "stress_effect": 5,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "park_quest_negotiate_bad_day3": {
+    "text": "Objective: Strike a deal with the squirrel [ ]\n\nThe squirrel is demanding lots of acorns for your phone.",
+    "options": [
+      {
+        "text": "Close the deal",
+        "go": "park_quest_close_day3",
+        "grade_effect": -10,
+        "popularity_effect": -10,
+        "stress_effect": 10,
+        "reputation_effect": -10,
+        "can_game_over": false
+      },
+      {
+        "text": "Refuse",
+        "go": "park_quest_negotiate_very_bad_day3",
+        "grade_effect": 0,
+        "popularity_effect": 5,
+        "stress_effect": -5,
+        "reputation_effect": 5,
+        "can_game_over": false
+      },
+      {
+        "text": "Threaten",
+        "go": "park_quest_negotiate_medium_day3",
+        "grade_effect": 0,
+        "popularity_effect": 5,
+        "stress_effect": -5,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "park_quest_negotiate_good_day3": {
+    "text": "Objective: Strike a deal with the squirrel [ ]\n\nThe squirrel is taking pity on you.",
+    "options": [
+      {
+        "text": "Close the deal",
+        "go": "park_quest_close_day3",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "Threaten",
+        "go": "park_quest_negotiate_bad_day3",
+        "grade_effect": 0,
+        "popularity_effect": 5,
+        "stress_effect": -5,
+        "reputation_effect": 5,
+        "can_game_over": false
+      },
+      {
+        "text": "Refuse",
+        "go": "park_quest_negotiate_medium_day3",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      },
+      {
+        "text": "Haggle",
+        "go": "park_quest_negotiate_very_good_day3",
+        "grade_effect": 5,
+        "popularity_effect": 5,
+        "stress_effect": 5,
+        "reputation_effect": 5,
+        "can_game_over": false
+      }
+    ]
+  },
+  "park_quest_negotiate_very_good_day3": {
+    "text": "Objective: Strike a deal with the squirrel [X]\n\nThe squirrel feels bad and gives your phone back to you.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "afterschool_day3",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "park_quest_negotiate_very_bad_day3": {
+    "text": "Objective: Strike a deal with the squirrel: FAILED\n\nThe squirrel tries to run away! You are able to snatch your phone but it is badly damaged.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "afterschool_day3",
+        "grade_effect": -10,
+        "popularity_effect": -10,
+        "stress_effect": 15,
+        "reputation_effect": -10,
+        "can_game_over": false
+      }
+    ]
+  },
+  "park_quest_close_day3": {
+    "text": "QUEST DONE: You have your phone back now.",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "afterschool_day3",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
   },
   "sat_start.comment": "The whole SAT \"test\"",
   "sat_start": {
@@ -4684,5 +5131,508 @@
       }
     ]
   },
-  "afterschool_day3.comment": "Afterschool day 3 stuff"
+  "afterschool_day3.comment": "Afterschool day 3 stuff",
+  "afterschool_day3": {
+    "text": "[Afterschool]: 4pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day3_1",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day3_1",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Meet Friends",
+        "go": "afterschool_day3_2",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      }
+    ]
+  },
+  "afterschool_day3_1": {
+    "text": "[Afterschool]: 5pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day3_2",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day3_2",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Meet Friends",
+        "go": "afterschool_day3_3",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      }
+    ]
+  },
+  "afterschool_day3_2": {
+    "text": "[Afterschool]: 6pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day3_3",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day3_3",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Meet Friends",
+        "go": "afterschool_day3_4",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      }
+    ]
+  },
+  "afterschool_day3_3": {
+    "text": "[Afterschool]: 7pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day3_4",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day3_4",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Meet Friends",
+        "go": "afterschool_day3_5",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      }
+    ]
+  },
+  "afterschool_day3_4": {
+    "text": "[Afterschool]: 8pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day3_5",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day3_5",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Meet Friends",
+        "go": "afterschool_day3_6",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      }
+    ]
+  },
+  "afterschool_day3_5": {
+    "text": "[Afterschool]: 9pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day3_6",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day3_6",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Meet Friends",
+        "go": "afterschool_day3_7",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      }
+    ]
+  },
+  "afterschool_day3_6": {
+    "text": "[Afterschool]: 10pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day3_7",
+        "reputation_effect": 0,
+        "grade_effect": 5
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day3_7",
+        "reputation_effect": 0,
+        "stress_effect": -5
+      },
+      {
+        "text": "Meet Friends",
+        "go": "afterschool_day3_8",
+        "reputation_effect": 0,
+        "popularity_effect": 5
+      },
+      {
+        "text": "Go to the store",
+        "go": "store_day3",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "afterschool_day3_7": {
+    "text": "[Afterschool]: 11pm",
+    "options": [
+      {
+        "text": "Study",
+        "go": "afterschool_day3_8",
+        "reputation_effect": 0,
+        "grade_effect": 5,
+        "popularity_effect": 0
+      },
+      {
+        "text": "Relax",
+        "go": "afterschool_day3_8",
+        "reputation_effect": 0,
+        "stress_effect": -5,
+        "popularity_effect": 0
+      }
+    ]
+  },
+  "afterschool_day3_8": {
+    "text": "[Afterschool]: 12pm",
+    "options": [
+      {
+        "text": "Sleep",
+        "go": "chapter_3_end",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "store_day3.comment": "Store stuff for day 1",
+  "store_day3": {
+    "text": "You wander around and find yourself at a store",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day3_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "store_day3_options": {
+    "text": "\"I don't recommend overpaying...\"",
+    "options": [
+      {
+        "text": "Sharp stick +1 attack (Cost: 20 Reputation)",
+        "go": "store_day3_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": -20,
+        "can_game_over": false,
+        "attack_effect": 1
+      },
+      {
+        "text": "Knife +5 attack (Cost: 60 Reputation)",
+        "go": "store_day3_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": -60,
+        "can_game_over": false,
+        "attack_effect": 5
+      },
+      {
+        "text": "Padding +1 Defense (Cost: 50 Grade)",
+        "go": "store_day3_options",
+        "grade_effect": -50,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false,
+        "defense_effect": 1
+      },
+      {
+        "text": "Talk",
+        "go": "store_day3_talk0",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false,
+        "random": [
+          {
+            "go": "store_day3_talk1",
+            "grade_effect": 0,
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "reputation_effect": 0,
+            "can_game_over": false,
+            "chance": 0.1
+          },
+          {
+            "go": "store_day3_talk2",
+            "grade_effect": 0,
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "reputation_effect": 0,
+            "can_game_over": false,
+            "chance": 0.1
+          },
+          {
+            "go": "store_day3_talk3",
+            "grade_effect": 0,
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "reputation_effect": 0,
+            "can_game_over": false,
+            "chance": 0.1
+          },
+          {
+            "go": "store_day3_talk4",
+            "grade_effect": 0,
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "reputation_effect": 0,
+            "can_game_over": false,
+            "chance": 0.1
+          },
+          {
+            "go": "store_day3_talk5",
+            "grade_effect": 0,
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "reputation_effect": 0,
+            "can_game_over": false,
+            "chance": 0.1
+          },
+          {
+            "go": "store_day3_talk6",
+            "grade_effect": 0,
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "reputation_effect": 0,
+            "can_game_over": false,
+            "chance": 0.1
+          },
+          {
+            "go": "store_day3_talk7",
+            "grade_effect": 0,
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "reputation_effect": 0,
+            "can_game_over": false,
+            "chance": 0.1
+          },
+          {
+            "go": "store_day3_talk8",
+            "grade_effect": 0,
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "reputation_effect": 0,
+            "can_game_over": false,
+            "chance": 0.1
+          },
+          {
+            "go": "store_day3_talk9",
+            "grade_effect": 0,
+            "popularity_effect": 0,
+            "stress_effect": 0,
+            "reputation_effect": 0,
+            "can_game_over": false,
+            "chance": 0.1
+          }
+        ]
+      },
+      {
+        "text": "Leave",
+        "go": "afterschool_day3_8",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  },
+  "store_day3_talk0": {
+    "text": "\"I have more interesting things to say to you elsewhere\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day3_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "store_day3_talk1": {
+    "text": "\"The 13th labor is hard... I could replicate it...\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day3_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "store_day3_talk2": {
+    "text": "\"Elimination? I barely ended up not being the one to copy that.\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day3_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "store_day3_talk3": {
+    "text": "\"Tomorrow is the day\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day3_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "store_day3_talk4": {
+    "text": "\"That earlier hint about sheeps and pools was really unfortunate\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day3_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "store_day3_talk5": {
+    "text": "\"You made the SAT hard\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day3_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "store_day3_talk6": {
+    "text": "\"Have you heard of Donk Houston - A Troubled History\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day3_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "store_day3_talk7": {
+    "text": "\"I totally did not copy this\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day3_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "store_day3_talk8": {
+    "text": "\"Lorem ipsum docet\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day3_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "store_day3_talk9": {
+    "text": "\"Have you talked to me today already!\"",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "store_day3_options",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0,
+        "can_game_over": false
+      }
+    ]
+  },
+  "chapter_3_end": {
+    "text": "[End of Chapter 3]",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "title",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
+  }
 }
