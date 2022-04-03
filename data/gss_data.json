@@ -3219,7 +3219,7 @@
       },
       {
         "text": "Sleep",
-        "go": "day3_dream",
+        "go": "day3_sleep",
         "grade_effect": 0,
         "popularity_effect": 0,
         "stress_effect": 0,
@@ -3232,7 +3232,7 @@
     "options": [
       {
         "text": "Sleep",
-        "go": "day3_dream",
+        "go": "day3_sleep",
         "grade_effect": 0,
         "popularity_effect": 0,
         "stress_effect": 0,
@@ -3311,7 +3311,17 @@
     ]
   },
   "day3_sleep": {
-
+    "text": "You go to sleep and have a strange dream",
+    "options": [
+      {
+        "text": "Continue",
+        "go": "day3_dream",
+        "grade_effect": 0,
+        "popularity_effect": 0,
+        "stress_effect": 0,
+        "reputation_effect": 0
+      }
+    ]
   },
   "day3_dream": {
     "text": "\n   _______________\n  <><<<><>><>>>><>>\n   ---------------\n      ,ww v\nwWWWWWWW_)\n`WWWWWW'\n II  II",
