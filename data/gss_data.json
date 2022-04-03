@@ -335,7 +335,8 @@
     "options": [
       {
         "text": "Listen",
-        "go": "announcement_message_day1"
+        "go": "announcement_message_day1",
+        "reputation_effect": 5
       },
       {
         "text": "Ignore",
@@ -1937,10 +1938,10 @@
       {
         "text": "Yes",
         "go": "per6_survey_finish",
-        "popularity_effect": 0,
-        "stress_effect": 0,
-        "grade_effect": 0,
-        "reputation_effect": 0,
+        "popularity_effect": 10,
+        "stress_effect": -10,
+        "grade_effect": 10,
+        "reputation_effect": 10,
         "can_game_over": false
       },
       {
@@ -2678,7 +2679,8 @@
     "options": [
       {
         "text": "Listen",
-        "go": "announcement_message_day2"
+        "go": "announcement_message_day2",
+        "reputation_effect": 5
       },
       {
         "text": "Ignore",
@@ -3021,7 +3023,7 @@
       }
     ]
   },
-  "afterschool_day2_0.comment": "Time events for day2, starts at 12",
+  "afterschool_day2_0.comment": "Time events for day1, starts at 12",
   "afterschool_day2_0": {
     "text": "[Afterschool]: 12pm",
     "options": [
@@ -3308,6 +3310,9 @@
       }
     ]
   },
+  "day3_sleep": {
+
+  },
   "day3_dream": {
     "text": "\n   _______________\n  <><<<><>><>>>><>>\n   ---------------\n      ,ww v\nwWWWWWWW_)\n`WWWWWW'\n II  II",
     "options": [
@@ -3443,7 +3448,8 @@
     "options": [
       {
         "text": "Listen",
-        "go": "announcement_message_day3"
+        "go": "announcement_message_day3",
+        "reputation_effect": 5
       },
       {
         "text": "Ignore",
@@ -4238,35 +4244,35 @@
         "text": "Joe Stalin",
         "go": "sat_question2",
         "grade_effect": 5,
-        "popularity_effect": -2,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "popularity_effect": -1,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Joe Mama",
         "go": "sat_question2",
-        "grade_effect": -2,
+        "grade_effect": -1,
         "popularity_effect": 5,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Idk, who is Joe?",
         "go": "sat_question2",
-        "grade_effect": -2,
-        "popularity_effect": -2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
         "stress_effect": -5,
-        "reputation_effect": -2,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Mr. Stalin",
         "go": "sat_question2",
-        "popularity_effect": -2,
-        "stress_effect": 2,
-        "grade_effect": -2,
+        "popularity_effect": -1,
+        "stress_effect": 1,
+        "grade_effect": -1,
         "reputation_effect": 5,
         "can_game_over": false
       }
@@ -4280,35 +4286,35 @@
         "text": "Innersloth",
         "go": "sat_question3",
         "grade_effect": 5,
-        "popularity_effect": -2,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "popularity_effect": -1,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "AMOGUS!!!1!1!!1! SUSUUSUSUSUYY",
         "go": "sat_question3",
-        "grade_effect": -2,
+        "grade_effect": -1,
         "popularity_effect": 5,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Why should I care?",
         "go": "sat_question3",
-        "grade_effect": -2,
-        "popularity_effect": -2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
         "stress_effect": -5,
-        "reputation_effect": -2,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Among us is dead",
         "go": "sat_question3",
-        "grade_effect": -2,
-        "popularity_effect": -2,
-        "stress_effect": 2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
+        "stress_effect": 1,
         "reputation_effect": 5,
         "can_game_over": false
       }
@@ -4322,35 +4328,35 @@
         "text": "NaCO3",
         "go": "sat_question4",
         "grade_effect": 5,
-        "popularity_effect": -2,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "popularity_effect": -1,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "imagine chemistry",
         "go": "sat_question4",
-        "grade_effect": -2,
+        "grade_effect": -1,
         "popularity_effect": 5,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Barium Potassium Indium [G] Sulfur Oxygen [D] [A]",
         "go": "sat_question4",
-        "grade_effect": -2,
-        "popularity_effect": -2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
         "stress_effect": -5,
-        "reputation_effect": -2,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Sodium Bicarbonate",
         "go": "sat_question4",
-        "grade_effect": -2,
-        "popularity_effect": -2,
-        "stress_effect": 2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
+        "stress_effect": 1,
         "reputation_effect": 5,
         "can_game_over": false
       }
@@ -4364,35 +4370,35 @@
         "text": "11 m/s",
         "go": "sat_question5",
         "grade_effect": 5,
-        "popularity_effect": -2,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "popularity_effect": -1,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Sparrow, is that like the pokemon?",
         "go": "sat_question5",
-        "grade_effect": -2,
+        "grade_effect": -1,
         "popularity_effect": 5,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Wait isn't this test about math and stuff?",
         "go": "sat_question5",
-        "grade_effect": -2,
-        "popularity_effect": -2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
         "stress_effect": -5,
-        "reputation_effect": -2,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Depends on the sparrow",
         "go": "sat_question5",
-        "grade_effect": -2,
-        "popularity_effect": -2,
-        "stress_effect": 2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
+        "stress_effect": 1,
         "reputation_effect": 5,
         "can_game_over": false
       }
@@ -4406,35 +4412,35 @@
         "text": "The test",
         "go": "sat_question6",
         "grade_effect": 5,
-        "popularity_effect": -2,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "popularity_effect": -1,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Nobody",
         "go": "sat_question6",
-        "grade_effect": -2,
+        "grade_effect": -1,
         "popularity_effect": 5,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "You",
         "go": "sat_question6",
-        "grade_effect": -2,
-        "popularity_effect": -2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
         "stress_effect": -5,
-        "reputation_effect": -2,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Me",
         "go": "sat_question6",
-        "grade_effect": -2,
-        "popularity_effect": -2,
-        "stress_effect": 2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
+        "stress_effect": 1,
         "reputation_effect": 5,
         "can_game_over": false
       }
@@ -4528,35 +4534,35 @@
         "text": "No",
         "go": "sat_question9",
         "grade_effect": 5,
-        "popularity_effect": -2,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "popularity_effect": -1,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Yes",
         "go": "sat_question9",
-        "grade_effect": -2,
+        "grade_effect": -1,
         "popularity_effect": 5,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Chickens can't talk",
         "go": "sat_question9",
-        "grade_effect": -2,
-        "popularity_effect": -2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
         "stress_effect": -5,
-        "reputation_effect": -2,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "This is a paradox",
         "go": "sat_question9",
-        "grade_effect": -2,
-        "popularity_effect": -2,
-        "stress_effect": 2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
+        "stress_effect": 1,
         "reputation_effect": 5,
         "can_game_over": false
       }
@@ -4626,35 +4632,35 @@
         "text": "Snap, Crackle, Pop",
         "go": "sat_question11",
         "grade_effect": 5,
-        "popularity_effect": -2,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "popularity_effect": -1,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "What is a velocity?",
         "go": "sat_question11",
-        "grade_effect": -2,
+        "grade_effect": -1,
         "popularity_effect": 5,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Wait, there are more?",
         "go": "sat_question11",
-        "grade_effect": -2,
-        "popularity_effect": -2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
         "stress_effect": -5,
-        "reputation_effect": -2,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "I would never infringe on the trademark of Rice Krispies™",
         "go": "sat_question11",
-        "grade_effect": -2,
-        "popularity_effect": -2,
-        "stress_effect": 2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
+        "stress_effect": 1,
         "reputation_effect": 5,
         "can_game_over": false
       }
@@ -4668,35 +4674,35 @@
         "text": "Table",
         "go": "sat_question12",
         "grade_effect": 5,
-        "popularity_effect": -2,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "popularity_effect": -1,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Cereal",
         "go": "sat_question12",
-        "grade_effect": -2,
+        "grade_effect": -1,
         "popularity_effect": 5,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Bowl",
         "go": "sat_question12",
-        "grade_effect": -2,
-        "popularity_effect": -2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
         "stress_effect": -5,
-        "reputation_effect": -2,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Milk",
         "go": "sat_question12",
-        "grade_effect": -2,
-        "popularity_effect": -2,
-        "stress_effect": 2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
+        "stress_effect": 1,
         "reputation_effect": 5,
         "can_game_over": false
       }
@@ -4710,35 +4716,35 @@
         "text": "Matrix multiplication",
         "go": "sat_question13",
         "grade_effect": 5,
-        "popularity_effect": -2,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "popularity_effect": -1,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Since when could you program a snake?",
         "go": "sat_question13",
-        "grade_effect": -2,
+        "grade_effect": -1,
         "popularity_effect": 5,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Ping people to review your spaghetti code",
         "go": "sat_question12_review",
-        "grade_effect": -2,
-        "popularity_effect": -2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
         "stress_effect": -5,
-        "reputation_effect": -2,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "It adds a special attribute to a language element",
         "go": "sat_question12_java",
-        "grade_effect": -2,
-        "popularity_effect": -2,
-        "stress_effect": 2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
+        "stress_effect": 1,
         "reputation_effect": 5,
         "can_game_over": false
       }
@@ -4790,35 +4796,35 @@
         "text": "I don't know",
         "go": "sat_question14",
         "grade_effect": 5,
-        "popularity_effect": -2,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "popularity_effect": -1,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "idk man what about you",
         "go": "sat_question14",
-        "grade_effect": -2,
+        "grade_effect": -1,
         "popularity_effect": 5,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "idk?",
         "go": "sat_question14",
-        "grade_effect": -2,
-        "popularity_effect": -2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
         "stress_effect": -5,
-        "reputation_effect": -2,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Using contractions in professional and academic writing is bad form and we will grade you lower for using them in your essay.",
         "go": "sat_question14",
-        "grade_effect": -2,
-        "popularity_effect": -2,
-        "stress_effect": 2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
+        "stress_effect": 1,
         "reputation_effect": 5,
         "can_game_over": false
       }
@@ -4832,35 +4838,35 @@
         "text": "Me",
         "go": "sat_question15",
         "grade_effect": 5,
-        "popularity_effect": -2,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "popularity_effect": -1,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "You",
         "go": "sat_question15",
-        "grade_effect": -2,
+        "grade_effect": -1,
         "popularity_effect": 5,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "██████████",
         "go": "sat_question15",
-        "grade_effect": -2,
-        "popularity_effect": -2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
         "stress_effect": -5,
-        "reputation_effect": -2,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "██████",
         "go": "sat_question15",
-        "grade_effect": -2,
-        "popularity_effect": -2,
-        "stress_effect": 2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
+        "stress_effect": 1,
         "reputation_effect": 5,
         "can_game_over": false
       }
@@ -4874,35 +4880,35 @@
         "text": "Fusion",
         "go": "sat_question16",
         "grade_effect": 5,
-        "popularity_effect": -2,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "popularity_effect": -1,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Death",
         "go": "sat_question16",
-        "grade_effect": -2,
+        "grade_effect": -1,
         "popularity_effect": 5,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "is that the ancestor of the f-bomb?",
         "go": "sat_question16",
-        "grade_effect": -2,
-        "popularity_effect": -2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
         "stress_effect": -5,
-        "reputation_effect": -2,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Illegal",
         "go": "sat_question16",
-        "grade_effect": -2,
-        "popularity_effect": -2,
-        "stress_effect": 2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
+        "stress_effect": 1,
         "reputation_effect": 5,
         "can_game_over": false
       }
@@ -4945,35 +4951,35 @@
         "text": "42",
         "go": "sat_question18",
         "grade_effect": 5,
-        "popularity_effect": -2,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "popularity_effect": -1,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "69",
         "go": "sat_question18",
-        "grade_effect": -2,
+        "grade_effect": -1,
         "popularity_effect": 5,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "this is a bit too deep?",
         "go": "sat_question18",
-        "grade_effect": -2,
-        "popularity_effect": -2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
         "stress_effect": -5,
-        "reputation_effect": -2,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Where are the commas in this question?",
         "go": "sat_question18",
-        "grade_effect": -2,
-        "popularity_effect": -2,
-        "stress_effect": 2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
+        "stress_effect": 1,
         "reputation_effect": 5,
         "can_game_over": false
       }
@@ -4987,77 +4993,77 @@
         "text": "Pasteque",
         "go": "sat_question19",
         "grade_effect": 5,
-        "popularity_effect": -2,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "popularity_effect": -1,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Haha funni bagueette langugae!!1",
         "go": "sat_question19",
-        "grade_effect": -2,
+        "grade_effect": -1,
         "popularity_effect": 5,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "when did i take french?",
         "go": "sat_question19",
-        "grade_effect": -2,
-        "popularity_effect": -2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
         "stress_effect": -5,
-        "reputation_effect": -2,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "l'eau melon",
         "go": "sat_question19",
-        "grade_effect": -2,
-        "popularity_effect": -2,
-        "stress_effect": 2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
+        "stress_effect": 1,
         "reputation_effect": 5,
         "can_game_over": false
       }
     ]
   },
   "sat_question19": {
-    "text": "Question 19: What is 1,3,7-trimethylpurine-2,6-dione?",
+    "text": "Question 19: What is 1,3,7-trimethylpurine-1,6-dione?",
     "shuffle": true,
     "options": [
       {
         "text": "The active ingredient in coffee",
         "go": "sat_question20",
         "grade_effect": 5,
-        "popularity_effect": -2,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "popularity_effect": -1,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "what do the symbols mean?",
         "go": "sat_question20",
-        "grade_effect": -2,
+        "grade_effect": -1,
         "popularity_effect": 5,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "organic chemistry aaaaa",
         "go": "sat_question20",
-        "grade_effect": -2,
-        "popularity_effect": -2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
         "stress_effect": -5,
-        "reputation_effect": -2,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "C₈H₁₀N₄O₂",
         "go": "sat_question20",
-        "grade_effect": -2,
-        "popularity_effect": -2,
-        "stress_effect": 2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
+        "stress_effect": 1,
         "reputation_effect": 5,
         "can_game_over": false
       }
@@ -5071,35 +5077,35 @@
         "text": "Painless operation",
         "go": "sat_end",
         "grade_effect": 5,
-        "popularity_effect": -2,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "popularity_effect": -1,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "what???",
         "go": "sat_end",
-        "grade_effect": -2,
+        "grade_effect": -1,
         "popularity_effect": 5,
-        "stress_effect": 2,
-        "reputation_effect": -2,
+        "stress_effect": 1,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Oreo",
         "go": "sat_end",
-        "grade_effect": -2,
-        "popularity_effect": -2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
         "stress_effect": -5,
-        "reputation_effect": -2,
+        "reputation_effect": -1,
         "can_game_over": false
       },
       {
         "text": "Oerto",
         "go": "sat_end",
-        "grade_effect": -2,
-        "popularity_effect": -2,
-        "stress_effect": 2,
+        "grade_effect": -1,
+        "popularity_effect": -1,
+        "stress_effect": 1,
         "reputation_effect": 5,
         "can_game_over": false
       }

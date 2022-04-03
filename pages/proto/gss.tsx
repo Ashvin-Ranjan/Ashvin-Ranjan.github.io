@@ -87,7 +87,7 @@ export default function GunnStudentSimulator() {
   let [stressEffect, setStressEffect] = useState(0);
   let [reputationEffect, setReputationEffect] = useState(0);
   let [showIndicator, setShowIndicator] = useState(false);
-  let baseChange = 3;
+  let baseChange = 2;
 
   // Combat stuff
   let [inFight, setInFight] = useState(false);
