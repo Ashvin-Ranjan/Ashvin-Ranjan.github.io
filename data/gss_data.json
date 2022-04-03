@@ -4335,7 +4335,7 @@
     "shuffle": true,
     "options": [
       {
-        "text": "NaCO3",
+        "text": "NaHCO3",
         "go": "sat_question4",
         "grade_effect": 5,
         "popularity_effect": -1,
