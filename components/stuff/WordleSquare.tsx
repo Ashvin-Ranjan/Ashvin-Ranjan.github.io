@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { ColorState, SquareData } from '../pages/stuff/crosswordle';
+import { ColorState, SquareData } from '../../pages/stuff/crosswordle';
 
 const useStyles = makeStyles((theme) => ({
   square: {

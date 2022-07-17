@@ -1,4 +1,4 @@
-import TranslatePage from '../../components/TranslatePage';
+import TranslatePage from '../../components/stuff/TranslatePage';
 
 // Rune translate table
 import rune from '../../data/rune.json';

@@ -1,4 +1,4 @@
-import VerticalText from '../components/VerticalText';
+import VerticalText from '../components/general/VerticalText';
 
 export default function PageNotFound() {
   return (

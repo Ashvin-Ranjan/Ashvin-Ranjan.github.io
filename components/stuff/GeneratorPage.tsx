@@ -67,7 +67,7 @@ export const GeneratorPage = (props: {
     while (cont) {
       message +=
         values[message.slice(-context)][
-          Math.floor(Math.random() * values[message.slice(-context)].length)
+        Math.floor(Math.random() * values[message.slice(-context)].length)
         ];
       if (message.slice(-1) == end) {
         cont = false;

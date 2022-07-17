@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import VerticalText from '../../components/VerticalText';
+import VerticalText from '../../components/general/VerticalText';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import WordleSquare from '../../components/WordleSquare';
+import WordleSquare from '../../components/stuff/WordleSquare';
 
 const API_KEY = `https://Crosswordle.asra.repl.co`;
 

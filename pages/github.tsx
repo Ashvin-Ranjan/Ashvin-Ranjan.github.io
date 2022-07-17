@@ -1,5 +1,5 @@
-import VerticalText from '../components/VerticalText';
-import GithubItem, { Repo } from '../components/GithubItem';
+import VerticalText from '../components/general/VerticalText';
+import GithubItem, { Repo } from '../components/.github/GithubItem';
 import { makeStyles } from '@material-ui/core/styles';
 import { useState } from 'react';
 import { Button } from '@material-ui/core';

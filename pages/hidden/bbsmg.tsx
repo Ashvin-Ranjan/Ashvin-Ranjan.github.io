@@ -1,6 +1,6 @@
 // Data
 import data from '../../data/bbsmg.json';
-import GeneratorPage from '../../components/GeneratorPage';
+import GeneratorPage from '../../components/stuff/GeneratorPage';
 
 export const BecauseBreadStarredMessageGeneator = () => {
   return (

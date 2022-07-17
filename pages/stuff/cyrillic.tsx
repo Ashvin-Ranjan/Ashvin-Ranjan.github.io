@@ -1,4 +1,4 @@
-import TranslatePage from '../../components/TranslatePage';
+import TranslatePage from '../../components/stuff/TranslatePage';
 
 // Cyrillic translate table
 import cyrillic from '../../data/cyrillic.json';
