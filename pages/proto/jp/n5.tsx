@@ -1,5 +1,5 @@
 import N5_DATA from "../../../data/japanese/n5.json";
-import { Definition } from "./types";
+import { Definition } from "../../../util/types/jp";
 import WordDisplay from "../../../components/jp/WordDisplay";
 
 import { useState } from "react";

@@ -1,4 +1,4 @@
-import { Definition } from "../../pages/proto/jp/types";
+import { Definition } from "../../util/types/jp";
 
 export default function VerticalText(props: { word: Definition }) {
   const { word } = props;
