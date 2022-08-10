@@ -172,15 +172,15 @@ const Crosswordle = () => {
   }, [selected, direction, originalBoardWords, data]);
 
   return (
-    <div className="App">
-      <header className="App-header-align-top">
+    <div className='App'>
+      <header className='App-header-align-top'>
         <div className={classes.side}>
           <div className={classes.title}>
             <h1>
-              <VerticalText bold text="Crosswordle" />
+              <VerticalText bold text='Crosswordle' />
             </h1>
 
-            <Button href="/" style={{ color: 'white', fontSize: 30 }}>
+            <Button href='/' style={{ color: 'white', fontSize: 30 }}>
               ≪
             </Button>
           </div>
