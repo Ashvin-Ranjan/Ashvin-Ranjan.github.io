@@ -1,5 +1,5 @@
-import N5_DATA from '../../../data/japanese/n5.json';
-import { Definition } from '../../../util/types/jp';
+import N5_DATA from '../../data/japanese/n5.json';
+import { Definition } from '../../util/types/jp';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -54,6 +54,7 @@ export default function N5Flashcards() {
 
   let [words, setWords] = useState(randomWords());
   let [displayJapanese, setDisplayJapanese] = useState(false);
+  let [noHelper, setNoHelper] = useState(false);
 
   let shuffleMap = shuffle([0, 1, 2, 3]);
 
@@ -73,7 +74,10 @@ export default function N5Flashcards() {
   };
 
   const checkCorrect = (numb: number) => {
-    let display = displayWord(TYPED_DATA[words[0]], !displayJapanese);
+    let display = displayWord(
+      TYPED_DATA[words[0]],
+      !displayJapanese || noHelper
+    );
 
     if (numb == words[0]) {
       toast(`You got ${display} correct`);
@@ -89,7 +93,7 @@ export default function N5Flashcards() {
     <div className='App'>
       <header className='App-header'>
         {displayJapanese
-          ? displayWord(TYPED_DATA[words[0]])
+          ? displayWord(TYPED_DATA[words[0]], noHelper)
           : TYPED_DATA[words[0]].definitions[0][0]}
         <br />
         {shuffleMap.map((v, i) => (
@@ -103,7 +107,7 @@ export default function N5Flashcards() {
             ({i + 1}){' '}
             {displayJapanese
               ? TYPED_DATA[words[v]].definitions[0][0]
-              : displayWord(TYPED_DATA[words[v]])}
+              : displayWord(TYPED_DATA[words[v]], noHelper)}
           </Button>
         ))}
         <div style={{ paddingTop: '5%' }}>
@@ -118,6 +122,17 @@ export default function N5Flashcards() {
             {displayJapanese
               ? 'Test English to Japanese'
               : 'Test Japanese to English'}
+          </Button>{' '}
+          <br />
+          <Button
+            className={classes.button}
+            style={{ alignSelf: 'center' }}
+            onClick={() => {
+              setNoHelper((v) => !v);
+              setWords(randomWords());
+            }}
+          >
+            {noHelper ? 'Enable non-main reading' : 'Disable non-main reading'}
           </Button>
         </div>
         <ToastContainer position='bottom-right' />
