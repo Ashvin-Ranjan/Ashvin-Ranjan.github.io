@@ -20,7 +20,7 @@ const IBMPlexSansJP = IBM_Plex_Sans_JP({
 });
 
 export default function Home() {
-    const imageIndex = useMemo(() => Math.floor(Math.random() * 3), []);
+    const imageIndex = useRef(Date.now().valueOf() % 3);
     let [isEnglish, setIsEnglish] = useState(true);
     let [loadedLanguage, setLoadedLanguage] = useState(false);
     let [currentText, setCurrentText] = useState(TextData.english);
@@ -53,7 +53,7 @@ export default function Home() {
 
     return (
         <main className='flex min-h-screen max-h-screen justify-between w-full flex-col md:flex-row'>
-            {imagesArray[imageIndex]}
+            {imagesArray[imageIndex.current]}
             <div
                 className={`w-full md:w-2/3 flex flex-col justify-between overflow-y-auto ${
                     loadedLanguage ? '' : 'hidden'
