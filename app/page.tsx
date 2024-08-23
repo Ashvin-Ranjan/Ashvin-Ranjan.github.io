@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { IBM_Plex_Sans, IBM_Plex_Sans_JP } from 'next/font/google';
 
 import TextData from '../public/text.json';
@@ -20,8 +20,9 @@ const IBMPlexSansJP = IBM_Plex_Sans_JP({
 });
 
 export default function Home() {
-    let [imageIndex, _] = useState(() => Math.floor(Math.random() * 3));
+    const imageIndex = useRef(Math.floor(Math.random() * 3));
     let [isEnglish, setIsEnglish] = useState(true);
+    let [loadedLanguage, setLoadedLanguage] = useState(false);
     let [currentText, setCurrentText] = useState(TextData.english);
 
     const imagesArray = [
@@ -41,11 +42,19 @@ export default function Home() {
 
     useEffect(() => {
         setCurrentText(isEnglish ? TextData.english : TextData.japanese);
+        if (typeof window !== 'undefined' && loadedLanguage)
+            localStorage.setItem('lang', isEnglish ? 'en' : 'jp');
     }, [isEnglish]);
+    useEffect(() => {
+        if (typeof window === 'undefined') return;
+        const lang = localStorage.getItem('lang');
+        if (lang) setIsEnglish(lang === 'en');
+        setLoadedLanguage(true);
+    }, []);
 
     return (
         <main className='flex min-h-screen max-h-screen justify-between w-full flex-col md:flex-row'>
-            {imagesArray[imageIndex]}
+            {imagesArray[imageIndex.current]}
             <div className='w-full md:w-2/3 flex flex-col justify-between overflow-y-auto'>
                 <div
                     className={`p-[6%_12%] pb-0 font-light ${
@@ -102,7 +111,7 @@ export default function Home() {
                     )}
                 </div>
                 <div
-                    className={`text-lg text-right p-5 ${IBMPlexSansJP.className}`}
+                    className={`text-lg text-right p-5 select-none ${IBMPlexSansJP.className}`}
                     onClick={() => {
                         setIsEnglish((v) => !v);
                     }}
