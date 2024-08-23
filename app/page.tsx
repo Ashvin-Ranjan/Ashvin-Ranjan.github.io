@@ -55,7 +55,11 @@ export default function Home() {
     return (
         <main className='flex min-h-screen max-h-screen justify-between w-full flex-col md:flex-row'>
             {imagesArray[imageIndex]}
-            <div className='w-full md:w-2/3 flex flex-col justify-between overflow-y-auto'>
+            <div
+                className={`w-full md:w-2/3 flex flex-col justify-between overflow-y-auto ${
+                    loadedLanguage ? '' : 'hidden'
+                }`}
+            >
                 <div
                     className={`p-[6%_12%] pb-0 font-light ${
                         isEnglish ? '' : IBMPlexSansJP.className
