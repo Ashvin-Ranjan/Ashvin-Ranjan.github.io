@@ -3,18 +3,19 @@ import { useEffect, useState } from 'react';
 import { IBM_Plex_Sans, IBM_Plex_Sans_JP } from 'next/font/google';
 
 import TextData from '../public/text.json';
+import Link from 'next/link';
 
 export const IBMPlexSans = IBM_Plex_Sans({
     subsets: ['latin'],
     display: 'swap',
-    variable: '--font-poppins',
+    variable: '--font-ibm-plex-sans',
     weight: ['100', '200', '300', '400', '500', '600', '700'],
 });
 
 export const IBMPlexSansJP = IBM_Plex_Sans_JP({
     subsets: ['latin'],
     display: 'swap',
-    variable: '--font-poppins',
+    variable: '--font-ibm-plex-sans-jp',
     weight: ['100', '200', '300', '400', '500', '600', '700'],
 });
 
@@ -26,7 +27,7 @@ export default function Home() {
     let [currentText, setCurrentText] = useState(TextData.english);
 
     const imagesArray = [
-        <div className="w-full md:w-1/3 min-h-56 bg-[url('/images/workspace_reflections.jpg')] bg-[75%_50%] bg-cover" />,
+        <div className="w-full md:w-1/3 min-h-56 align-text-bottom bg-[url('/images/workspace_reflections.jpg')] bg-[75%_50%] bg-cover text-black" />,
         <div className="w-full md:w-1/3 min-h-56 bg-[url('/images/bedroom.jpg')] bg-[20%_50%] bg-cover" />,
         <div className="w-full md:w-1/3 min-h-56 bg-[url('/images/bioluminecent_water.jpg')] bg-[50%_25%] md:bg-[50%_50%] bg-cover" />,
     ];
@@ -36,27 +37,56 @@ export default function Home() {
     }, [isEnglish]);
 
     return (
-        <main className='flex min-h-screen justify-between w-full flex-col md:flex-row'>
-            {imagesArray[2]}
-            <div className='w-full md:w-2/3 flex flex-col justify-between'>
+        <main className='flex min-h-screen max-h-screen justify-between w-full flex-col md:flex-row'>
+            {imagesArray[imageIndex]}
+            <div className='w-full md:w-2/3 flex flex-col justify-between overflow-y-auto'>
                 <div
-                    className={`p-[6%_12%] ${
+                    className={`p-[6%_12%] pb-0 font-light ${
                         isEnglish ? '' : IBMPlexSansJP.className
                     }`}
                 >
                     <div
-                        className={`text-4xl ${
+                        className={`text-4xl font-normal ${
                             isEnglish ? IBMPlexSans.className : ''
                         }`}
                     >
                         {currentText.name}
                     </div>
-                    <div className='text-2xl mb-16'>{currentText.position}</div>
-                    <div className='text-lg mb-16 whitespace-pre-wrap	'>
+                    <div className='text-2xl mb-14'>{currentText.position}</div>
+                    <div className='text-lg mb-14 whitespace-pre-wrap'>
                         {currentText.about}
                     </div>
-                    <div className={`text-lg ${!isEnglish ? 'mb-14' : ''}`}>
+                    <div className='text-lg mb-14 whitespace-pre-wrap'>
                         {currentText.email}
+                    </div>
+                    <div
+                        className={`text-lg flex flex-wrap justify-between underline ${
+                            !isEnglish ? 'mb-14' : ''
+                        }`}
+                    >
+                        <Link
+                            className='px-2'
+                            href={
+                                'https://www.linkedin.com/in/ashvin-ranjan-153b99297/'
+                            }
+                        >
+                            {currentText.links.linkedin}
+                        </Link>
+                        <Link
+                            className='px-2'
+                            href={'https://instagram.com/gedatsu.ara/'}
+                        >
+                            {currentText.links.instagram}
+                        </Link>
+                        <Link className='px-2' href={'/resume.pdf'}>
+                            {currentText.links.resume}
+                        </Link>
+                        <Link
+                            className='px-2'
+                            href={'https://github.com/Ashvin-Ranjan'}
+                        >
+                            {currentText.links.github}
+                        </Link>
                     </div>
                     {!isEnglish && (
                         <div className={`text-lg`}>

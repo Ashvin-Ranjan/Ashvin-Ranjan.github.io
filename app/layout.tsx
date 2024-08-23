@@ -6,7 +6,7 @@ import { IBM_Plex_Serif } from 'next/font/google';
 const IBMPlexSerif = IBM_Plex_Serif({
     subsets: ['latin'],
     display: 'swap',
-    variable: '--font-poppins',
+    variable: '--font-ibm-plex-serif',
     weight: ['100', '200', '300', '400', '500', '600', '700'],
 });
 
