@@ -27,9 +27,18 @@ export default function Home() {
     let [currentText, setCurrentText] = useState(TextData.english);
 
     const imagesArray = [
-        <div className="w-full md:w-1/3 min-h-56 align-text-bottom bg-[url('/images/workspace_reflections.jpg')] bg-[75%_50%] bg-cover text-black" />,
-        <div className="w-full md:w-1/3 min-h-56 bg-[url('/images/bedroom.jpg')] bg-[20%_50%] bg-cover" />,
-        <div className="w-full md:w-1/3 min-h-56 bg-[url('/images/bioluminecent_water.jpg')] bg-[50%_25%] md:bg-[50%_50%] bg-cover" />,
+        <div
+            key='workspace_reflection'
+            className="w-full md:w-1/3 min-h-56 align-text-bottom bg-[url('/images/workspace_reflections.jpg')] bg-[75%_50%] bg-cover text-black"
+        />,
+        <div
+            key='bedroom'
+            className="w-full md:w-1/3 min-h-56 bg-[url('/images/bedroom.jpg')] bg-[20%_50%] bg-cover"
+        />,
+        <div
+            key='bioluminecent_water'
+            className="w-full md:w-1/3 min-h-56 bg-[url('/images/bioluminecent_water.jpg')] bg-[50%_25%] md:bg-[50%_50%] bg-cover"
+        />,
     ];
 
     useEffect(() => {
