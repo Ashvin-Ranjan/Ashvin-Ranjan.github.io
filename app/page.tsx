@@ -42,11 +42,10 @@ export default function Home() {
 
     useEffect(() => {
         setCurrentText(isEnglish ? TextData.english : TextData.japanese);
-        if (typeof window !== 'undefined' && loadedLanguage)
+        if (loadedLanguage)
             localStorage.setItem('lang', isEnglish ? 'en' : 'jp');
     }, [isEnglish]);
     useEffect(() => {
-        if (typeof window === 'undefined') return;
         const lang = localStorage.getItem('lang');
         if (lang) setIsEnglish(lang === 'en');
         setLoadedLanguage(true);
