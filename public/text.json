@@ -1,0 +1,17 @@
+{
+    "english": {
+        "name": "Ashvin Ranjan",
+        "position": "Computer Science Student @ The University of Washington",
+        "about": "Ashvin is a Computer Science student currently focused on the field of Computational Linguistics, with specific applications in the languages of Hindi and Japanese. He has work experience in next.js-based front-end development and creating developer tools. Furthermore, he consistently builds large-scale projects with other developers on GitHub.\n\n Outside of Computer Science he likes to create and think about media. He often writes blog posts and posts photos online. He is also a big fan of Ginger Root, JPEGMAFIA, and Ghais Guevara.",
+        "email": "Email: me@ash.vin",
+        "toggle": "English/日本語"
+    },
+    "japanese": {
+        "name": "アシュヴィン・ランジャン",
+        "position": "ワシントン大学のコンピューターサイエンス学科の学生",
+        "about": "アシュヴィンは日本語とかヒンディー語の計算言語学に興味があるコンピューターサイエンス学科の生徒です。Next.jsでのサイトとデベロッパーのプログラムを作る仕事をしたことがあります。なお、自分のGitHubでほかのデベロッパーと大きなプロジェクトをよく作ります。\n\nコンピューターサイエンス以外にいろいろなことを作ったり考えたりすることが好きです。ブログを書いたりインスタで写真をよく投稿します。音楽も大好きです。姜根やJPEGMAFIAやGhais Guevaraの音楽をよく聞きます。",
+        "email": "メール: me@ash.vin",
+        "toggle": "日本語/English",
+        "apology": "私は日本語をまだ勉強しているので間違いがあればすみません。ある場合は間違いについてメールを送ってください。"
+    }
+}
