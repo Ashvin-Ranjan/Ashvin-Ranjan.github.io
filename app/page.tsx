@@ -21,9 +21,7 @@ const IBMPlexSansJP = IBM_Plex_Sans_JP({
 
 export default function Home() {
     let [imageIndex, _] = useState(() => Math.floor(Math.random() * 3));
-    let [isEnglish, setIsEnglish] = useState(
-        navigator.language != 'ja' && navigator.language != 'ja-JP'
-    );
+    let [isEnglish, setIsEnglish] = useState(true);
     let [currentText, setCurrentText] = useState(TextData.english);
 
     const imagesArray = [
