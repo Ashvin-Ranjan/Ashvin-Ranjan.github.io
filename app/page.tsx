@@ -20,7 +20,7 @@ const IBMPlexSansJP = IBM_Plex_Sans_JP({
 });
 
 export default function Home() {
-    const imageIndex = useRef(Date.now().valueOf() % 3);
+    let [imageIndex, setImageIndex] = useState<number | null>(null);
     let [isEnglish, setIsEnglish] = useState(true);
     let [loadedLanguage, setLoadedLanguage] = useState(false);
     let [currentText, setCurrentText] = useState(TextData.english);
@@ -28,15 +28,15 @@ export default function Home() {
     const imagesArray = [
         <div
             key='workspace_reflection'
-            className="w-full md:w-1/3 min-h-56 align-text-bottom bg-[url('/images/workspace_reflections.jpg')] bg-[75%_50%] bg-cover text-black"
+            className="w-full animate-fade md:w-1/3 min-h-56 align-text-bottom bg-[url('/images/workspace_reflections.jpg')] bg-[75%_50%] bg-cover text-black"
         />,
         <div
             key='bedroom'
-            className="w-full md:w-1/3 min-h-56 bg-[url('/images/bedroom.jpg')] bg-[20%_50%] bg-cover"
+            className="w-full animate-fade md:w-1/3 min-h-56 bg-[url('/images/bedroom.jpg')] bg-[20%_50%] bg-cover"
         />,
         <div
             key='bioluminecent_water'
-            className="w-full md:w-1/3 min-h-56 bg-[url('/images/bioluminecent_water.jpg')] bg-[50%_25%] md:bg-[50%_50%] bg-cover"
+            className="w-full animate-fade md:w-1/3 min-h-56 bg-[url('/images/bioluminecent_water.jpg')] bg-[50%_25%] md:bg-[50%_50%] bg-cover"
         />,
     ];
 
@@ -49,13 +49,14 @@ export default function Home() {
         const lang = localStorage.getItem('lang');
         if (lang) setIsEnglish(lang === 'en');
         setLoadedLanguage(true);
+        setImageIndex(Math.floor(Math.random() * 3));
     }, []);
 
     return (
         <main className='flex min-h-screen max-h-screen justify-between w-full flex-col md:flex-row'>
-            {imagesArray[imageIndex.current]}
+            {imageIndex === null ? null : imagesArray[imageIndex]}
             <div
-                className={`w-full md:w-2/3 flex flex-col justify-between overflow-y-auto ${
+                className={`w-full md:w-2/3 flex flex-col justify-between overflow-y-auto  animate-fadeDelay opacity-0 ${
                     loadedLanguage ? '' : 'hidden'
                 }`}
             >
