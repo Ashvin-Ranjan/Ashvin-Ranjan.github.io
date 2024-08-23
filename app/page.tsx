@@ -85,6 +85,7 @@ export default function Home() {
                         }`}
                     >
                         <Link
+                            target='_blank'
                             className='px-2'
                             href={
                                 'https://www.linkedin.com/in/ashvin-ranjan-153b99297/'
@@ -93,15 +94,21 @@ export default function Home() {
                             {currentText.links.linkedin}
                         </Link>
                         <Link
+                            target='_blank'
                             className='px-2'
                             href={'https://instagram.com/gedatsu.ara/'}
                         >
                             {currentText.links.instagram}
                         </Link>
-                        <Link className='px-2' href={'/resume.pdf'}>
+                        <Link
+                            target='_blank'
+                            className='px-2'
+                            href={'/resume.pdf'}
+                        >
                             {currentText.links.resume}
                         </Link>
                         <Link
+                            target='_blank'
                             className='px-2'
                             href={'https://github.com/Ashvin-Ranjan'}
                         >
