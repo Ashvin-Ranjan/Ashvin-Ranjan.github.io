@@ -20,7 +20,7 @@ const IBMPlexSansJP = IBM_Plex_Sans_JP({
 });
 
 export default function Home() {
-    const imageIndex = useRef(Math.floor(Math.random() * 3));
+    const imageIndex = useMemo(() => Math.floor(Math.random() * 3), []);
     let [isEnglish, setIsEnglish] = useState(true);
     let [loadedLanguage, setLoadedLanguage] = useState(false);
     let [currentText, setCurrentText] = useState(TextData.english);
