@@ -5,14 +5,14 @@ import { IBM_Plex_Sans, IBM_Plex_Sans_JP } from 'next/font/google';
 import TextData from '../public/text.json';
 import Link from 'next/link';
 
-export const IBMPlexSans = IBM_Plex_Sans({
+const IBMPlexSans = IBM_Plex_Sans({
     subsets: ['latin'],
     display: 'swap',
     variable: '--font-ibm-plex-sans',
     weight: ['100', '200', '300', '400', '500', '600', '700'],
 });
 
-export const IBMPlexSansJP = IBM_Plex_Sans_JP({
+const IBMPlexSansJP = IBM_Plex_Sans_JP({
     subsets: ['latin'],
     display: 'swap',
     variable: '--font-ibm-plex-sans-jp',
