@@ -53,7 +53,7 @@ export default function Home() {
     }, []);
 
     return (
-        <main className='flex min-h-screen max-h-screen justify-between w-full flex-col md:flex-row'>
+        <main className='flex min-h-screen max-h-screen md:justify-between w-full flex-col md:flex-row'>
             {imageIndex === null ? null : imagesArray[imageIndex]}
             <div
                 className={`w-full md:w-2/3 flex flex-col justify-between overflow-y-auto  animate-fadeDelay opacity-0 ${
