@@ -19,12 +19,13 @@ const AlbumSummary = (
         onClick,
         focused,
     } = props;
+
     return (
         <div
             onClick={onClick}
             className={`md:transition drop-shadow-lg ease-in-out !duration-500  ${
-                focused ? '-translate-y-5' : 'hover:-translate-y-3'
-            } flex flex-col m-5 md:m-3 p-5 md:mb-6 h-auto md:w-1/3 max-w-96 rounded-lg bg-[#1d8888]`}
+                focused ? 'md:-translate-y-5' : 'md:hover:-translate-y-3'
+            } flex flex-col m-5 md:m-3 p-5 mb-6 h-auto md:w-1/3 max-w-96 rounded-lg bg-[#1d8888]`}
         >
             <div className={`text-3xl text-center p-3 pt-0 ${sansFont}`}>
                 {!!link ? (
@@ -83,7 +84,11 @@ const AlbumSummary = (
                     );
                 })}
             </div>
-            <div className='text-lg text-left m-3 overflow-hidden line-clamp-1 md:line-clamp-3'>
+            <div
+                className={`text-lg text-left m-3 overflow-hidden ${
+                    focused ? '' : 'line-clamp-1'
+                } md:!line-clamp-3`}
+            >
                 {about}
             </div>
         </div>
