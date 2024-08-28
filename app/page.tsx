@@ -1,8 +1,8 @@
 'use client';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IBM_Plex_Sans, IBM_Plex_Sans_JP } from 'next/font/google';
 
-import TextData from '../public/text.json';
+import TextData from '../public/page_data/main_page.json';
 import Link from 'next/link';
 
 const IBMPlexSans = IBM_Plex_Sans({
@@ -53,7 +53,7 @@ export default function Home() {
     }, []);
 
     return (
-        <main className='flex min-h-screen max-h-screen md:justify-between w-full flex-col md:flex-row'>
+        <main className='flex h-[calc(100dvh)] h-screen md:justify-between w-full flex-col md:flex-row'>
             {imageIndex === null ? null : imagesArray[imageIndex]}
             <div
                 className={`w-full md:w-2/3 flex flex-col justify-between overflow-y-auto  animate-fadeDelay opacity-0 ${
