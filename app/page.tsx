@@ -87,7 +87,7 @@ export default function Home() {
                         <Link
                             target='_blank'
                             className='px-2'
-                            href={'www.linkedin.com/in/asra31'}
+                            href={'https://linkedin.com/in/asra31'}
                         >
                             {currentText.links.linkedin}
                         </Link>
