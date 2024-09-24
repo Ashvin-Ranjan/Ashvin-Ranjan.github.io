@@ -1,18 +1,11 @@
 'use client';
-import { IBM_Plex_Sans } from 'next/font/google';
 
 import AlbumData from '../../../public/page_data/albums.json';
 import AlbumSummary from '@/components/albums/AlbumSummary';
 import { AlbumSummaryProps } from '@/components/albums/AlbumSummaryTypes';
 import { useState } from 'react';
 import AlbumDisplay from '@/components/albums/AlbumDisplay';
-
-const IBMPlexSans = IBM_Plex_Sans({
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-ibm-plex-sans',
-    weight: ['100', '200', '300', '400', '500', '600', '700'],
-});
+import { IBMPlexSans } from '@/utils/fonts';
 
 export default function Albums() {
     let [focusedAlbum, setFocusedAlbum] = useState(0);

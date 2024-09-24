@@ -1,23 +1,9 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { IBM_Plex_Sans, IBM_Plex_Sans_JP } from 'next/font/google';
 
 import TextData from '../public/page_data/main_page.json';
 import Link from 'next/link';
-
-const IBMPlexSans = IBM_Plex_Sans({
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-ibm-plex-sans',
-    weight: ['100', '200', '300', '400', '500', '600', '700'],
-});
-
-const IBMPlexSansJP = IBM_Plex_Sans_JP({
-    subsets: ['latin'],
-    display: 'swap',
-    variable: '--font-ibm-plex-sans-jp',
-    weight: ['100', '200', '300', '400', '500', '600', '700'],
-});
+import { IBMPlexSans, IBMPlexSansJP } from '@/utils/fonts';
 
 export default function Home() {
     let [imageIndex, setImageIndex] = useState<number | null>(null);
