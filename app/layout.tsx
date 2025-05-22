@@ -6,18 +6,18 @@ import { IBMPlexSerif } from '@/utils/fonts';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: 'Ashvin Ranjan',
-    description: 'A webpage by Ashvin Ranjan',
+  title: 'Ashvin Ranjan',
+  description: 'A webpage by Ashvin Ranjan',
 };
 
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode;
 }>) {
-    return (
-        <html lang='en'>
-            <body className={IBMPlexSerif.className}>{children}</body>
-        </html>
-    );
+  return (
+    <html lang="en">
+      <body className={IBMPlexSerif.className}>{children}</body>
+    </html>
+  );
 }
