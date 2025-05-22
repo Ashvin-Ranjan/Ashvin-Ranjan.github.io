@@ -2,7 +2,7 @@
     "english": {
         "name": "Ashvin Ranjan",
         "position": "Computer Science Student @ The University of Washington",
-        "about": "Ashvin is a Computer Science student currently focused on the field of Computational Linguistics, with specific applications in the languages of Hindi and Japanese. He has work experience in Next.js-based front-end development and creating developer tools. Furthermore, he consistently builds large-scale projects with other developers on GitHub.\n\nOutside of Computer Science he likes to create and think about media. He often writes blog posts and posts photos online. He is also a big fan of Ginger Root, JPEGMAFIA, and Ghais Guevara.",
+        "about": "I am a Computer Science student currently focused on the field of Computational Linguistics, with specific applications in Semantic Typology and Machine Learning architecture. I have experience in Next.js-based front-end development and creating developer tools in a professional environment. Furthermore, I also build large-scale projects with other developers on GitHub.\n\nOutside of Computer Science I like photography, games, and listening to music. I occasionally write blog posts about various topics and post photos online. Furthermore, I also occasionally create games, which I have published online.",
         "email": "Email: me@ash.vin",
         "toggle": "English/日本語",
         "links": {
@@ -15,7 +15,7 @@
     "japanese": {
         "name": "アシュヴィン・ランジャン",
         "position": "ワシントン大学のコンピューターサイエンス学科の学生",
-        "about": "アシュヴィンは日本語とかヒンディー語の計算言語学に興味があるコンピューターサイエンス学科の生徒です。Next.jsでのサイトとデベロッパーのプログラムを作る仕事をしたことがあります。なお、自分のGitHubでほかのデベロッパーと大きなプロジェクトをよく作ります。\n\nコンピューターサイエンス以外にいろいろなことを作ったり考えたりすることが好きです。ブログを書いたりインスタで写真をよく投稿したりします。音楽も大好きです。姜根やJPEGMAFIAやGhais Guevaraの音楽をよく聞きます。",
+        "about": "私は意味類型論や機械学習構造を専門して計算言語学に興味があるコンピューターサイエンス学科の学生です。Next.jsでのサイトとデベロッパーのプログラムを作る仕事をしたことがあります。なお、自分のGitHubでほかのデベロッパーと大きなプロジェクトを作ります。\n\nコンピューターサイエンス以外にいろいろなことを作ったり考えたりすることが好きです。ブログを書いたりインスタで写真をよく投稿したりします。音楽とゲームも大好きです。姜根やJPEGMAFIAやGhais Guevaraの音楽をよく聞きます。それに、時々ゲームを作って発行します。",
         "email": "メール: me@ash.vin",
         "toggle": "日本語/English",
         "apology": "私は日本語をまだ勉強しているので間違いがあればすみません。ある場合は間違いについてメールを送ってください。",
