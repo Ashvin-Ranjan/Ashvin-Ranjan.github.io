@@ -32,6 +32,10 @@ export default function Home() {
       key="building_1"
       className="w-full animate-fade md:w-1/3 min-h-56 align-text-bottom bg-[url('/images/building_1.jpg')] bg-[50%_60%] bg-cover"
     />,
+    <div
+      key="myself"
+      className="w-full animate-fade md:w-1/3 min-h-56 bg-[url('/images/myself.jpg')] bg-[50%_50%] bg-cover"
+    />,
   ];
 
   useEffect(() => {
