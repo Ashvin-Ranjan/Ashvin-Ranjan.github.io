@@ -105,6 +105,9 @@ export default function Home() {
             >
               {currentText.links.github}
             </Link>
+            <Link className="px-2" href={'/portfolio'}>
+              {currentText.links.portfolio}
+            </Link>
           </div>
           {!isEnglish && (
             <div className={`text-lg`}>{TextData.japanese.apology}</div>
