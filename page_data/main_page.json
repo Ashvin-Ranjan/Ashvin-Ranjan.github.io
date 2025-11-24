@@ -9,7 +9,8 @@
             "linkedin": "LinkedIn",
             "instagram": "Instagram",
             "resume": "Resume",
-            "github": "GitHub"
+            "github": "GitHub",
+            "portfolio": "Portfolio"
         }
     },
     "japanese": {
@@ -23,7 +24,8 @@
             "linkedin": "LinkedIn",
             "instagram": "インスタグラム",
             "resume": "履歴書",
-            "github": "GitHub"
+            "github": "GitHub",
+            "portfolio": "ポートフォリオ"
         }
     }
 }
