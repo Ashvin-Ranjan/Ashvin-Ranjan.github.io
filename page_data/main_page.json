@@ -7,7 +7,7 @@
         "toggle": "English/日本語",
         "links": {
             "linkedin": "LinkedIn",
-            "instagram": "Instagram",
+            "cv": "CV",
             "resume": "Resume",
             "github": "GitHub",
             "portfolio": "Portfolio"
@@ -22,7 +22,7 @@
         "apology": "私は日本語をまだ勉強しているので間違いがあればすみません。ある場合は間違いについてメールを送ってください。",
         "links": {
             "linkedin": "LinkedIn",
-            "instagram": "インスタグラム",
+            "cv": "職務経歴書",
             "resume": "履歴書",
             "github": "GitHub",
             "portfolio": "ポートフォリオ"
