@@ -91,9 +91,9 @@ export default function Home() {
             <Link
               target="_blank"
               className="px-2"
-              href={'https://instagram.com/gedatsu.ara/'}
+              href={'/cv.pdf'}
             >
-              {currentText.links.instagram}
+              {currentText.links.cv}
             </Link>
             <Link target="_blank" className="px-2" href={'/resume.pdf'}>
               {currentText.links.resume}
